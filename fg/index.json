@@ -1,6 +1,14 @@
-{
-    "file":  "fg1.json",
-    "status":  3,
-    "updated":  "2026-05-02T21:36:58Z",
-    "hash":  "727841da5ff8eae439850d257abae5d5f432bd063e9d81d0ff7ee5cdc8a0312c"
-}
+[
+    {
+        "file":  "fg1.json",
+        "status":  3,
+        "updated":  "2026-05-05T12:48:20Z",
+        "hash":  "4e9f08cd00e76ebd91d5ab4ff95240068903647d8d1468dd186084d911fba8a1"
+    },
+    {
+        "file":  "fg2.json",
+        "status":  3,
+        "updated":  "2026-05-05T12:48:20Z",
+        "hash":  "727841da5ff8eae439850d257abae5d5f432bd063e9d81d0ff7ee5cdc8a0312c"
+    }
+]
