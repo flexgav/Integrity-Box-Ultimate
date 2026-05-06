@@ -23,11 +23,13 @@
 To utilize the full potential of IntegrityBox Ultimate, ensure your environment meets the following criteria:
 
 **Core Requirements:**
+
 1. A supported Root Manager: **KernelSU**, **APatch**, or **Magisk**.
 2. **Tricky Store** or **TEE Simulator** *(Strictly required for hardware keystore attestation)*.
 3. A WebUI host: **KsuWebUIStandalone**, **MMRL**, or native WebUI support to access the module's dashboard.
 
 **Optional (but highly recommended):**
+
 4. **Zygisk Next** or **ReZygisk** *(Required for Zygisk injection unless you are using the standalone "Zygiskless" Pixel Mode)*.
 5. **LSPosed** and **HideMyApplist (HMA)** *(Required for the Advanced Stealth Setup to hide your root environment from banking apps)*.
 
@@ -109,11 +111,13 @@ This project uses concepts and code from the following amazing open-source work:
 Для использования всего потенциала IntegrityBox Ultimate убедитесь, что ваша система соответствует следующим критериям:
 
 **Основные требования:**
+
 1. Поддерживаемый Root-менеджер: **KernelSU**, **APatch** или **Magisk**.
 2. **Tricky Store** или **TEE Simulator** *(Строго необходимы для аппаратной аттестации хранилища ключей)*.
 3. Хост для WebUI: **KsuWebUIStandalone**, **MMRL** или встроенная поддержка WebUI для доступа к панели управления модуля.
 
 **Дополнительные (но настоятельно рекомендуемые):**
+
 4. **Zygisk Next** или **ReZygisk** *(Необходимы для Zygisk-инъекций, если вы не используете автономный "Zygiskless" Pixel Mode)*.
 5. **LSPosed** и **HideMyApplist (HMA)** *(Необходимы для продвинутой скрытой настройки, чтобы скрыть root-окружение от банковских приложений)*.
 
