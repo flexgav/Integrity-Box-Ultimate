@@ -6807,6 +6807,1672 @@
             ],
             "extraOppositeAppList": [
             ]
+        },
+        "ru.sberbankmobile": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "com.idamob.tinkoff.android": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "ru.alfabank.mobile.android": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "ru.vtb.mretail": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "ru.vtb.business": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "ru.rostel": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "ru.nspk.mirpay": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "ru.nspk.sbpay": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "ru.yandex.money": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "com.qiwi.wallet": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "ru.raiffeisennews": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "ru.rosbank.android": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "by.asbis.belarusbank": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "by.priorbank.priorbank": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "by.belinvestbank.mobil": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "by.lwo.oplati": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "kz.kaspi.mobile": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "kz.kaspi.pay": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "kz.kkb.homebank": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "kz.bcc.starbanking": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "kz.tsb.app": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "kz.fortebank.forte": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "kz.eubank.smartbank.app": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "kz.gov.egov2": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "uz.dida.payme": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "uz.click.uz": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "uz.uzum.bank": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "uz.kapitalbank.mobile": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "uz.uzinfocom.mygov": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "am.idram": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "am.ameriabank.ameriabanking": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "am.inecobank.mobapp": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "az.kapitalbank.mbanking": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "az.ibar.m.android": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "az.unibank.leo": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "az.gov.mygov": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "kg.cbk.mbank": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "kg.optima.optima24": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "kg.tunduk.portal": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "tj.alif.mobi": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "tj.dcb.mobile": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "tj.halykbank.mobile": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "ua.privatbank.ap24": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "com.ftband.mono": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "ua.oschadbank.oschad24": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "ua.gov.diia.app": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "ua.pumb.digital": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "md.maib.maibank": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "md.micb.mobilebanking": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
         }
     }
 }
