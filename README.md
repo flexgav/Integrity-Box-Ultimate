@@ -50,6 +50,8 @@ For users who need to hide root from aggressive banking or government applicatio
 2. **Install LSPosed:** Flash the downloaded LSPosed module (`Vector.zip`) in your Root Manager and reboot your device.
 3. **Install HMA:** Install the `HideMyApplist.apk` from the downloads folder, enable its module inside LSPosed, open it once to initialize, and then force close it.
 4. **Inject Config:** Open the WebUI -> **Hide My Stuff** -> **Inject HMA Template**. This automatically applies our ultimate stealth configuration (with over 50 pre-configured banking/gov apps) directly into HMA!
+5. **Bypass TEE Checks:** If your target apps use advanced hardware Keystore attestation, open WebUI -> **Keybox Hub** -> **Target Simulator** and configure a simulated secure environment for those specific apps.
+6. **Spoof Boot Hash:** To bypass strict bootloader verifications, open WebUI -> **Detection** -> **Boot Hash Spoofer**, generate and inject a trusted cryptographic boot hash.
 
 ---
 
@@ -67,6 +69,8 @@ We have eliminated the need for a massive, hard-to-read README file. **Integrity
 * **"Device not certified" in Play Store?** Even if you pass DEVICE/STRONG integrity, the Play Store caches old statuses. Use **GMS Tools** -> **Deep GMS Wipe** and reboot to fix this.
 * **Google Wallet / GPay failing?** If you just updated a banned keybox, the Wallet app still remembers the security failure. Use **GMS Tools** -> **Wallet Reset** to clear its local security cache.
 * **Banking apps crashing?** Use the **Applist Detector** and **Hide Suspicious Files** modules to mask your root environment (TWRP, Magisk folders) from aggressive anti-cheat scans.
+* **Failing strict bootloader checks?** Some advanced apps verify the cryptographic hash of your boot image. Use the **Boot Hash Spoofer** module to inject a trusted hash and hide your unlocked state.
+* **Failing hardware attestation (TEE)?** If an app enforces strict Keystore checks and refuses to work, use the **Target Simulator** module to spoof the Trusted Execution Environment.
 
 ---
 
@@ -132,6 +136,8 @@ This project uses concepts and code from the following amazing open-source work:
 2. **Установите LSPosed:** Прошейте скачанный модуль LSPosed (`Vector.zip`) в вашем Root-менеджере и перезагрузите устройство.
 3. **Установите HMA:** Установите `HideMyApplist.apk` из папки загрузок, включите его модуль в LSPosed, откройте один раз для инициализации, а затем принудительно закройте.
 4. **Внедрите конфиг:** Откройте WebUI -> **Hide My Stuff** -> **Inject HMA Template**. Это автоматически применит нашу ультимативную скрытую конфигурацию (с более чем 50 предварительно настроенными банковскими/гос. приложениями) прямо в HMA!
+5. **Обход проверок TEE:** Если нужные вам приложения требуют строгой аппаратной аттестации Keystore, откройте WebUI -> **Keybox Hub** -> **Target Simulator** и настройте эмуляцию безопасной среды для этих конкретных приложений.
+6. **Подмена хэша загрузчика:** Для обхода строгих проверок загрузчика откройте WebUI -> **Detection** -> **Boot Hash Spoofer**, сгенерируйте и внедрите доверенный криптографический хэш.
 
 ---
 
@@ -149,6 +155,8 @@ This project uses concepts and code from the following amazing open-source work:
 * **"Устройство не сертифицировано" в Play Маркете?** Даже если вы проходите DEVICE/STRONG integrity, Play Маркет кэширует старые статусы. Используйте **GMS Tools** -> **Deep GMS Wipe** и перезагрузитесь, чтобы исправить это.
 * **Google Wallet / GPay не работает?** Если вы только что обновили заблокированный keybox, приложение Wallet все еще помнит ошибку безопасности. Используйте **GMS Tools** -> **Wallet Reset**, чтобы очистить его локальный кэш безопасности.
 * **Банковские приложения вылетают?** Используйте модули **Applist Detector** и **Hide Suspicious Files**, чтобы скрыть ваше root-окружение (папки TWRP, Magisk) от агрессивных античит-сканирований.
+* **Не проходите строгие проверки загрузчика?** Некоторые продвинутые приложения проверяют криптографический хэш вашего boot-образа. Используйте модуль **Boot Hash Spoofer**, чтобы внедрить доверенный хэш и скрыть статус разблокировки.
+* **Не проходите аппаратную аттестацию (TEE)?** Если приложение требует строгой проверки Keystore и отказывается работать, используйте модуль **Target Simulator** для подмены Trusted Execution Environment.
 
 ---
 
