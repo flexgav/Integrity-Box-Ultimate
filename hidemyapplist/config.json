@@ -7760,6 +7760,40 @@
             "extraOppositeAppList": [
             ]
         },
+        "uz.kapitalbank.android": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
         "uz.uzinfocom.mygov": {
             "useWhitelist": false,
             "excludeSystemApps": true,
