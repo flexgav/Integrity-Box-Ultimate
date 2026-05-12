@@ -4,17 +4,17 @@
 
 <br>
 
-<p align="center">
+<div align="center">
   <a href="../README.md"><img src="../assets/readme_ru_icon.png" alt="Русский" height="72"></a>
-  &emsp;&emsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="./README.en.md"><img src="../assets/readme_en_icon.png" alt="English" height="72"></a>
-  &emsp;&emsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://github.com/flexgav/IntegrityBox-Ultimate/releases"><img src="../assets/download.png" alt="Download" height="54"></a>
-  &emsp;&emsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://t.me/IntegrityBoxUltimateChatRU"><img src="../assets/tgru_icon.png" alt="Telegram RU" height="72"></a>
-  &emsp;&emsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://t.me/IntegrityBoxUltimateChatEN"><img src="../assets/tgen_icon.png" alt="Telegram EN" height="72"></a>
-</p>
+</div>
 
 ---
 
