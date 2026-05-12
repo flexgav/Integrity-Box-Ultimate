@@ -9,7 +9,7 @@
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="./README.en.md"><img src="../assets/readme_en_icon.png" alt="English" height="72"></a>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://t.me/IntegrityBoxUltimateChatRU/519"><img src="../assets/download.png" alt="Download" height="54"></a>
+  <a href="https://github.com/flexgav/IntegrityBox-Ultimate/releases/latest"><img src="../assets/download.png" alt="Download" height="54"></a>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://t.me/IntegrityBoxUltimateChatRU"><img src="../assets/tgru_icon.png" alt="Telegram RU" height="72"></a>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -41,14 +41,33 @@ For the best experience, make sure your device has:
 
 **Core Requirements:**
 
-1. A supported Root Manager: **KernelSU**, **APatch**, or **Magisk**.
-2. **Tricky Store** or **TEE Simulator** *(needed for apps that check hardware-backed keys)*.
-3. A WebUI host: **KsuWebUIStandalone**, **MMRL**, or built-in WebUI support, so you can open the dashboard.
+1. A supported Root Manager: [**KernelSU Next**](https://github.com/KernelSU-Next/KernelSU-Next/releases/latest), [**APatch**](https://github.com/bmax121/APatch/releases/latest), or [**Kitsune Magisk / Kitsune Ufork**](https://t.me/KitsuneUfork).
+2. Hardware attestation backend: [**Tricky Store**](https://github.com/5ec1cff/TrickyStore/releases/latest) or [**TEE Simulator**](https://github.com/JingMatrix/TEESimulator/releases/latest) *(needed for apps that check hardware-backed keys)*. Use only one backend: Tricky Store, TrickyStoreOSS, TEE Simulator, and their forks must not run at the same time.
+3. A WebUI host: [**MMRL**](https://github.com/MMRLApp/MMRL/releases/latest), [**WebUI X Portable**](https://github.com/MMRLApp/WebUI-X-Portable/releases/latest), or built-in WebUI support in your Root Manager. [**KsuWebUIStandalone**](https://github.com/5ec1cff/KsuWebUIStandalone/releases/latest) can be used only as an old fallback option because its repository is archived.
+4. Before installing, remove other Integrity / Play Integrity certification fix modules and tools so they do not conflict with IntegrityBox Ultimate.
+
+**Conflicting modules to remove or disable:**
+
+<ul>
+  <li><b>Play Integrity / DroidGuard spoofers:</b> PlayIntegrityFix / PIF, Play Integrity Fix Next / PlayIntegrityFix-NEXT, Play Integrity Fork / PIFork, PlayIntegritySuperFork, Play Integrity Fix Advanced, Strong Integrity Fix, SafetyNet Fix, Universal SafetyNet Fix, Displax SafetyNet Fix, and other PIF/SafetyNet forks.</li>
+  <li><b>All-in-one Integrity / Keybox solutions:</b> Integrity-Box, Integrity Box forks, old IntegrityBox builds, Tricky Addon, Tricky Addon Enhanced / Update Target List, and similar modules if they manage keybox, target.txt, security patch, VBHash, or GMS state on their own.</li>
+  <li><b>Key attestation / Keybox backend:</b> do not keep Tricky Store, TrickyStoreOSS, TEE Simulator, TEESimulator-RS, and their forks enabled at the same time. Leave only the backend selected for IntegrityBox Ultimate.</li>
+  <li><b>Build props / fingerprint / security patch spoofers:</b> MagiskHide Props Config, Sensitive Props, Pixel Props / build.prop, Build-Prop-BETA, PixelFlasher PIF helper, XiaomiEU Injected PIF, and any ROM-bundled PIF / Pixel props spoof.</li>
+  <li><b>Pixel spoofing modules:</b> Pixelify, Pixelify Next, Pix3lify, Pixel Features, Google Photos Unlimited Backup, and similar modules if they change <code>ro.product*</code>, fingerprint, model, brand, security patch, or GMS properties.</li>
+  <li><b>VBMeta / boot hash spoofers:</b> Android VBMeta Fixer, VBMeta Disguiser, and similar tools if IntegrityBox Ultimate Boot Hash / verifiedBootHash / VBMeta features are used at the same time.</li>
+  <li>Any other module that changes fingerprint, build props, GMS state, DroidGuard, Keybox, attestation, security patch, VBMeta, boot hash, or Play Integrity verdicts.</li>
+</ul>
+
+**Important for classic Magisk Stable users:**
+
+Classic [**Magisk Stable**](https://github.com/topjohnwu/Magisk/releases/latest) is not the recommended option for IntegrityBox Ultimate if your goal is stable banking-app behavior and stricter environment checks. It is strongly recommended to move to [**Kitsune Magisk / Kitsune Ufork**](https://t.me/KitsuneUfork) or [**KSU Next Spoofed**](https://github.com/KernelSU-Next/KernelSU-Next/releases/latest) *(choose the APK with `-spoofed_...-release.apk` in the release assets)*; otherwise stable banking-app behavior is not guaranteed.
 
 **Optional, but highly recommended:**
 
-4. **Zygisk Next** or **ReZygisk** *(needed for Zygisk-based features unless you use the standalone Zygiskless Pixel Mode)*.
-5. **LSPosed** and **HideMyApplist (HMA)** *(recommended when banking or government apps are sensitive to root traces)*.
+5. [**Zygisk Next**](https://github.com/Dr-TSNG/ZygiskNext/releases/latest) or [**ReZygisk**](https://github.com/PerformanC/ReZygisk/releases/latest) *(needed for Zygisk-based features unless you use the standalone Zygiskless Pixel Mode)*.
+6. [**LSPosed / Vector**](https://github.com/JingMatrix/Vector/releases/latest) and [**HideMyApplist / HMA-OSS**](https://github.com/frknkrc44/HMA-OSS/releases/latest) *(recommended when banking or government apps react to app lists, root traces, or installed modules)*. Alternative HMA branch: [**Hide-My-Applist**](https://github.com/Dr-TSNG/Hide-My-Applist/releases/latest).
+
+**Useful tools from Integrity Downloader:** [PixelMask](https://github.com/kinginu/PixelMask/releases/latest), [KeyAttestation](https://github.com/vvb2060/KeyAttestation/releases/latest), [UpdateLocker](https://github.com/Xposed-Modules-Repo/ru.mike.updatelocker/releases/latest), [CorePatch](https://github.com/LSPosed/CorePatch/releases/latest), [Reverse Pixelify](https://github.com/uragiristereo/Reverse_Pixelify/releases/latest).
 
 ---
 
