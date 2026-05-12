@@ -69,6 +69,26 @@
 
 **Полезные инструменты из Integrity Downloader:** [PixelMask](https://github.com/kinginu/PixelMask/releases/latest), [KeyAttestation](https://github.com/vvb2060/KeyAttestation/releases/latest), [UpdateLocker](https://github.com/Xposed-Modules-Repo/ru.mike.updatelocker/releases/latest), [CorePatch](https://github.com/LSPosed/CorePatch/releases/latest), [Reverse Pixelify](https://github.com/uragiristereo/Reverse_Pixelify/releases/latest).
 
+**Где искать файлы, скачанные через Integrity Downloader:**
+
+Все APK/ZIP/JSON сохраняются в `/sdcard/IntegrityBox/Downloads`.
+
+| Инструмент | Имя файла | Полный путь |
+| --- | --- | --- |
+| Zygisk Next | `ZygiskNext.zip` | `/sdcard/IntegrityBox/Downloads/ZygiskNext.zip` |
+| Tricky Store | `TrickyStore.zip` | `/sdcard/IntegrityBox/Downloads/TrickyStore.zip` |
+| Key Attestation | `KeyAttestation.apk` | `/sdcard/IntegrityBox/Downloads/KeyAttestation.apk` |
+| Update Locker | `UpdateLocker.apk` | `/sdcard/IntegrityBox/Downloads/UpdateLocker.apk` |
+| HMA config | `HMA_Config.json` | `/sdcard/IntegrityBox/Downloads/HMA_Config.json` |
+| HideMyApplist / HMA-OSS | `HideMyApplist.apk` | `/sdcard/IntegrityBox/Downloads/HideMyApplist.apk` |
+| PixelMask | `PixelMask.apk` | `/sdcard/IntegrityBox/Downloads/PixelMask.apk` |
+| Reverse Pixelify | `Reverse_Pixelify.apk` | `/sdcard/IntegrityBox/Downloads/Reverse_Pixelify.apk` |
+| KsuWebUIStandalone | `KSU_WebUI.apk` | `/sdcard/IntegrityBox/Downloads/KSU_WebUI.apk` |
+| Core Patch | `Core_Patch.apk` | `/sdcard/IntegrityBox/Downloads/Core_Patch.apk` |
+| Thor Installer | `Thor_Installer.apk` | `/sdcard/IntegrityBox/Downloads/Thor_Installer.apk` |
+| Android Faker | `Android_Faker.apk` | `/sdcard/IntegrityBox/Downloads/Android_Faker.apk` |
+| LSPosed / Vector | `LSPosedVector.zip` | `/sdcard/IntegrityBox/Downloads/LSPosedVector.zip` |
+
 ---
 
 ## Установка и полное руководство по настройке
@@ -83,15 +103,15 @@
 7. **Повторный вход и проверка:** После перезагрузки откройте Play Маркет, снова войдите в свой аккаунт Google и проверьте статус сертификации Play Защиты.
 8. **Включите AutoPilot:** Перейдите в **Auto Pilot** -> **AutoPilot Manager** и включите автоматическое фоновое обновление.
 
-### Продвинутая скрытая настройка
+### Продвинутая настройка скрытности
 Если банковские или государственные приложения слишком внимательно проверяют устройство, рекомендуем настроить HideMyApplist (HMA) через встроенные инструменты:
 
-1. **Скачайте инструменты:** Откройте WebUI -> **Miscellaneous** -> **Module Settings**. Включите **Integrity Downloader** и нажмите **Apply Changes**.
+1. **Скачайте инструменты:** Откройте WebUI -> **Miscellaneous** -> **Module Settings**. Включите **Integrity Downloader** и нажмите **Apply Changes**. Скачанные APK/ZIP появятся в папке `/sdcard/IntegrityBox/Downloads`.
 2. **Установите LSPosed:** Прошейте скачанный модуль LSPosed в вашем Root-менеджере и перезагрузите устройство.
-3. **Установите HMA / PixelMask при необходимости:** Установите HMA из папки загрузок, включите его в LSPosed, откройте один раз для создания рабочей папки, а затем принудительно закройте.
-4. **Примените готовый профиль:** Откройте WebUI -> **Hide My Stuff** -> **Inject HMA Template**. Это применит готовые правила скрытия для многих банковских и государственных приложений прямо в HMA.
-5. **Обход строгих проверок:** Если нужные вам приложения требуют аппаратные ключи устройства, откройте WebUI -> **Keybox Hub** -> **Target Simulator** и включите более безопасную имитацию защищенной среды для этих приложений.
-6. **Подмена хэша загрузки:** Если приложения ругаются на состояние загрузчика, откройте WebUI -> **Detection** -> **Boot Hash Spoofer** и следуйте подсказкам на экране.
+3. **Установите HMA:** Откройте `/sdcard/IntegrityBox/Downloads/HideMyApplist.apk`, установите HideMyApplist, включите его в LSPosed, откройте один раз для создания рабочей папки, а затем принудительно закройте.
+4. **Примените готовый профиль HMA:** Откройте WebUI -> **Hide My Stuff** -> **Inject HMA Template**. Это применит готовые правила скрытия для многих банковских и государственных приложений прямо в HMA.
+5. **Установите PixelMask при необходимости:** PixelMask не является частью настройки HMA. Используйте его отдельно, если вам нужны Pixel/GMS-сценарии, которые он обслуживает.
+6. **Подмена хэша загрузки при необходимости:** Если приложение прямо указывает на проблему с загрузчиком или boot hash, откройте WebUI, нажмите плитку **Boot Hash Spoofer** в разделе **Detection** и следуйте подсказкам на экране.
 
 ---
 

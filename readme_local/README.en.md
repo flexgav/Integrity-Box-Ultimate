@@ -69,6 +69,26 @@ Classic [**Magisk Stable**](https://github.com/topjohnwu/Magisk/releases/latest)
 
 **Useful tools from Integrity Downloader:** [PixelMask](https://github.com/kinginu/PixelMask/releases/latest), [KeyAttestation](https://github.com/vvb2060/KeyAttestation/releases/latest), [UpdateLocker](https://github.com/Xposed-Modules-Repo/ru.mike.updatelocker/releases/latest), [CorePatch](https://github.com/LSPosed/CorePatch/releases/latest), [Reverse Pixelify](https://github.com/uragiristereo/Reverse_Pixelify/releases/latest).
 
+**Where to find files downloaded by Integrity Downloader:**
+
+All APK/ZIP/JSON files are saved to `/sdcard/IntegrityBox/Downloads`.
+
+| Tool | File name | Full path |
+| --- | --- | --- |
+| Zygisk Next | `ZygiskNext.zip` | `/sdcard/IntegrityBox/Downloads/ZygiskNext.zip` |
+| Tricky Store | `TrickyStore.zip` | `/sdcard/IntegrityBox/Downloads/TrickyStore.zip` |
+| Key Attestation | `KeyAttestation.apk` | `/sdcard/IntegrityBox/Downloads/KeyAttestation.apk` |
+| Update Locker | `UpdateLocker.apk` | `/sdcard/IntegrityBox/Downloads/UpdateLocker.apk` |
+| HMA config | `HMA_Config.json` | `/sdcard/IntegrityBox/Downloads/HMA_Config.json` |
+| HideMyApplist / HMA-OSS | `HideMyApplist.apk` | `/sdcard/IntegrityBox/Downloads/HideMyApplist.apk` |
+| PixelMask | `PixelMask.apk` | `/sdcard/IntegrityBox/Downloads/PixelMask.apk` |
+| Reverse Pixelify | `Reverse_Pixelify.apk` | `/sdcard/IntegrityBox/Downloads/Reverse_Pixelify.apk` |
+| KsuWebUIStandalone | `KSU_WebUI.apk` | `/sdcard/IntegrityBox/Downloads/KSU_WebUI.apk` |
+| Core Patch | `Core_Patch.apk` | `/sdcard/IntegrityBox/Downloads/Core_Patch.apk` |
+| Thor Installer | `Thor_Installer.apk` | `/sdcard/IntegrityBox/Downloads/Thor_Installer.apk` |
+| Android Faker | `Android_Faker.apk` | `/sdcard/IntegrityBox/Downloads/Android_Faker.apk` |
+| LSPosed / Vector | `LSPosedVector.zip` | `/sdcard/IntegrityBox/Downloads/LSPosedVector.zip` |
+
 ---
 
 ## Installation & Ultimate Setup Guide
@@ -83,15 +103,15 @@ For a clean setup and the best chance of restoring Play Store certification, fol
 7. **Re-login & Verify:** After rebooting, open the Play Store, log back into your Google account, and check your Play Protect certification status.
 8. **Enable AutoPilot:** Go to **Auto Pilot** -> **AutoPilot Manager** and enable automatic background updates.
 
-### Advanced App Hiding Setup
+### Advanced Stealth Setup
 For users who need banking or government apps to see a cleaner device, we recommend setting up HideMyApplist (HMA) with the built-in helpers:
 
-1. **Download Tools:** Open WebUI -> **Miscellaneous** -> **Module Settings**. Toggle **Integrity Downloader** ON and tap **Apply Changes**.
+1. **Download Tools:** Open WebUI -> **Miscellaneous** -> **Module Settings**. Toggle **Integrity Downloader** ON and tap **Apply Changes**. Downloaded APK/ZIP files will be saved to `/sdcard/IntegrityBox/Downloads`.
 2. **Install LSPosed:** Flash the downloaded LSPosed module in your Root Manager and reboot your device.
-3. **Install HMA / PixelMask if needed:** Install HMA from the downloads folder, enable it in LSPosed, open it once so it creates its data folder, then force close it.
-4. **Inject Config:** Open WebUI -> **Hide My Stuff** -> **Inject HMA Template**.
-5. **Handle strict TEE checks:** Open WebUI -> **Keybox Hub** -> **Target Simulator** and enable the safer simulated environment for selected apps.
-6. **Hide boot state:** Open **Detection** -> **Boot Hash Spoofer** and follow the on-screen workflow.
+3. **Install HMA:** Open `/sdcard/IntegrityBox/Downloads/HideMyApplist.apk`, install HideMyApplist, enable it in LSPosed, open it once so it creates its data folder, then force close it.
+4. **Inject the HMA profile:** Open WebUI -> **Hide My Stuff** -> **Inject HMA Template**. This applies ready-made hiding rules for many banking and government apps directly into HMA.
+5. **Install PixelMask if needed:** PixelMask is not part of the HMA setup. Use it separately if you need the Pixel/GMS scenarios it handles.
+6. **Hide boot state if needed:** If an app clearly reports a bootloader or boot hash problem, open the WebUI, tap **Boot Hash Spoofer** in the **Detection** section, and follow the on-screen workflow.
 
 ---
 
