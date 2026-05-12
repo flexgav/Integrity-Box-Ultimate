@@ -2,32 +2,37 @@
   <img src="ibu.png" alt="IntegrityBox Ultimate" width="100%">
 </div>
 
-<table width="100%" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td align="center" style="border: 0;">
-      <a href="./README.md"><img src="./assets/readme_ru_icon.png" alt="Русский" height="72"></a>
-    </td>
-    <td align="center" style="border: 0;">
-      <a href="./readme_local/README.en.md"><img src="./assets/readme_en_icon.png" alt="English" height="72"></a>
-    </td>
-    <td align="center" style="border: 0;">
-      <a href="https://github.com/flexgav/IntegrityBox-Ultimate/releases"><img src="./assets/download.png" alt="Скачать" height="54"></a>
-    </td>
-    <td align="center" style="border: 0;">
-      <a href="https://t.me/IntegrityBoxUltimateChatRU"><img src="./assets/tgru_icon.png" alt="Telegram RU" height="72"></a>
-    </td>
-    <td align="center" style="border: 0;">
-      <a href="https://t.me/IntegrityBoxUltimateChatEN"><img src="./assets/tgen_icon.png" alt="Telegram EN" height="72"></a>
-    </td>
-  </tr>
-</table>
+<br>
+
+<p align="center">
+  <a href="./README.md">
+    <img src="./assets/readme_ru_icon.png" alt="Русский" height="72">
+  </a>
+  &emsp;&emsp;
+  <a href="./readme_local/README.en.md">
+    <img src="./assets/readme_en_icon.png" alt="English" height="72">
+  </a>
+  &emsp;&emsp;
+  <a href="https://github.com/flexgav/IntegrityBox-Ultimate/releases">
+    <img src="./assets/download.png" alt="Скачать" height="72">
+  </a>
+  &emsp;&emsp;
+  <a href="https://t.me/IntegrityBoxUltimateChatRU">
+    <img src="./assets/tgru_icon.png" alt="Telegram RU" height="72">
+  </a>
+  &emsp;&emsp;
+  <a href="https://t.me/IntegrityBoxUltimateChatEN">
+    <img src="./assets/tgen_icon.png" alt="Telegram EN" height="72">
+  </a>
+</p>
 
 ---
 
-<div align="center">
-  <h1>IntegrityBox Ultimate</h1>
-  <p><b>Набор инструментов для сертификации, Keybox и приватности Android</b></p>
-</div>
+<h1 align="center">IntegrityBox Ultimate</h1>
+
+<p align="center">
+  <b>Набор инструментов для сертификации, Keybox и приватности Android</b>
+</p>
 
 ## Обзор
 **IntegrityBox Ultimate** — это удобный набор инструментов для Android с root-доступом: он помогает вернуть сертификацию Play Store, управлять Keybox, очищать следы Google-сервисов, настраивать скрытие приложений и проверять состояние устройства через понятный интерфейс в стиле Material You.

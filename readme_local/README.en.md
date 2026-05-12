@@ -2,32 +2,37 @@
   <img src="../ibu.png" alt="IntegrityBox Ultimate" width="100%">
 </div>
 
-<table width="100%" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td align="center" style="border: 0;">
-      <a href="../README.md"><img src="../assets/readme_ru_icon.png" alt="Русский" height="72"></a>
-    </td>
-    <td align="center" style="border: 0;">
-      <a href="./README.en.md"><img src="../assets/readme_en_icon.png" alt="English" height="72"></a>
-    </td>
-    <td align="center" style="border: 0;">
-      <a href="https://github.com/flexgav/IntegrityBox-Ultimate/releases"><img src="../assets/download.png" alt="Download" height="54"></a>
-    </td>
-    <td align="center" style="border: 0;">
-      <a href="https://t.me/IntegrityBoxUltimateChatRU"><img src="../assets/tgru_icon.png" alt="Telegram RU" height="72"></a>
-    </td>
-    <td align="center" style="border: 0;">
-      <a href="https://t.me/IntegrityBoxUltimateChatEN"><img src="../assets/tgen_icon.png" alt="Telegram EN" height="72"></a>
-    </td>
-  </tr>
-</table>
+<br>
+
+<p align="center">
+  <a href="../README.md">
+    <img src="../assets/readme_ru_icon.png" alt="Русский" height="72">
+  </a>
+  &emsp;&emsp;
+  <a href="./README.en.md">
+    <img src="../assets/readme_en_icon.png" alt="English" height="72">
+  </a>
+  &emsp;&emsp;
+  <a href="https://github.com/flexgav/IntegrityBox-Ultimate/releases">
+    <img src="../assets/download.png" alt="Download" height="72">
+  </a>
+  &emsp;&emsp;
+  <a href="https://t.me/IntegrityBoxUltimateChatRU">
+    <img src="../assets/tgru_icon.png" alt="Telegram RU" height="72">
+  </a>
+  &emsp;&emsp;
+  <a href="https://t.me/IntegrityBoxUltimateChatEN">
+    <img src="../assets/tgen_icon.png" alt="Telegram EN" height="72">
+  </a>
+</p>
 
 ---
 
-<div align="center">
-  <h1>IntegrityBox Ultimate</h1>
-  <p><b>Android Certification, Keybox, and Privacy Toolkit</b></p>
-</div>
+<h1 align="center">IntegrityBox Ultimate</h1>
+
+<p align="center">
+  <b>Android Certification, Keybox, and Privacy Toolkit</b>
+</p>
 
 ## Overview
 **IntegrityBox Ultimate** is a practical toolkit for keeping an Android device with root access clean, certified, and easier to manage. It brings keybox handling, Play Integrity helpers, app-hiding templates, Google services cleanup, and device status checks into one Material You WebUI.
