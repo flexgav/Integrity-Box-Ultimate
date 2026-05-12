@@ -5,25 +5,15 @@
 <br>
 
 <p align="center">
-  <a href="./README.md">
-    <img src="./assets/readme_ru_icon.png" alt="Русский" height="72">
-  </a>
+  <a href="./README.md"><img src="./assets/readme_ru_icon.png" alt="Русский" height="72"></a>
   &emsp;&emsp;
-  <a href="./readme_local/README.en.md">
-    <img src="./assets/readme_en_icon.png" alt="English" height="72">
-  </a>
+  <a href="./readme_local/README.en.md"><img src="./assets/readme_en_icon.png" alt="English" height="72"></a>
   &emsp;&emsp;
-  <a href="https://github.com/flexgav/IntegrityBox-Ultimate/releases">
-    <img src="./assets/download.png" alt="Скачать" height="72">
-  </a>
+  <a href="https://github.com/flexgav/IntegrityBox-Ultimate/releases"><img src="./assets/download.png" alt="Скачать" height="54"></a>
   &emsp;&emsp;
-  <a href="https://t.me/IntegrityBoxUltimateChatRU">
-    <img src="./assets/tgru_icon.png" alt="Telegram RU" height="72">
-  </a>
+  <a href="https://t.me/IntegrityBoxUltimateChatRU"><img src="./assets/tgru_icon.png" alt="Telegram RU" height="72"></a>
   &emsp;&emsp;
-  <a href="https://t.me/IntegrityBoxUltimateChatEN">
-    <img src="./assets/tgen_icon.png" alt="Telegram EN" height="72">
-  </a>
+  <a href="https://t.me/IntegrityBoxUltimateChatEN"><img src="./assets/tgen_icon.png" alt="Telegram EN" height="72"></a>
 </p>
 
 ---
