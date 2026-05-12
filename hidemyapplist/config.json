@@ -791,7 +791,20 @@
                 "com.kowx712.supermanager",
                 "io.github.mhmrdd.libxposed.ps.passit",
                 "com.mycompany.myapp",
-                "com.twj.wksu"
+                "com.twj.wksu",
+                "kwlkkw.odbaum.pebxnq",
+                "icu.nullptr.applistdetector",
+                "com.studio.duckdetector",
+                "app.revanced.android.gms",
+                "app.morphe.manager",
+                "com.blackmods.ezmod",
+                "com.speedy.vpn",
+                "com.tadami.aurora",
+                "com.pavelrekun.skit.premium",
+                "ru.forpdateam.forpda.parallel",
+                "anddea.youtube",
+                "com.deniscerri.ytdl",
+                "com.maheshtechnicals.sealplus"
             ]
         },
         "FlexGAV Whitelist 5.5": {
@@ -6017,6 +6030,40 @@
             ]
         },
         "icu.nullptr.applistdetector": {
+            "useWhitelist": false,
+            "excludeSystemApps": true,
+            "hideInstallationSource": true,
+            "hideSystemInstallationSource": true,
+            "excludeTargetInstallationSource": false,
+            "invertActivityLaunchProtection": true,
+            "excludeVoldIsolation": false,
+            "restrictedZygotePermissions": [
+            ],
+            "applyTemplates": [
+                "FlexGAV Blacklist 5.5"
+            ],
+            "applyPresets": [
+                "custom_rom",
+                "detector_apps",
+                "root_apps",
+                "shizuku_dhizuku",
+                "sus_apps",
+                "xposed"
+            ],
+            "applySettingTemplates": [
+                "FlexGAV Settings 5.5"
+            ],
+            "applySettingsPresets": [
+                "accessibility",
+                "dev_options",
+                "input_method"
+            ],
+            "extraAppList": [
+            ],
+            "extraOppositeAppList": [
+            ]
+        },
+        "com.studio.duckdetector": {
             "useWhitelist": false,
             "excludeSystemApps": true,
             "hideInstallationSource": true,
