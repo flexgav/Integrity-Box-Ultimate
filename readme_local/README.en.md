@@ -2,22 +2,22 @@
   <img src="../ibu.png" alt="IntegrityBox Ultimate" width="100%">
 </div>
 
-<table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
-    <td align="center" width="20%">
-      <a href="../README.md"><img src="../assets/readme_ru_icon.png" alt="Русский" width="150"></a>
+    <td align="center" style="border: 0;">
+      <a href="../README.md"><img src="../assets/readme_ru_icon.png" alt="Русский" height="72"></a>
     </td>
-    <td align="center" width="20%">
-      <a href="./README.en.md"><img src="../assets/readme_en_icon.png" alt="English" width="150"></a>
+    <td align="center" style="border: 0;">
+      <a href="./README.en.md"><img src="../assets/readme_en_icon.png" alt="English" height="72"></a>
     </td>
-    <td align="center" width="20%">
-      <a href="https://github.com/flexgav/IntegrityBox-Ultimate/releases"><img src="../assets/download.png" alt="Download" width="150"></a>
+    <td align="center" style="border: 0;">
+      <a href="https://github.com/flexgav/IntegrityBox-Ultimate/releases"><img src="../assets/download.png" alt="Download" height="54"></a>
     </td>
-    <td align="center" width="20%">
-      <a href="https://t.me/IntegrityBoxUltimateChatRU"><img src="../assets/tgru_icon.png" alt="Telegram RU" width="150"></a>
+    <td align="center" style="border: 0;">
+      <a href="https://t.me/IntegrityBoxUltimateChatRU"><img src="../assets/tgru_icon.png" alt="Telegram RU" height="72"></a>
     </td>
-    <td align="center" width="20%">
-      <a href="https://t.me/IntegrityBoxUltimateChatEN"><img src="../assets/tgen_icon.png" alt="Telegram EN" width="150"></a>
+    <td align="center" style="border: 0;">
+      <a href="https://t.me/IntegrityBoxUltimateChatEN"><img src="../assets/tgen_icon.png" alt="Telegram EN" height="72"></a>
     </td>
   </tr>
 </table>
