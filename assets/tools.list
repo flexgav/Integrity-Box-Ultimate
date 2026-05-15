@@ -15,8 +15,8 @@ https://github.com/5ec1cff/TrickyStore/releases/download/1.4.1/Tricky-Store-v1.4
 2f5e73fcba0e4e43b6e96b38f333cbe394873e3a81cf8fe1b831c2fbd6c46ea9
 
 KeyAttestation.apk
-https://github.com/vvb2060/KeyAttestation/releases/download/v1.8.4/key-attestation-v1.8.4-release.apk
-c9bbc118c75b11bfca7d99b67470d68b5505e1959b6a5f0b298b38ba8104c93a
+https://github.com/vvb2060/KeyAttestation/releases/download/v1.8.4/KeyAttestation-v1.8.4.apk
+e22ae305deca589fc9af2dc8940f5c62bac7120bed817f80da1f345a9ec69897
 
 UpdateLocker.apk
 https://github.com/Xposed-Modules-Repo/ru.mike.updatelocker/releases/download/20-1.4.3/updatelocker_v1.4.3.apk
@@ -24,7 +24,7 @@ https://github.com/Xposed-Modules-Repo/ru.mike.updatelocker/releases/download/20
 
 HMA_Config.json
 https://raw.githubusercontent.com/flexgav/IntegrityBox-Ultimate/main/hidemyapplist/config.json
-98927766652c04de5985fd6c6131372fef0a8e9536fa1787d12b8ea03ff17d1a
+71b75154ca013ddf739aebfb84ebed6a002e0745765ea4f7b37ffd3f53dc5f4e
 
 HMA_OSS.apk
 https://github.com/frknkrc44/HMA-OSS/releases/download/oss-161/HMA-OSS-oss-161-release.apk
@@ -35,7 +35,7 @@ https://github.com/kinginu/PixelMask/releases/download/15-1.1.0/PixelMask-1.1.0.
 bb76328fcfb53e0830df388981af77846fd0e2ffa2947d94dd4cb7a40989053f
 
 KSU_WebUI.apk
-https://github.com/KOWX712/KsuWebUIStandalone/releases/download/v1.0-48/KsuWebUI-1.0-48-release.apk
+https://github.com/KOWX712/KsuWebUIStandalone/releases/download/v1.0/KsuWebUI-1.0-48-release.apk
 e781356ed1312c9c19d290e80e2816609f7cb909fb8ae557e6b88b6ffc7416a2
 
 Core_Patch.apk
