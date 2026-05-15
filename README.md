@@ -25,20 +25,22 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Recommended-Kitsune%20Magisk%20%2F%20KSU%20Next%20Spoofed-blue" alt="Recommended">
-  <img src="https://img.shields.io/badge/Warning-Remove%20conflicting%20modules-orange" alt="Warning">
-  <img src="https://img.shields.io/badge/Critical-Do%20not%20mix%20attestation%20backends-red" alt="Critical">
+  <img src="https://img.shields.io/badge/Recommended-Kitsune%20Magisk%20%2F%20KSU%20Next%20Spoofed-blue.svg" alt="Recommended">
+  <img src="https://img.shields.io/badge/Warning-Remove%20conflicting%20modules-orange.svg" alt="Warning">
+  <img src="https://img.shields.io/badge/Critical-Do%20not%20mix%20attestation%20backends-red.svg" alt="Critical">
 </p>
 
 ## 📌 Обзор
 **IntegrityBox Ultimate** — это удобный набор инструментов для Android с root-доступом: он помогает вернуть сертификацию Play Store, управлять Keybox, очищать следы Google-сервисов, настраивать скрытие приложений и проверять состояние устройства через понятный интерфейс в стиле Material You.
 
 ### ✨ Основные возможности
-* 📌 **Quick Access:** Зажмите любую плитку WebUI, чтобы закрепить ее наверху главного экрана. Список хранится в `/data/adb/Box-Brain/quick_access.cfg`.
-* 🛡️ **Автоматизация Security Patch:** Модуль берет дату из активных данных PIF, записывает файл Security Patch для TrickyStore в нужном формате и поддерживает эти значения после загрузки устройства.
-* 🧹 **Anti-Detection Nuke:** Режимы Soft, Standard и Aggressive очищают обычные следы проверок, остатки приложений и более глубокие системные следы, если вы выбираете такой режим. Там, где нужна перезагрузка, модуль сразу предупреждает об этом.
-* 🔐 **Починка TEE / Widevine:** **Fix Widevine L1** может восстановить встроенный Keybox на поддерживаемых устройствах, где есть системная утилита `KmInstallKeybox`.
-* 📦 **Integrity Downloader:** Скачивает полезные приложения и модули: ZygiskNext, TrickyStore, HMA, PixelMask, KeyAttestation и другие инструменты.
+* ️ **Комплексная аттестация (Core Attestation):** Автоматическое управление `fingerprint` (PIF), инъекция `Keybox` из облака, подмена `Boot Hash` и `Security Patch` для прохождения проверок Play Integrity.
+* 🕶️ **Продвинутая маскировка (Stealth):** Готовый шаблон для `HideMyApplist` (HMA) со списком из 200+ банков и детекторов, сканер опасных приложений, маскировщик файлов (`TWRP`, `Magisk`) и `Anti-Detection Nuke` для глубокой очистки следов root.
+* 🤖 **Полная автоматизация (AutoPilot):** Фоновый демон, который самостоятельно скачивает и ротирует рабочие `Keybox` и `fingerprint` до того, как Google их забанит, поддерживая систему в актуальном состоянии.
+* 🛠️ **Системные утилиты (System Toolkit):** Инструменты для сброса `Google Wallet`, глубокой очистки кэша `GMS`, восстановления `Widevine L1` на поддерживаемых устройствах, принудительного включения `SELinux Enforcing`, очистки данных выбранных приложений и экспорта диагностического архива для поддержки.
+* 🎨 **Удобный интерфейс (Modern UI):** Понятный WebUI в стиле Material You с интерактивными плитками, быстрым доступом (`Quick Access`), встроенным `AI Assistant` и центром помощи с генерацией диагностических отчетов.
+* 📥 **Выборочная загрузка утилит:** `Integrity Downloader` показывает список доступных APK/ZIP/JSON с чекбоксами, поэтому можно скачать только нужные инструменты, а не весь набор сразу.
+* ⚙️ **Гибкая настройка (Advanced Configuration):** `Target Box` и `Target Simulator` поддерживают Auto/Manual режимы, импорт собственного `target.txt`, ручное управление списком приложений, `Zygiskless Mode` и селектор профилей для переключения между разными стратегиями маскировки.
 
 ---
 
@@ -47,7 +49,7 @@
 
 1. Поддерживаемый Root-менеджер: [**KernelSU Next**](https://github.com/KernelSU-Next/KernelSU-Next/releases/latest), [**APatch**](https://github.com/bmax121/APatch/releases/latest) или [**Kitsune Magisk / Kitsune Ufork**](https://t.me/KitsuneUfork).
 2. Backend для аппаратной аттестации: [**Tricky Store**](https://github.com/5ec1cff/TrickyStore/releases/latest) или [**TEE Simulator**](https://github.com/JingMatrix/TEESimulator/releases/latest) *(нужны для приложений, которые проверяют аппаратные ключи устройства)*. Используйте только один backend: Tricky Store, TrickyStoreOSS, TEE Simulator и их форки не должны работать одновременно.
-3. Приложение для открытия WebUI: [**MMRL**](https://github.com/MMRLApp/MMRL/releases/latest), [**WebUI X Portable**](https://github.com/MMRLApp/WebUI-X-Portable/releases/latest) или встроенная поддержка WebUI в Root-менеджере. [**KsuWebUIStandalone**](https://github.com/5ec1cff/KsuWebUIStandalone/releases/latest) можно использовать только как старый fallback-вариант, так как репозиторий архивирован.
+3. Приложение для открытия WebUI: [**MMRL**](https://github.com/MMRLApp/MMRL/releases/latest), [**WebUI X Portable**](https://github.com/MMRLApp/WebUI-X-Portable/releases/latest) или встроенная поддержка WebUI в Root-менеджере. Если WebUI не открывается напрямую, заранее установите [**KsuWebUIStandalone**](https://github.com/KOWX712/KsuWebUIStandalone/releases/latest) вручную как fallback-вариант. После первого входа в WebUI его APK также можно скачать через Integrity Downloader.
 
 > [!IMPORTANT]
 > Перед установкой удалите другие модули и решения для починки Integrity / Play Integrity сертификации, чтобы они не конфликтовали с IntegrityBox Ultimate.
@@ -78,12 +80,29 @@
 2. [**LSPosed / Vector**](https://github.com/JingMatrix/Vector/releases/latest) и [**HideMyApplist / HMA-OSS**](https://github.com/frknkrc44/HMA-OSS/releases/latest) *(рекомендуются, если банковские или государственные приложения реагируют на список приложений, root-следы или установленные модули)*. Альтернативная ветка HMA: [**Hide-My-Applist**](https://github.com/Dr-TSNG/Hide-My-Applist/releases/latest).
 
 ## 📦 Полезные инструменты из Integrity Downloader
-[PixelMask](https://github.com/kinginu/PixelMask/releases/latest), [KeyAttestation](https://github.com/vvb2060/KeyAttestation/releases/latest), [UpdateLocker](https://github.com/Xposed-Modules-Repo/ru.mike.updatelocker/releases/latest), [CorePatch](https://github.com/LSPosed/CorePatch/releases/latest), [Reverse Pixelify](https://github.com/uragiristereo/Reverse_Pixelify/releases/latest).
+
+> [!TIP]
+> Integrity Downloader больше не скачивает весь набор вслепую. После включения плитки **Integrity Downloader** и нажатия **Apply Changes** появится окно выбора: отметьте чекбоксами только нужные утилиты и нажмите **Download Selected**. После подтверждения откроется терминальное окно с прогрессом загрузки.
+
+Текущий список из `assets/tools.list`:
+
+* **ZygiskNext.zip** — актуальный Zygisk Next для Root-менеджеров без встроенного Zygisk.
+* **TrickyStore.zip** — backend для аппаратной аттестации.
+* **KeyAttestation.apk** — приложение для ручной проверки сертификатов и verdict-данных.
+* **UpdateLocker.apk** — LSPosed-модуль для блокировки нежелательных обновлений приложений.
+* **HMA_Config.json** — готовый профиль IntegrityBox для HideMyApplist.
+* **HMA_OSS.apk** — актуальная сборка HideMyApplist OSS.
+* **PixelMask.apk** — LSPosed-модуль для Pixel/GMS-сценариев.
+* **KSU_WebUI.apk** — отдельное приложение WebUI для устройств, где Root-менеджер не открывает WebUI напрямую.
+* **Core_Patch.apk** — LSPosed-модуль для патча системных ограничений установки/подписи.
+* **Thor_Installer.apk** — менеджер/инсталлер для дополнительных Android-инструментов.
+* **Android_Faker.apk** — утилита для ручной проверки и настройки Android-идентификаторов.
+* **LSPosedVector.zip** — LSPosed / Vector для работы HMA и других LSPosed-модулей.
 
 ## 📁 Где искать файлы, скачанные через Integrity Downloader
 
 > [!NOTE]
-> Все APK/ZIP/JSON, скачанные через Integrity Downloader, сохраняются в `/sdcard/IntegrityBox/Downloads`.
+> Все выбранные APK/ZIP/JSON, скачанные через Integrity Downloader, сохраняются в `/sdcard/IntegrityBox/Downloads`.
 
 | Инструмент | Имя файла | Полный путь |
 | --- | --- | --- |
@@ -92,14 +111,13 @@
 | Key Attestation | `KeyAttestation.apk` | `/sdcard/IntegrityBox/Downloads/KeyAttestation.apk` |
 | Update Locker | `UpdateLocker.apk` | `/sdcard/IntegrityBox/Downloads/UpdateLocker.apk` |
 | HMA config | `HMA_Config.json` | `/sdcard/IntegrityBox/Downloads/HMA_Config.json` |
-| HideMyApplist / HMA-OSS | `HideMyApplist.apk` | `/sdcard/IntegrityBox/Downloads/HideMyApplist.apk` |
+| HMA-OSS | `HMA_OSS.apk` | `/sdcard/IntegrityBox/Downloads/HMA_OSS.apk` |
 | PixelMask | `PixelMask.apk` | `/sdcard/IntegrityBox/Downloads/PixelMask.apk` |
-| Reverse Pixelify | `Reverse_Pixelify.apk` | `/sdcard/IntegrityBox/Downloads/Reverse_Pixelify.apk` |
-| KsuWebUIStandalone | `KSU_WebUI.apk` | `/sdcard/IntegrityBox/Downloads/KSU_WebUI.apk` |
+| KSU WebUI | `KSU_WebUI.apk` | `/sdcard/IntegrityBox/Downloads/KSU_WebUI.apk` |
 | Core Patch | `Core_Patch.apk` | `/sdcard/IntegrityBox/Downloads/Core_Patch.apk` |
 | Thor Installer | `Thor_Installer.apk` | `/sdcard/IntegrityBox/Downloads/Thor_Installer.apk` |
 | Android Faker | `Android_Faker.apk` | `/sdcard/IntegrityBox/Downloads/Android_Faker.apk` |
-| LSPosed / Vector | `LSPosedVector.zip` | `/sdcard/IntegrityBox/Downloads/LSPosedVector.zip` |
+| LSPosed (Vector) | `LSPosedVector.zip` | `/sdcard/IntegrityBox/Downloads/LSPosedVector.zip` |
 
 ---
 
@@ -109,14 +127,16 @@
 > [!TIP]
 > Если вы настраиваете модуль впервые, проходите шаги по порядку и не включайте дополнительные инструменты до первичной проверки сертификации Play Маркета.
 
-1. ✅ **Установите зависимости:** Убедитесь, что у вас установлен Root-менеджер и необходимые модули.
+1. ✅ **Установите зависимости:** Убедитесь, что у вас установлен Root-менеджер и выбран только один backend аппаратной аттестации.
 2. 📲 **Прошейте IntegrityBox Ultimate:** Установите zip-архив модуля и **перезагрузите** устройство.
 3. ▶️ **Запустите основное действие:** Перейдите в список модулей вашего Root-менеджера и нажмите **Action** на карточке IntegrityBox Ultimate. Дождитесь завершения: модуль скачает рабочий Keybox и подготовит свежие данные устройства.
 4. 🔎 **Проверьте статус:** Откройте WebUI, перейдите в **Toolkit** -> **Integrity Checker** и убедитесь, что активный Keybox имеет статус `ONLINE`, а данные устройства загружены.
 5. 🔐 **Почините TEE / Widevine при необходимости:** Поддерживаемые устройства могут использовать **Keybox Hub** -> **Fix Widevine L1** для восстановления Widevine/TEE через встроенный установщик Keybox. Используйте только на совместимых ROM/устройствах. После завершения подтвердите перезагрузку.
-6. 🧼 **Глубокая очистка GMS:** Перейдите в **Toolkit** -> **GMS Tools** и выполните **Deep GMS Wipe**. Это удалит старые состояния сертификации Google и данные Google Services Framework. Следуйте подсказке на экране, чтобы **перезагрузить** устройство. *(Вы выйдете из своего аккаунта Google.)*
-7. ✅ **Повторный вход и проверка:** После перезагрузки откройте Play Маркет, снова войдите в свой аккаунт Google и проверьте статус сертификации Play Защиты.
-8. 🤖 **Включите AutoPilot:** Перейдите в **Auto Pilot** -> **AutoPilot Manager** и включите автоматическое фоновое обновление.
+6. 🧬 **Настройте Boot Hash при необходимости:** Если приложение или детектор указывает на загрузчик, VBMeta или boot hash, откройте **Detection** -> **Boot Hash Spoofer**, сначала нажмите **Get Real Boot Hash**, затем **Apply** и **Reboot**. Если реальный hash не найден, используйте **Magic Wand** как запасной вариант.
+7. 🧼 **Глубокая очистка GMS:** Перейдите в **Toolkit** -> **GMS Tools** и выполните **Deep GMS Wipe**. Это удалит старые состояния сертификации Google и данные Google Services Framework. Следуйте подсказке на экране, чтобы **перезагрузить** устройство. *(Вы выйдете из своего аккаунта Google.)*
+8. ✅ **Повторный вход и проверка:** После перезагрузки откройте Play Маркет, снова войдите в свой аккаунт Google и проверьте статус сертификации Play Защиты.
+9. 🤖 **Включите AutoPilot:** Перейдите в **Auto Pilot** -> **AutoPilot Manager** и включите автоматическое фоновое обновление.
+10. 📦 **Соберите диагностический архив при проблемах:** Если сертификация или приложения всё еще работают нестабильно, откройте **Help Center** -> **Export Report**. Архив появится в `/sdcard/IntegrityBox/Reports` и его можно приложить в теме помощи.
 
 ### 🕶️ Продвинутая настройка скрытности
 Если банковские или государственные приложения слишком внимательно проверяют устройство, рекомендуем настроить HideMyApplist (HMA) через встроенные инструменты:
@@ -124,12 +144,32 @@
 > [!IMPORTANT]
 > Обычно HMA не нужно открывать вручную перед применением профиля: IntegrityBox Ultimate пытается сам создать нужные data-директории и записать конфигурацию. Если автоматическое применение не сработало, откройте HMA один раз, закройте его и повторите **Inject HMA Template**.
 
-1. 📥 **Скачайте инструменты:** Откройте WebUI -> **Miscellaneous** -> **Module Settings**. Включите **Integrity Downloader** и нажмите **Apply Changes**. Скачанные APK/ZIP появятся в папке `/sdcard/IntegrityBox/Downloads`.
-2. 🧩 **Установите LSPosed:** Прошейте скачанный модуль LSPosed в вашем Root-менеджере и перезагрузите устройство.
-3. 🕵️ **Установите HMA:** Откройте `/sdcard/IntegrityBox/Downloads/HideMyApplist.apk`, установите HideMyApplist и включите его в LSPosed.
+1. 📥 **Скачайте инструменты:** Откройте WebUI -> **Miscellaneous** -> **Module Settings**. Включите **Integrity Downloader** и нажмите **Apply Changes**. В появившемся окне отметьте чекбоксами нужные позиции. Для HMA-сценария обычно нужны **LSPosedVector.zip**, **HMA_OSS.apk** и **HMA_Config.json**. Скачанные файлы появятся в `/sdcard/IntegrityBox/Downloads`.
+2. 🧩 **Установите LSPosed / Vector:** Прошейте `/sdcard/IntegrityBox/Downloads/LSPosedVector.zip` в вашем Root-менеджере и перезагрузите устройство.
+3. 🕵️ **Установите HMA:** Откройте `/sdcard/IntegrityBox/Downloads/HMA_OSS.apk`, установите HideMyApplist и включите его в LSPosed.
 4. 🛡️ **Примените готовый профиль HMA:** Откройте WebUI -> **Hide My Stuff** -> **Inject HMA Template**. Это применит готовые правила скрытия для многих банковских и государственных приложений прямо в HMA.
 5. 📱 **Установите PixelMask при необходимости:** PixelMask не является частью настройки HMA. Используйте его отдельно, если вам нужны Pixel/GMS-сценарии, которые он обслуживает.
-6. 🧬 **Подмена хэша загрузки при необходимости:** Если приложение прямо указывает на проблему с загрузчиком или boot hash, откройте WebUI, нажмите плитку **Boot Hash Spoofer** в разделе **Detection** и следуйте подсказкам на экране.
+
+Для максимальной скрытности и антидетекта дополнительно используйте эти функции по симптомам:
+
+1. 🏦 **Banking Mode:** Откройте **Toolkit** -> **Utility Box** и включите **Banking Mode**. Он скрывает ADB/debug-состояние и выставляет `sys.oem_unlock_allowed=0`.
+2. 🛡️ **SELinux Enforcing:** На главной откройте **Cleanup & SELinux** -> **Enforce SELinux** и убедитесь, что в статусе модуля SELinux отображается как `Enforcing`.
+3. 🧩 **Строгая изоляция Zygisk/Shamiko:** Используйте **ZygiskNext & Shamiko** -> **Enable Whitelist Mode**, чтобы включить строгий режим изоляции. Список приложений для скрытия root/Zygisk настраивается отдельно в DenyList вашего Root-менеджера или в настройках ZygiskNext/Shamiko.
+4. ⚙️ **Оптимизация ZygiskNext:** Нажмите **ZygiskNext & Shamiko** -> **Optimize ZygiskNext**, если используете Zygisk Next. Модуль применит рекомендуемые stealth-настройки контроллера.
+5. 🧰 **Антидетект-флаги:** В **Miscellaneous** -> **Module Settings** включайте только нужные пункты: **Spoof Lineage Props**, **Debug Fingerprint**, **Debug Build**, **Build Tag**, **Clear LSposed**, **Spoof Encryption**, **Hide Recovery**, **Clear Gapps Logs** и **Archive Manager Logs**.
+6. 🗂️ **Скрытие подозрительных файлов:** Используйте **Hide My Stuff** -> **Hide Suspicious Files**, если приложение видит папки `TWRP`, `Fox`, `Magisk`, менеджеры root или старые следы на `/sdcard`. Не добавляйте случайные системные пути.
+7. 🧹 **Сброс состояния приложения:** После изменения HMA, Target, props или Boot Hash откройте **Cleanup & SELinux** -> **App Data Cleaner** и очистите данные/кэш проблемного приложения, чтобы оно заново проверило окружение.
+8. 🔥 **Anti-Detection Nuke:** Используйте **Detection** -> **Anti-Detection Nuke** только при явных остаточных следах. Начинайте с **Soft Cleanup**, затем **Standard Nuke**. **Aggressive Nuke** оставьте как крайний вариант.
+9. 🧪 **System Prop Spoofer:** Используйте **Detection** -> **System Prop Spoofer** только если понимаете, какие `getprop`-следы нужно сбросить или удалить.
+
+### 🎯 Ручное управление Target List
+Если вы хотите использовать собственный список приложений вместо автоматического шаблона:
+
+1. Откройте WebUI -> **Customize Tricky Store** -> **Target Box**.
+2. Отключите **Auto Update Target List**, если хотите полностью контролировать `target.txt` вручную.
+3. Используйте **Import Target**, чтобы выбрать свой файл `target.txt` через встроенный проводник.
+4. Для точечной настройки отдельных приложений откройте **Customize Tricky Store** -> **Target Simulator**: там можно выбрать приложение, профиль и режим, а также импортировать собственный target-файл.
+5. Если **Auto Update Target List** снова включить, модуль применит свои правила и обновит отображение списка из актуального `target.txt`.
 
 ---
 
@@ -180,7 +220,7 @@
 > Target Simulator настраивается для конкретного приложения. Не применяйте его ко всем приложениям сразу.
 
 1. Сначала убедитесь, что **Active Keybox** в **Integrity Checker** имеет статус `ONLINE`.
-2. Откройте WebUI -> **Keybox Hub** -> **Target Simulator**.
+2. Откройте WebUI -> **Customize Tricky Store** -> **Target Simulator**.
 3. Найдите нужное приложение по названию или package name.
 4. Для первой попытки выберите профиль **Default** и режим **AUTO**, затем нажмите **Save**.
 5. Принудительно остановите проблемное приложение или перезагрузите устройство, затем проверьте приложение снова.
@@ -188,10 +228,12 @@
 
 ### 🔓 Приложение ругается на загрузчик, VBMeta или boot hash
 1. Откройте WebUI -> **Detection** -> **Boot Hash Spoofer**.
-2. Сначала нажмите **Get Real Boot Hash**. Модуль попытается извлечь реальный `androidboot.vbmeta.digest` устройства из `/proc/cmdline`, device-tree или bootconfig и автоматически подставит его в поле.
-3. Если реальный hash найден, нажмите **Apply**, затем **Reboot** и проверьте приложение снова.
-4. Если появилось **Extraction Failed** и реальный hash извлечь не удалось, используйте иконку **Magic Wand** для генерации 64-символьного hash, нажмите **Apply**, затем **Reboot**.
-5. Если нужно откатить изменение, вернитесь в **Boot Hash Spoofer**, нажмите **Reset** и перезагрузите устройство.
+2. Нажмите **Get Real Boot Hash**. Модуль сначала проверит аппаратные boot-источники: `/proc/cmdline`, device-tree и `/proc/bootconfig`.
+3. Если boot-источники не вернули валидный hash, модуль автоматически попробует fallback через локальную Java Key Attestation операцию. Отдельно запускать ее не нужно.
+4. Если поле заполнилось 64-символьным hash, нажмите **Apply**, затем **Reboot** и проверьте приложение снова.
+5. Если появилось **Extraction Failed**, откройте **Help Center** -> **Export Report** и сохраните диагностический архив: в нем будут логи `boot_hash_extract.log` и `boot_hash_attestation.log`.
+6. Если реальный hash получить не удалось, используйте **Magic Wand** только как запасной вариант: она генерирует валидный 64-символьный hash, но это не реальное значение устройства.
+7. Если нужно откатить изменение, вернитесь в **Boot Hash Spoofer**, нажмите **Reset** и перезагрузите устройство.
 
 ### 📌 Нужен быстрый доступ к часто используемым инструментам
 Зажмите нужную плитку WebUI примерно на 300 мс, чтобы закрепить ее в **Quick Access** на главной странице.
