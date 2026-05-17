@@ -45,17 +45,36 @@
 ---
 
 ## 🧩 Core Requirements
-For the best experience, make sure your device has:
+For comfortable use and maximum stealth, make sure the environment is built without conflicting root engines, attestation backends, or unnecessary traces in the user profile.
 
-1. A supported Root Manager: [**KernelSU Next**](https://github.com/KernelSU-Next/KernelSU-Next/releases/latest), [**APatch**](https://github.com/bmax121/APatch/releases/latest), or [**Kitsune Magisk / Kitsune Ufork**](https://t.me/KitsuneUfork).
-2. Hardware attestation backend: [**Tricky Store**](https://github.com/5ec1cff/TrickyStore/releases/latest) or [**TEE Simulator**](https://github.com/JingMatrix/TEESimulator/releases/latest) *(needed for apps that check hardware-backed keys)*. Use only one backend: Tricky Store, TrickyStoreOSS, TEE Simulator, and their forks must not run at the same time.
-3. A WebUI host: [**MMRL**](https://github.com/MMRLApp/MMRL/releases/latest), [**WebUI X Portable**](https://github.com/MMRLApp/WebUI-X-Portable/releases/latest), or built-in WebUI support in your Root Manager. If WebUI does not open directly, install [**KsuWebUIStandalone**](https://github.com/KOWX712/KsuWebUIStandalone/releases/latest) manually as a fallback first. After you can open WebUI, its APK can also be downloaded through Integrity Downloader.
+1. **Root solution.** Recommended order for devices where banking and government apps matter:
 
-> [!IMPORTANT]
-> Before installing, remove other Integrity / Play Integrity certification fix modules and tools so they do not conflict with IntegrityBox Ultimate.
+   - **Preferred:** [**SukiSU Ultra**](https://github.com/SukiSU-Ultra/SukiSU-Ultra/releases/latest) or [**KernelSU Next**](https://github.com/KernelSU-Next/KernelSU-Next/releases/latest) together with **SUSFS**.
+     Full SUSFS support requires more than just the Manager APK: the device must boot a kernel / AnyKernel3 / boot image that already includes SUSFS patches. After flashing such a kernel, also install the userspace module [**susfs4ksu / SUSFS-FOR-KERNELSU**](https://github.com/sidex15/susfs4ksu-module/releases/latest).
+
+   - **Alternative:** [**APatch**](https://github.com/bmax121/APatch/releases/latest), if there is no stable KernelSU / SukiSU / SUSFS kernel for your device or you specifically need kernel-based root without a Magisk-like setup.
+
+   - **Fallback:** [**Kitsune Magisk / Kitsune Ufork**](https://t.me/KitsuneUfork). Use it only when KernelSU Next, SukiSU Ultra, or APatch are unavailable for your device. Stable behavior with strict banking apps is not guaranteed on Kitsune, because Magisk-like environments more often leave visible traces.
+
+   Use only **one** root solution at a time. Do not mix Magisk / Kitsune, KernelSU Next, SukiSU Ultra, and APatch in the same system unless you fully understand the consequences.
+
+2. **SUSFS and stealth.** If you choose SukiSU Ultra or KernelSU Next, using a **SUSFS** kernel build for your exact device, Android version, kernel branch, and firmware is recommended for better anti-detection.
+
+   Simply patching `boot.img` or `init_boot.img` through a Manager can provide root access, but it does not guarantee SUSFS support. If the kernel does not contain SUSFS patches, the `susfs4ksu` module cannot enable kernel-level hiding.
+
+3. **Hardware attestation backend.** Install [**Tricky Store**](https://github.com/5ec1cff/TrickyStore/releases/latest) or [**TEE Simulator**](https://github.com/JingMatrix/TEESimulator/releases/latest) if apps check hardware-backed keys and TEE / KeyMint attestation.
+
+   Use only **one** attestation backend. Tricky Store, TrickyStoreOSS, TEE Simulator, and their forks must not run at the same time.
+
+4. **WebUI.** To open the control panel, install [**MMRL**](https://github.com/MMRLApp/MMRL/releases/latest), [**WebUI X Portable**](https://github.com/MMRLApp/WebUI-X-Portable/releases/latest), or use built-in WebUI support in your Root Manager.
+
+   If WebUI does not open directly, install [**KsuWebUIStandalone**](https://github.com/KOWX712/KsuWebUIStandalone/releases/latest) manually as a fallback first. After you can open WebUI, its APK can also be downloaded through Integrity Downloader.
 
 ## ⚠️ Conflicting modules to remove or disable
 
+> [!IMPORTANT]
+> Before installing, remove other Integrity / Play Integrity certification fix modules and tools so they do not conflict with IntegrityBox Ultimate.
+>
 > [!CAUTION]
 > Do not mix multiple modules that change Keybox, fingerprint, GMS state, DroidGuard, VBMeta, or Play Integrity verdicts at the same time. These conflicts often cause unstable certification and false positives in banking apps.
 
@@ -240,6 +259,15 @@ Long-press a WebUI tile for about 300 ms to pin it to **Quick Access** on the ho
 
 ### 🆘 Nothing helped
 If you still cannot restore Google certification or get the required apps working after all steps, open the Telegram group from the links at the top of this README and post in the help/support topic. Include your device model, ROM, Root Manager, attestation backend, Play Integrity result from the Play Store, and what you have already tried.
+
+---
+
+## 🧩 Binary Component Sources
+The module ZIP already contains readable JS, HTML, CSS, shell scripts, and config files. Separate source folders are provided only for components shipped as compiled binaries:
+
+- `sources/zygisk/` - source code and build notes for native Zygisk libraries from `IntegrityBox-Ultimate-Clnt/zygisk/*.so`.
+- `sources/boot-hash-attestation/` - source code and build notes for the `boot_attest.jar` helper.
+- `sources/licenses/` - licenses and notices for compiled components.
 
 ---
 
