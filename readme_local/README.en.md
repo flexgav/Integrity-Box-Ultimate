@@ -74,7 +74,7 @@ For comfortable use and maximum stealth, make sure the environment is built with
 
 > [!IMPORTANT]
 > Before installing, remove other Integrity / Play Integrity certification fix modules and tools so they do not conflict with IntegrityBox Ultimate.
->
+
 > [!CAUTION]
 > Do not mix multiple modules that change Keybox, fingerprint, GMS state, DroidGuard, VBMeta, or Play Integrity verdicts at the same time. These conflicts often cause unstable certification and false positives in banking apps.
 
