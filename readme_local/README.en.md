@@ -167,7 +167,7 @@ For users who need banking or government apps to see a cleaner device, we recomm
 2. 🧩 **Install LSPosed / Vector:** Flash `/sdcard/IntegrityBox/Downloads/LSPosedVector.zip` in your Root Manager and reboot your device.
 3. 🕵️ **Install HMA:** Open `/sdcard/IntegrityBox/Downloads/HMA_OSS.apk`, install HideMyApplist, and enable it in LSPosed.
 4. 🛡️ **Inject the HMA profile:** Open WebUI -> **Hide My Stuff** -> **Inject HMA Template**. This applies ready-made hiding rules for many banking and government apps directly into HMA.
-5. 📱 **Install PixelMask if needed:** PixelMask is not part of the HMA setup. Use it separately if you need the Pixel/GMS scenarios it handles.
+5. 📱 **Install PixelMask for Google Photos features:** PixelMask can unlock selected Pixel features for Google Photos on your phone. Depending on the selected profile, this may include unlimited Original-quality photo and video backup or Pixel-only features such as Video Boost, Night Sight Video, Add Me, Reimagine, and Magic Editor.
 
 For maximum stealth and anti-detection, use these tools according to the symptoms:
 
