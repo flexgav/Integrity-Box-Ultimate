@@ -125,18 +125,18 @@ Current list from `assets/tools.list`:
 
 | Tool | File name | Full path |
 | --- | --- | --- |
-| Zygisk Next | `ZygiskNext.zip` | `/sdcard/IntegrityBox/Downloads/ZygiskNext.zip` |
-| Tricky Store | `TrickyStore.zip` | `/sdcard/IntegrityBox/Downloads/TrickyStore.zip` |
-| Key Attestation | `KeyAttestation.apk` | `/sdcard/IntegrityBox/Downloads/KeyAttestation.apk` |
-| Update Locker | `UpdateLocker.apk` | `/sdcard/IntegrityBox/Downloads/UpdateLocker.apk` |
-| HMA config | `HMA_Config.json` | `/sdcard/IntegrityBox/Downloads/HMA_Config.json` |
-| HMA-OSS | `HMA_OSS.apk` | `/sdcard/IntegrityBox/Downloads/HMA_OSS.apk` |
-| PixelMask | `PixelMask.apk` | `/sdcard/IntegrityBox/Downloads/PixelMask.apk` |
-| KSU WebUI | `KSU_WebUI.apk` | `/sdcard/IntegrityBox/Downloads/KSU_WebUI.apk` |
-| Core Patch | `Core_Patch.apk` | `/sdcard/IntegrityBox/Downloads/Core_Patch.apk` |
-| Thor Installer | `Thor_Installer.apk` | `/sdcard/IntegrityBox/Downloads/Thor_Installer.apk` |
-| Android Faker | `Android_Faker.apk` | `/sdcard/IntegrityBox/Downloads/Android_Faker.apk` |
-| LSPosed / Vector | `LSPosedVector.zip` | `/sdcard/IntegrityBox/Downloads/LSPosedVector.zip` |
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 
@@ -180,6 +180,144 @@ For maximum stealth and anti-detection, use these tools according to the symptom
 7. 🧹 **Reset the app state:** After changing HMA, Target, props, or Boot Hash, open **Cleanup & SELinux** -> **App Data Cleaner** and clear data/cache for the problematic app so it re-checks the environment.
 8. 🔥 **Anti-Detection Nuke:** Use **Detection** -> **Anti-Detection Nuke** only for clear leftover traces. Start with **Soft Cleanup**, then **Standard Nuke**. Keep **Aggressive Nuke** as the last resort.
 9. 🧪 **System Prop Spoofer:** Use **Detection** -> **System Prop Spoofer** only if you understand which `getprop` traces need to be reset or removed.
+
+<details>
+<summary><strong>Detailed System Prop Spoofer table</strong></summary>
+
+#### Purpose summary
+
+| Section | What it affects | When to use |
+| --- | --- | --- |
+| Reset Props | ADB, debug/dev state, secure mode, bootloader/Verified Boot, build type, OEM unlock, emulator flags. | When dangerous props need to be overwritten with safer user/locked/release-like values. |
+| Duck Detector Props | A small set of props often checked by strict native detectors. | When the keys themselves should be removed from the current property space instead of changing their values. |
+| Delete Props | ROM-branded properties, Pixel/EliteProps/PIF leftovers, and other traces from old spoofing modules. | When the property itself should disappear from the current property space. |
+| Nuke Trash | `*.odex`, `*.vdex`, `base.odex` under `/data/app`. | When a detector reacts to stale odex/vdex artifacts after modules or app updates. |
+
+#### Reset Props
+
+| UI item | Props / action | Purpose |
+| --- | --- | --- |
+| USB Debug Block | `sys.usb.adb.disabled=1` | Applies a signal that USB ADB is disabled. |
+| MTP Only Mode | `persist.sys.usb.config=mtp`, `sys.usb.config=mtp`, `sys.usb.state=mtp` | Removes ADB from USB configuration and leaves MTP mode. |
+| ADB Root Off | `service.adb.root=0`, `service.adb.tcp.port=-1` | Disables root shell over ADB and ADB over TCP. |
+| Secure Mode | `ro.secure=1`, `ro.adb.secure=1` | Restores secure-build and secure-ADB signals. |
+| Debug Off | `ro.debuggable=0`, `persist.sys.debuggable=0` | Hides debug/userdebug state. |
+| Dev Options Off | `persist.sys.developer_options=0`, `persist.sys.dev_mode=0` | Resets persistent Developer Options signals. |
+| Global Settings | `development_settings_enabled=0`, `adb_enabled=0`, `oem_unlock_allowed=0` | Resets Android global settings for Developer Options, ADB, and OEM unlock. |
+| Verified Boot | `ro.boot.verifiedbootstate=green`, `vendor.boot.verifiedbootstate=green` | Applies green Verified Boot state. |
+| Flash Locked | `ro.boot.flash.locked=1` | Applies the signal that flash partitions are locked. |
+| VBMeta Locked | `ro.boot.vbmeta.device_state=locked`, `vendor.boot.vbmeta.device_state=locked` | Applies locked VBMeta/device state. |
+| SecureBoot | `ro.secureboot.lockstate=locked` | Applies locked Secure Boot state. |
+| Warranty Valid | `ro.boot.warranty_bit=0` | Resets the warranty bit to a non-triggered value. |
+| User Build | `ro.build.type=user`, `ro.build.tags=release-keys` | Presents the build as a normal release build. |
+| OEM Lock | `ro.oem_unlock_supported=0`, `sys.oem_unlock_allowed=0` | Hides OEM unlock support/permission signals. |
+| No Emulator | `ro.kernel.qemu=0`, `ro.boot.qemu=0`, `ro.hardware.virtual_device=0` | Removes basic emulator/virtual-device indicators. |
+| Nuke Trash | Delete `*.odex`, `*.vdex`, `base.odex` under `/data/app` | Cleans stale app optimization artifacts; this is not a `getprop` change. |
+
+#### Duck Detector Props
+
+| UI item | Prop | Action |
+| --- | --- | --- |
+| ADB Secure | `ro.adb.secure` | Deletes the prop with `resetprop --delete` if it exists in the current property space. |
+| Verified Boot State | `ro.boot.verifiedbootstate` | Deletes the prop with `resetprop --delete` if it exists in the current property space. |
+| Verity Mode | `ro.boot.veritymode` | Deletes the prop with `resetprop --delete` if it exists in the current property space. |
+| Build Tags | `ro.build.tags` | Deletes the prop with `resetprop --delete` if it exists in the current property space. |
+| Build Type | `ro.build.type` | Deletes the prop with `resetprop --delete` if it exists in the current property space. |
+
+#### Delete Props
+
+Every item below **deletes the selected prop** from the current Android property space with `resetprop --delete`. The value is not spoofed or replaced. If the prop is absent, the module skips it.
+
+| UI item | Prop |
+| --- | --- |
+| Lineage Device | `ro.lineage.device` |
+| crDroid Device | `ro.crdroid.device` |
+| Build Flavor | `ro.build.flavor` |
+| Custom Device | `ro.custom.device` |
+| Elite Version | `ro.build.elitever` |
+| Xiaomi Dev ID | `ro.xiaomi.developerid` |
+| Mod Version | `ro.modversion` |
+| Elite Time | `ro.elite.version.code_time` |
+| Elite Keybox | `sys.eliteprops.keybox` |
+| Elite PIF | `sys.eliteprops.pif` |
+| Elite Vending | `sys.eliteprops.vending` |
+| Elite Pixel | `sys.eliteprops.pixelprops` |
+| Elite Photos | `sys.eliteprops.photos` |
+| Elite Games | `sys.eliteprops.games` |
+| Elite Snapchat | `sys.eliteprops.snapchat` |
+| Elite Recent | `sys.eliteprops.recent` |
+| Elite Recent All | `sys.eliteprops.recent.all` |
+| Elite Spoof | `sys.eliteprops.spoofastab` |
+| Pixel Device | `ro.pixel.device` |
+| Pixel Version | `ro.pixel.version` |
+| Pixel Build | `ro.pixel.build.version` |
+| Pixel Release | `ro.pixel.releasetype` |
+| Pixel Legal | `ro.pixellegal.url` |
+| Evolution Device | `ro.evolution.device` |
+| Evolution Build | `ro.evolution.build.version` |
+| Evolution Display | `ro.evolution.display.version` |
+| Evolution Version | `ro.evolution.version` |
+| Evolution Legal | `ro.evolutionlegal.url` |
+| Lineage SDK | `ro.lineage.build.version.plat.sdk` |
+| Lineage Rev | `ro.lineage.build.version.plat.rev` |
+| Rising Popup | `ro.rising.feature.pop_up_view` |
+| Rising Chipset | `ro.rising.chipset` |
+| Rising Maintainer | `ro.rising.maintainer` |
+| Rising Code | `ro.rising.code` |
+| Rising Package | `ro.rising.packagetype` |
+| Rising Release | `ro.rising.releasetype` |
+| Rising Version | `ro.rising.version` |
+| Rising Build | `ro.rising.build.version` |
+| Rising Display | `ro.rising.display.version` |
+| Rising Codename | `ro.rising.platform_release_codename` |
+| Rising Device | `ro.rising.device` |
+| Rising Storage | `ro.rising.storage` |
+| Rising RAM | `ro.rising.ram` |
+| Rising Battery | `ro.rising.battery` |
+| Rising Resolution | `ro.rising.display_resolution` |
+| Lineage Version | `ro.lineage.version` |
+| Lineage Display | `ro.lineage.display.version` |
+| Lineage Build | `ro.lineage.build.version` |
+| Lineage Release | `ro.lineage.releasetype` |
+| Lineage Legal | `ro.lineagelegal.url` |
+| Infinity Device | `ro.infinity.device` |
+| Infinity SoC | `ro.infinity.soc` |
+| Infinity Battery | `ro.infinity.battery` |
+| Infinity Display | `ro.infinity.display` |
+| Infinity Camera | `ro.infinity.camera` |
+| Infinity Android | `ro.infinity.android.version` |
+| Infinity Build | `ro.infinity.build.version` |
+| Infinity Status | `ro.infinity.build.status` |
+| Infinity Date | `ro.infinity.build.date` |
+| Infinity Type | `ro.infinity.buildtype` |
+| Infinity Fingerprint | `ro.infinity.fingerprint` |
+| Infinity Version | `ro.infinity.version` |
+| Infinity Maintainer | `ro.infinity.maintainer` |
+| Havoc Variant | `ro.havoc.build.variant` |
+| Havoc Device | `ro.havoc.device` |
+| Havoc Date | `ro.havoc.build.date` |
+| Havoc Build | `ro.havoc.build.version` |
+| Havoc Fingerprint | `ro.havoc.fingerprint` |
+| Havoc Release | `ro.havoc.releasetype` |
+| Havoc Version | `ro.havoc.version` |
+| Havoc Security | `ro.havoc.build.version.security_patch` |
+| Derpfest Device | `ro.derpfest.device` |
+| Derpfest Date | `ro.derpfest.build.date` |
+| Derpfest Build | `ro.derpfest.build.version` |
+| Derpfest Variant | `ro.derpfest.build.variant` |
+| Derpfest Display | `ro.derpfest.display.version` |
+| Derpfest Release | `ro.derpfest.releasetype` |
+| Derpfest Version | `ro.derpfest.version` |
+| Derpfest Legal | `ro.derpfestlegal.url` |
+| Axion Device | `ro.axion.device` |
+| Axion Version | `ro.axion.version` |
+| Axion Display | `ro.axion.display.version` |
+| Axion Build | `ro.axion.build.version` |
+| Axion Release | `ro.axion.releasetype` |
+| Axion Maintainer | `persist.sys.axion_maintainer` |
+| Axion Processor | `persist.sys.axion_processor_info` |
+
+</details>
 
 ### 🎯 Manual Target List Control
 If you want to use your own app list instead of the automatic template:
