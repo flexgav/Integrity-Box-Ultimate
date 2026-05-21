@@ -240,7 +240,7 @@ Every item below **deletes the selected prop** from the current Android property
 | Elite Time | `ro.elite.version.code_time` |
 | Elite Keybox | `sys.eliteprops.keybox` |
 | Elite PIF | `sys.eliteprops.pif` |
-| Elite Vending | `sys.eliteprops.vending` |
+| Elite Play Store | `sys.eliteprops.vending` |
 | Elite Pixel | `sys.eliteprops.pixelprops` |
 | Elite Photos | `sys.eliteprops.photos` |
 | Elite Games | `sys.eliteprops.games` |
