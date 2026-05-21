@@ -1,3 +1,15 @@
+> Release Date: 21/05/2026
+
+#### 🛠️ IntegrityBox Ultimate v41.0
+
+- **Russian WebUI localization**: added full Russian interface translation, automatic system-language detection, and manual language switching in Module Settings.
+- **HMA Profile**: expanded the hiding profile with more banking, system, and sensitive apps. After updating, apply **Inject HMA Template** to refresh the profile.
+- **Inject HMA Template**: improved config injection on firmware where direct `/data` access is isolated, and removed unnecessary HMA app launches during the operation.
+- **App Data Cleaner**: fixed stale selection counting. The cleanup button no longer shows a phantom app count when the saved selection contains apps that are no longer installed.
+- **Fingerprint Selector**: added a dedicated PIF Pool update button for users running AutoPilot in **Keybox Only** mode.
+- **Interface polish**: adjusted help dialogs, cards, status labels, buttons, and dynamic action messages for clearer Russian and English wording.
+- **Help Center**: improved diagnostic report generation and log output formatting.
+
 > Release Date: 15/05/2026
 
 #### 🚀 IntegrityBox Ultimate v40.7
