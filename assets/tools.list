@@ -1,6 +1,6 @@
 # IntegrityBox Ultimate - Utility Tools List
-# Reworked: 2026-05-15
-# Policy: stable-only; outdated/archived entries removed or replaced with maintained upstream/forks.
+# Reworked: 2026-05-28
+# Policy: stable-preferred; nightly-only entries allowed when upstream has no stable release.
 # Format (3 lines per tool, separated by blank lines):
 # 1. FileName
 # 2. URL
@@ -17,6 +17,14 @@ https://github.com/5ec1cff/TrickyStore/releases/download/1.4.1/Tricky-Store-v1.4
 KeyAttestation.apk
 https://github.com/vvb2060/KeyAttestation/releases/download/v1.8.4/KeyAttestation-v1.8.4.apk
 e22ae305deca589fc9af2dc8940f5c62bac7120bed817f80da1f345a9ec69897
+
+Duck_Detector.apk
+https://github.com/eltavine/Duck-Detector-Refactoring/releases/download/nightly/Duck.Detector-2026.05.26-e3849ab3173f.apk
+606ecca11c01e30ede6b4907e75d5491264143535932ba4754dfbbe2617b6ebe
+
+Native_Root_Detector.apk
+https://github.com/reveny/Android-Native-Root-Detector/releases/download/v7.7.0/native-root-detector-v7.7.0.apk
+1033d24102af2632fe5c379e28c9ea9a20bc1d570e171ac3e50f8afd35fc4bd6
 
 UpdateLocker.apk
 https://github.com/Xposed-Modules-Repo/ru.mike.updatelocker/releases/download/20-1.4.3/updatelocker_v1.4.3.apk
