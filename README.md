@@ -118,6 +118,8 @@
 * **Thor_Installer.apk** — менеджер/инсталлер для дополнительных Android-инструментов.
 * **Android_Faker.apk** — утилита для ручной проверки и настройки Android-идентификаторов.
 * **LSPosedVector.zip** — LSPosed / Vector для работы HMA и других LSPosed-модулей.
+* **Duck_Detector.apk** — детектор root/Xposed/Magisk с нативными проверками; полезен для диагностики обнаружения рут-среды.
+* **Native_Root_Detector.apk** — нативный детектор рут, показывающий что именно приложения могут видеть при низкоуровневом сканировании.
 
 ## 📁 Где искать файлы, скачанные через Integrity Downloader
 
@@ -126,18 +128,20 @@
 
 | Инструмент | Имя файла | Полный путь |
 | --- | --- | --- |
-
-
-
-
-
-
-
-
-
-
-
-
+| Zygisk Next | `ZygiskNext.zip` | `/sdcard/IntegrityBox/Downloads/ZygiskNext.zip` |
+| Tricky Store | `TrickyStore.zip` | `/sdcard/IntegrityBox/Downloads/TrickyStore.zip` |
+| Key Attestation | `KeyAttestation.apk` | `/sdcard/IntegrityBox/Downloads/KeyAttestation.apk` |
+| Duck Detector | `Duck_Detector.apk` | `/sdcard/IntegrityBox/Downloads/Duck_Detector.apk` |
+| Native Root Detector | `Native_Root_Detector.apk` | `/sdcard/IntegrityBox/Downloads/Native_Root_Detector.apk` |
+| Update Locker | `UpdateLocker.apk` | `/sdcard/IntegrityBox/Downloads/UpdateLocker.apk` |
+| HMA Config | `HMA_Config.json` | `/sdcard/IntegrityBox/Downloads/HMA_Config.json` |
+| HideMyApplist OSS | `HMA_OSS.apk` | `/sdcard/IntegrityBox/Downloads/HMA_OSS.apk` |
+| PixelMask | `PixelMask.apk` | `/sdcard/IntegrityBox/Downloads/PixelMask.apk` |
+| KSU WebUI | `KSU_WebUI.apk` | `/sdcard/IntegrityBox/Downloads/KSU_WebUI.apk` |
+| Core Patch | `Core_Patch.apk` | `/sdcard/IntegrityBox/Downloads/Core_Patch.apk` |
+| Thor Installer | `Thor_Installer.apk` | `/sdcard/IntegrityBox/Downloads/Thor_Installer.apk` |
+| Android Faker | `Android_Faker.apk` | `/sdcard/IntegrityBox/Downloads/Android_Faker.apk` |
+| LSPosed / Vector | `LSPosedVector.zip` | `/sdcard/IntegrityBox/Downloads/LSPosedVector.zip` |
 
 ---
 
@@ -148,15 +152,18 @@
 > Если вы настраиваете модуль впервые, проходите шаги по порядку и не включайте дополнительные инструменты до первичной проверки сертификации Play Маркета.
 
 1. ✅ **Установите зависимости:** Убедитесь, что у вас установлен Root-менеджер и выбран только один backend аппаратной аттестации.
-2. 📲 **Прошейте IntegrityBox Ultimate:** Установите zip-архив модуля и **перезагрузите** устройство.
-3. ▶️ **Запустите основное действие:** Перейдите в список модулей вашего Root-менеджера и нажмите **Action** на карточке IntegrityBox Ultimate. Дождитесь завершения: модуль скачает рабочий Keybox и подготовит свежие данные устройства.
-4. 🔎 **Проверьте статус:** Откройте WebUI, перейдите в **Toolkit** -> **Integrity Checker** и убедитесь, что активный Keybox имеет статус `ONLINE`, а данные устройства загружены.
-5. 🔐 **Почините TEE / Widevine при необходимости:** Поддерживаемые устройства могут использовать **Keybox Hub** -> **Fix Widevine L1** для восстановления Widevine/TEE через встроенный установщик Keybox. Используйте только на совместимых ROM/устройствах. После завершения подтвердите перезагрузку.
-6. 🧬 **Настройте Boot Hash при необходимости:** Если приложение или детектор указывает на загрузчик, VBMeta или boot hash, откройте **Detection** -> **Boot Hash Spoofer**, сначала нажмите **Get Real Boot Hash**, затем **Apply** и **Reboot**. Если реальный hash не найден, используйте **Magic Wand** как запасной вариант.
-7. 🧼 **Глубокая очистка GMS:** Перейдите в **Toolkit** -> **GMS Tools** и выполните **Deep GMS Wipe**. Это удалит старые состояния сертификации Google и данные Google Services Framework. Следуйте подсказке на экране, чтобы **перезагрузить** устройство. *(Вы выйдете из своего аккаунта Google.)*
-8. ✅ **Повторный вход и проверка:** После перезагрузки откройте Play Маркет, снова войдите в свой аккаунт Google и проверьте статус сертификации Play Защиты.
-9. 🤖 **Включите AutoPilot:** Перейдите в **Auto Pilot** -> **AutoPilot Manager** и включите автоматическое фоновое обновление.
-10. 📦 **Соберите диагностический архив при проблемах:** Если сертификация или приложения всё еще работают нестабильно, откройте **Help Center** -> **Export Report**. Архив появится в `/sdcard/IntegrityBox/Reports` и его можно приложить в теме помощи.
+2. 📲 **Прошейте IntegrityBox Ultimate:** Установите zip-архив модуля. Во время установки модуль автоматически синхронизирует каталог Keybox из облака. Если отображается запрос **«Стереть данные предыдущей установки?»** — нажмите **Vol Up** для сброса или **Vol Down** для сохранения настроек.
+3. 🔄 **Перезагрузите устройство.** При первой загрузке модуль автоматически выполняет начальную настройку: отключает встроенный ROM-спуфинг, активирует режим банков, извлекает реальный Boot Hash, запускает Standard Nuke, применяет настройки ZygiskNext, пробует восстановить Widevine L1 и включает AutoPilot Xtreme.
+4. ▶️ **Запустите основное действие:** Перейдите в список модулей Root-менеджера и нажмите **Action** на карточке IntegrityBox Ultimate. Дождитесь завершения: модуль обновит Keybox и подготовит свежие данные устройства.
+5. 🔎 **Проверьте статус:** Откройте WebUI → **Toolkit** → **Integrity Checker** и убедитесь, что активный Keybox имеет статус `ONLINE`, а данные устройства загружены.
+6. 🧼 **Глубокая очистка GMS:** Перейдите в **Toolkit** → **GMS Tools** и выполните **Deep GMS Wipe**. Это удалит старые состояния сертификации Google и данные Google Services Framework. Следуйте подсказке, чтобы **перезагрузить** устройство. *(Вы выйдете из аккаунта Google.)*
+7. ✅ **Повторный вход и проверка:** После перезагрузки откройте Play Маркет, снова войдите в аккаунт Google и проверьте статус сертификации Play Защиты.
+8. 🤖 **Проверьте AutoPilot:** Перейдите в **Auto Pilot** → **AutoPilot Manager** — демон уже должен быть включён в режиме Xtreme. При необходимости переключите режим на **Keybox Only** для минимального воздействия на систему.
+9. 🧹 **Custom ROM Props при необходимости:** Если устройство работает на кастомной прошивке, откройте **Custom ROM Spoofing** → **Spoof ROM Props** и нажмите **Auto Mode** — модуль сам определит, следы каких ROM-семейств есть на устройстве, и включит нужные карточки очистки.
+10. 📦 **Соберите диагностический архив при проблемах:** Если сертификация или приложения всё ещё работают нестабильно, откройте **Help Center** → **Export Report**. Архив появится в `/sdcard/IntegrityBox/Reports`.
+
+> [!NOTE]
+> Boot Hash и Widevine L1 настраиваются автоматически при первой установке. Если потребуется изменить Boot Hash вручную — откройте **Detection** → **Boot Hash Spoofer**. Для повторного запуска Widevine L1 — **Keybox Hub** → **Fix Widevine L1**.
 
 ### 🕶️ Продвинутая настройка скрытности
 Если банковские или государственные приложения слишком внимательно проверяют устройство, рекомендуем настроить HideMyApplist (HMA) через встроенные инструменты:
@@ -176,7 +183,7 @@
 2. 🛡️ **SELinux Enforcing:** На главной откройте **Cleanup & SELinux** -> **Enforce SELinux** и убедитесь, что в статусе модуля SELinux отображается как `Enforcing`.
 3. 🧩 **Строгая изоляция Zygisk/Shamiko:** Используйте **ZygiskNext & Shamiko** -> **Enable Whitelist Mode**, чтобы включить строгий режим изоляции. Список приложений для скрытия root/Zygisk настраивается отдельно в DenyList вашего Root-менеджера или в настройках ZygiskNext/Shamiko.
 4. ⚙️ **Оптимизация ZygiskNext:** Нажмите **ZygiskNext & Shamiko** -> **Optimize ZygiskNext**, если используете Zygisk Next. Модуль применит рекомендуемые stealth-настройки контроллера.
-5. 🧰 **Антидетект-флаги:** В **Miscellaneous** -> **Module Settings** включайте только нужные пункты: **Spoof Lineage Props**, **Debug Fingerprint**, **Debug Build**, **Build Tag**, **Clear LSposed**, **Spoof Encryption**, **Hide Recovery**, **Clear Gapps Logs** и **Archive Manager Logs**.
+5. 🧰 **Антидетект-флаги:** В **Miscellaneous** → **Module Settings** включайте только нужные пункты: **Debug Fingerprint**, **Debug Build**, **Build Tag**, **Clear LSposed**, **Spoof Encryption**, **Hide Recovery**, **Clear Gapps Logs** и **Archive Manager Logs**. Для очистки следов прошивки используйте **Custom ROM Spoofing** → **Spoof ROM Props**.
 6. 🗂️ **Скрытие подозрительных файлов:** Используйте **Hide My Stuff** -> **Hide Suspicious Files**, если приложение видит папки `TWRP`, `Fox`, `Magisk`, менеджеры root или старые следы на `/sdcard`. Не добавляйте случайные системные пути.
 7. 🧹 **Сброс состояния приложения:** После изменения HMA, Target, props или Boot Hash откройте **Cleanup & SELinux** -> **App Data Cleaner** и очистите данные/кэш проблемного приложения, чтобы оно заново проверило окружение.
 8. 🔥 **Anti-Detection Nuke:** Используйте **Detection** -> **Anti-Detection Nuke** только при явных остаточных следах. Начинайте с **Soft Cleanup**, затем **Standard Nuke**. **Aggressive Nuke** оставьте как крайний вариант.

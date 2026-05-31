@@ -117,6 +117,8 @@ Current list from `assets/tools.list`:
 * **Thor_Installer.apk** — manager/installer for additional Android tools.
 * **Android_Faker.apk** — utility for manual Android identifier checks and setup.
 * **LSPosedVector.zip** — LSPosed / Vector for HMA and other LSPosed modules.
+* **Duck_Detector.apk** — root/Xposed/Magisk detector with native checks; useful for diagnosing what the root environment exposes.
+* **Native_Root_Detector.apk** — native root detector showing exactly what apps can see during low-level environment scanning.
 
 ## 📁 Where to find files downloaded by Integrity Downloader
 
@@ -125,18 +127,20 @@ Current list from `assets/tools.list`:
 
 | Tool | File name | Full path |
 | --- | --- | --- |
-
-
-
-
-
-
-
-
-
-
-
-
+| Zygisk Next | `ZygiskNext.zip` | `/sdcard/IntegrityBox/Downloads/ZygiskNext.zip` |
+| Tricky Store | `TrickyStore.zip` | `/sdcard/IntegrityBox/Downloads/TrickyStore.zip` |
+| Key Attestation | `KeyAttestation.apk` | `/sdcard/IntegrityBox/Downloads/KeyAttestation.apk` |
+| Duck Detector | `Duck_Detector.apk` | `/sdcard/IntegrityBox/Downloads/Duck_Detector.apk` |
+| Native Root Detector | `Native_Root_Detector.apk` | `/sdcard/IntegrityBox/Downloads/Native_Root_Detector.apk` |
+| Update Locker | `UpdateLocker.apk` | `/sdcard/IntegrityBox/Downloads/UpdateLocker.apk` |
+| HMA Config | `HMA_Config.json` | `/sdcard/IntegrityBox/Downloads/HMA_Config.json` |
+| HideMyApplist OSS | `HMA_OSS.apk` | `/sdcard/IntegrityBox/Downloads/HMA_OSS.apk` |
+| PixelMask | `PixelMask.apk` | `/sdcard/IntegrityBox/Downloads/PixelMask.apk` |
+| KSU WebUI | `KSU_WebUI.apk` | `/sdcard/IntegrityBox/Downloads/KSU_WebUI.apk` |
+| Core Patch | `Core_Patch.apk` | `/sdcard/IntegrityBox/Downloads/Core_Patch.apk` |
+| Thor Installer | `Thor_Installer.apk` | `/sdcard/IntegrityBox/Downloads/Thor_Installer.apk` |
+| Android Faker | `Android_Faker.apk` | `/sdcard/IntegrityBox/Downloads/Android_Faker.apk` |
+| LSPosed / Vector | `LSPosedVector.zip` | `/sdcard/IntegrityBox/Downloads/LSPosedVector.zip` |
 
 ---
 
@@ -147,15 +151,18 @@ For a clean setup and the best chance of restoring Play Store certification, fol
 > If this is your first setup, follow the steps in order and do not enable extra tools until you complete the first Play Store certification check.
 
 1. ✅ **Install Dependencies:** Make sure your Root Manager is installed and only one hardware attestation backend is selected.
-2. 📲 **Flash IntegrityBox Ultimate:** Install the module zip and **reboot** your device.
-3. ▶️ **Run the main action:** Open your Root Manager's module list and tap **Action** on the IntegrityBox Ultimate card. Wait until it finishes; it will download a working keybox and prepare a fresh device identity.
-4. 🔎 **Check the result:** Open the WebUI, go to **Toolkit** -> **Integrity Checker**, and confirm that the active keybox is `ONLINE` and device identity data is present.
-5. 🔐 **Repair TEE / Widevine if needed:** Supported devices can use **Keybox Hub** -> **Fix Widevine L1** to restore Widevine/TEE data through the device's built-in keybox installer. Use this only on compatible ROMs/devices. Reboot when prompted.
-6. 🧬 **Configure Boot Hash if needed:** If an app or detector reports bootloader, VBMeta, or boot hash issues, open **Detection** -> **Boot Hash Spoofer**, tap **Get Real Boot Hash** first, then **Apply** and **Reboot**. If the real hash cannot be found, use **Magic Wand** as a fallback.
-7. 🧼 **Deep Clean GMS:** Go to **Toolkit** -> **GMS Tools** and run **Deep GMS Wipe**. This removes old Google certification states and Google Services Framework data. Reboot when prompted. *(You will be logged out of your Google Account.)*
-8. ✅ **Re-login & Verify:** After rebooting, open the Play Store, log back into your Google account, and check your Play Protect certification status.
-9. 🤖 **Enable AutoPilot:** Go to **Auto Pilot** -> **AutoPilot Manager** and enable automatic background updates.
-10. 📦 **Export a diagnostic package if needed:** If certification or apps are still unstable, open **Help Center** -> **Export Report**. The archive will be saved to `/sdcard/IntegrityBox/Reports` and can be attached in the support topic.
+2. 📲 **Flash IntegrityBox Ultimate:** Install the module zip. During installation, the module automatically syncs the Keybox catalog from the cloud. If prompted **"Erase previous installation data?"** — press **Vol Up** to reset or **Vol Down** to keep existing settings.
+3. 🔄 **Reboot your device.** On the first boot, the module runs a full automatic setup sequence: disables ROM native spoofing, applies Banking Mode defaults, extracts the real Boot Hash, runs Standard Nuke cleanup, applies ZygiskNext stealth settings, attempts Widevine L1 repair, and enables AutoPilot Xtreme.
+4. ▶️ **Run the main action:** Open your Root Manager's module list and tap **Action** on the IntegrityBox Ultimate card. Wait until it finishes; it will refresh the Keybox and prepare fresh device identity data.
+5. 🔎 **Check the result:** Open the WebUI → **Toolkit** → **Integrity Checker**, and confirm that the active Keybox is `ONLINE` and device identity data is present.
+6. 🧼 **Deep Clean GMS:** Go to **Toolkit** → **GMS Tools** and run **Deep GMS Wipe**. This removes old Google certification states and Google Services Framework data. Reboot when prompted. *(You will be logged out of your Google Account.)*
+7. ✅ **Re-login & Verify:** After rebooting, open the Play Store, log back into your Google account, and check your Play Protect certification status.
+8. 🤖 **Check AutoPilot:** Go to **Auto Pilot** → **AutoPilot Manager** — the daemon should already be running in Xtreme mode. Switch to **Keybox Only** if you prefer minimal system impact.
+9. 🧹 **Custom ROM Props if needed:** If your device runs a custom ROM, open **Custom ROM Spoofing** → **Spoof ROM Props** and enable **Auto Mode** — the module will scan for ROM-family traces and enable the matching cleanup cards automatically.
+10. 📦 **Export a diagnostic package if needed:** If certification or apps are still unstable, open **Help Center** → **Export Report**. The archive will be saved to `/sdcard/IntegrityBox/Reports`.
+
+> [!NOTE]
+> Boot Hash and Widevine L1 are configured automatically on first install. To adjust Boot Hash manually later — open **Detection** → **Boot Hash Spoofer**. To re-run Widevine L1 repair — use **Keybox Hub** → **Fix Widevine L1**.
 
 ### 🕶️ Advanced Stealth Setup
 For users who need banking or government apps to see a cleaner device, we recommend setting up HideMyApplist (HMA) with the built-in helpers:
@@ -175,7 +182,7 @@ For maximum stealth and anti-detection, use these tools according to the symptom
 2. 🛡️ **SELinux Enforcing:** On the home page, open **Cleanup & SELinux** -> **Enforce SELinux** and make sure the module status shows SELinux as `Enforcing`.
 3. 🧩 **Strict Zygisk/Shamiko isolation:** Use **ZygiskNext & Shamiko** -> **Enable Whitelist Mode** to enable strict isolation. Configure the app list separately in your Root Manager's DenyList or in the ZygiskNext/Shamiko settings.
 4. ⚙️ **Optimize ZygiskNext:** Tap **ZygiskNext & Shamiko** -> **Optimize ZygiskNext** if you use Zygisk Next. The module applies recommended controller stealth settings.
-5. 🧰 **Anti-detection flags:** In **Miscellaneous** -> **Module Settings**, enable only what you actually need: **Spoof Lineage Props**, **Debug Fingerprint**, **Debug Build**, **Build Tag**, **Clear LSposed**, **Spoof Encryption**, **Hide Recovery**, **Clear Gapps Logs**, and **Archive Manager Logs**.
+5. 🧰 **Anti-detection flags:** In **Miscellaneous** → **Module Settings**, enable only what you actually need: **Debug Fingerprint**, **Debug Build**, **Build Tag**, **Clear LSposed**, **Spoof Encryption**, **Hide Recovery**, **Clear Gapps Logs**, and **Archive Manager Logs**. For ROM trace cleanup, use **Custom ROM Spoofing** → **Spoof ROM Props**.
 6. 🗂️ **Hide suspicious files:** Use **Hide My Stuff** -> **Hide Suspicious Files** if an app sees `TWRP`, `Fox`, `Magisk`, root managers, or old traces on `/sdcard`. Do not add random system paths.
 7. 🧹 **Reset the app state:** After changing HMA, Target, props, or Boot Hash, open **Cleanup & SELinux** -> **App Data Cleaner** and clear data/cache for the problematic app so it re-checks the environment.
 8. 🔥 **Anti-Detection Nuke:** Use **Detection** -> **Anti-Detection Nuke** only for clear leftover traces. Start with **Soft Cleanup**, then **Standard Nuke**. Keep **Aggressive Nuke** as the last resort.

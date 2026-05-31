@@ -1,3 +1,18 @@
+> Release Date: 31/05/2026
+
+#### 🚀 IntegrityBox Ultimate v41.5
+
+- **Zero-config first install**: on fresh install the module now runs a full automated setup sequence — disables ROM native GMS/Vending spoofing to prevent conflicts, applies Banking Mode defaults (ADB, Wi-Fi ADB, developer options, OEM unlock all turned off), auto-extracts and saves the real Boot Hash, runs Standard Nuke cleanup, applies ZygiskNext stealth optimizations, attempts Widevine L1 repair if TEE is marked broken, syncs the Keybox catalog from cloud, and enables AutoPilot Xtreme with recommended flags. On update, **Vol Down** retains existing config; **Vol Up** wipes Box-Brain and re-runs the full setup as if fresh.
+- **New module — Spoof ROM Props**: dedicated manager for Custom ROM property trace cleanup, moved from Module Settings where it existed as two toggles. **Auto** mode scans the device and enables matching cleanup cards; **Manual** mode lets you target specific ROM families: Generic, LineageOS, crDroid, Evolution X, DerpFest, RisingOS, AOSPA, PixelExperience, Pixel, Infinity, Havoc, Axion.
+- **Keybox priority and persistence**: rebuilt keybox selection logic. New order: **CLOUD → CACHED → LOCAL**. A preferred keybox can be pinned — cloud takes priority when available, selection persists as fallback when cloud is unreachable. Sync now supports multiple keyboxes per provider, detects duplicates, and preserves the previous catalog on network failure.
+- **Security Patch — manual date override**: **Auto / Manual** toggle added to the Security Patch module. Manual mode uses a visual month/day picker stored in `manual_security_patch.cfg` with priority over PIF metadata auto-detection.
+- **Status — CACHED keybox indicator**: Integrity Checker now distinguishes a cloud Keybox whose provider is temporarily unavailable (**CACHED**) from a live online source. State badges (Online, Offline, Local, Cached, Missing) are fully localized.
+- **Help Center — richer diagnostics**: Report.sh rewritten with +270 lines of new logic: JSON-structured output, ROM family trace detection across all supported families, full Keybox state (hash, preferred, source, SHA256), and service script status.
+- **KeyboxLoader**: **CACHED** badge and provider name now shown per keybox entry in the list; sync label updated to reflect catalog rebuild flow.
+- **Module Settings — UI cleanup**: `Spoof Lineage Props` and `Lineage v2` flags removed; both are now part of the dedicated Spoof ROM Props module.
+- **Dynamic UI scaling**: WebUI now measures the host system text scale via a hidden probe element and adjusts the root font size (`--ibu-root-font-size`) accordingly. Scales down on compact screens (< 360 px wide or < 700 px tall) and responds live to resize and orientation changes.
+- **AutoPilot mode documentation**: Xtreme and Keybox Only mode descriptions rewritten from daemon source. **Xtreme**: hourly — targets + security patches; every 24 h — Keybox catalog rebuild and injection; every 3 days — PIF rotation (pool of 10 profiles) + GMS cache wipe. **Keybox Only**: hourly — target scope only; every 24 h — Keybox only.
+
 > Release Date: 21/05/2026
 
 #### 🛠️ IntegrityBox Ultimate v41.0
