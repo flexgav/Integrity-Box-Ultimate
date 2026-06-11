@@ -1,3 +1,21 @@
+> Release Date: 11/06/2026
+
+#### 🚀 IntegrityBox Ultimate v42.0
+
+- **First-run setup reworked**: the initial setup flow is now split into safe automatic steps and optional advanced steps. In Manual mode, sensitive stages are confirmed with Vol+/Vol- prompts; in Auto mode, defaults are applied without extra interaction.
+- **Metamodule and mount compatibility**: improved handling for KernelSU/APatch mount setups. The module now sets protective mount markers and the diagnostic report checks Mountify plus other metamodule-style solutions.
+- **Execution locks for critical tasks**: Action, AutoPilot, PIF handling, Target updates, Keybox synchronization, and tool downloads are protected from duplicate parallel execution. Repeated starts now detect active work, stale locks, and stuck processes instead of running a second cycle over the first one.
+- **Safer updates**: before installing an update, the module stops old runtime workers so code from the previous version does not continue running alongside the new installation.
+- **Target Box pipeline**: target list handling is now centralized. `target.txt` generation supports scheduled refresh, cached/local fallback, current-file backup, and Manual mode protection. Reports now include Target Box status, `target.txt` contents, and the file itself without duplicating the same data in JSON.
+- **PIF Processing 2.0**: PIF handling is now a single managed flow. Pool update and profile application timestamps are separated (`last_pif_check`, `last_pif_pool_update`, `last_pif_applied`), so AutoPilot can schedule by the actual applied profile while Status still reflects the active local file.
+- **Keybox synchronization rebuilt**: provider sync now has clearer diagnostics, provider-level logs, cache preservation, local XML import, deduplication, cleanup of stale entries, and protection against parallel sync runs.
+- **Tool downloader rebuilt**: tool downloads are now a separate controlled stage with list validation, checksum verification, explicit return codes, and a dedicated diagnostic log.
+- **Structured diagnostics**: runtime and service scripts now use structured file logs with level, stage, event, return code, and message fields. Terminal output for installer and Action has been unified and cleaned up.
+- **Boot and runtime reliability**: post-boot, background, uninstall, and verification stages now expose clearer return codes and fewer silent failures. AutoPilot watchdog handling, timeout checks, stale process cleanup, and runtime marker cleanup were improved.
+- **Expanded report package**: reports now include metamodule state, Target Box state, PIF/security patch state, companion module status, raw/effective TEE state, and diagnostic log copies.
+- **Status and WebUI updates**: Status now shows PIF source, metadata state, TEE state, companion modules, CDN/network diagnostics, and active-file state more clearly. UI cards and shared components were polished, including automatic-height behavior for profile/mode blocks.
+- **General cleanup**: bundled PIF pool updated, module icon refreshed, credits added, ShellCheck cleanup performed, and obsolete helper components removed.
+
 > Release Date: 31/05/2026
 
 #### 🚀 IntegrityBox Ultimate v41.5
