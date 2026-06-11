@@ -34,13 +34,28 @@
 **IntegrityBox Ultimate** is a practical toolkit for keeping an Android device with root access clean, certified, and easier to manage. It brings keybox handling, Play Integrity helpers, app-hiding templates, Google services cleanup, and device status checks into one Material You WebUI.
 
 ### ✨ Highlights
-* ️ **Core Attestation:** Automatic `fingerprint` management, cloud keybox loading, `Boot Hash`, and `Security Patch` helpers for Play Integrity checks.
-* 🕶️ **Advanced Stealth:** Ready-made `HideMyApplist` profile for banking and detector apps, risky-app scanning, suspicious-file hiding, and `Anti-Detection Nuke` cleanup modes.
-* 🤖 **AutoPilot:** Background automation that keeps the module data fresh without requiring manual checks every day.
-* 🛠️ **System Toolkit:** Google Wallet reset, deep GMS cleanup, Widevine L1 repair on supported devices, SELinux Enforcing helper, selected app-data cleanup, and diagnostic report export.
-* 🎨 **Modern UI:** Material You WebUI with interactive tiles, Quick Access, built-in AI Assistant, and Help Center.
-* 📥 **Selectable downloads:** `Integrity Downloader` shows available APK/ZIP/JSON files with checkboxes, so you can download only the tools you need.
-* ⚙️ **Advanced Configuration:** `Target Box` and `Target Simulator` support Auto/Manual modes, custom `target.txt` import, per-app target control, Zygiskless Mode, and profile switching.
+* ️ **Play Integrity in one place:** manage PIF, Keybox, `target.txt`, Boot Hash, and Security Patch without stacking multiple conflicting modules.
+* 🔑 **Keybox Hub:** cloud Keybox catalog, cached fallback, local XML import from `/sdcard/Download` and `/sdcard/Documents`, active Keybox selection, and state checks in **Integrity Checker**.
+* 🧬 **Fingerprint Selector:** built-in profile pool, scheduled PIF updates/application, manual Action refresh, and visible source information for the active profile.
+* 🎯 **Target Box:** automatic `target.txt` generation for Tricky Store, Manual mode protection, custom list import, and backup before changes.
+* 🧪 **Target Simulator:** per-app attestation tuning when a specific bank, Wallet, or service requires a different target mode.
+* 🗓️ **Security Patch:** automatic patch-date detection from PIF plus manual override through a date picker.
+* 🔓 **Boot Hash Spoofer:** extract the real device Boot Hash and apply a manual override for apps that check bootloader or VBMeta state.
+* 🛡️ **TEE / Widevine tools:** TEE state diagnostics, hardware-attestation backend support, and Widevine L1 repair attempts on supported devices.
+* 🧹 **Spoof ROM Props:** automatic and manual cleanup for Custom ROM traces: LineageOS, crDroid, Evolution X, DerpFest, RisingOS, AOSPA, PixelExperience, Pixel, Infinity, Havoc, Axion, and Generic.
+* 🕶️ **Root-environment hiding:** HideMyApplist template, suspicious-file hiding, TWRP/Fox/Magisk trace cleanup, and Anti-Detection Nuke.
+* 🧰 **GMS Tools:** deep GMS wipe, Google Wallet reset, selected app-data cleanup, and preparation for fresh Play Store checks.
+* 🤖 **AutoPilot:** scheduled background maintenance for Keybox, PIF, Target Box, and security patches.
+* 📦 **Integrity Downloader:** selectable APK/ZIP/JSON downloads directly from WebUI.
+* 📊 **Integrity Checker and Help Center:** active Keybox, PIF, TEE, Target Box, companion modules, network state, and diagnostic report export.
+* 🎨 **Modern WebUI:** Material You interface, Quick Access, localization, built-in module guides, and AI Assistant.
+
+### 🧭 Quick Navigation
+* **Installing for the first time?** Start with [Installation & Ultimate Setup Guide](#-installation--ultimate-setup-guide).
+* **Not sure what must be removed first?** See [Conflicting modules](#️-conflicting-modules-to-remove-or-disable).
+* **Need Tricky Store, Zygisk, HMA, or other tools?** See [Core Requirements](#-core-requirements), [Optional, but highly recommended](#-optional-but-highly-recommended), and [Integrity Downloader](#-useful-tools-from-integrity-downloader).
+* **Want manual control over `target.txt`?** See [Automatic and Manual Target List Control](#-automatic-and-manual-target-list-control).
+* **Something fails or an app detects root?** See [Quick Troubleshooting](#️-quick-troubleshooting).
 
 ---
 
@@ -69,6 +84,10 @@ For comfortable use and maximum stealth, make sure the environment is built with
 4. **WebUI.** To open the control panel, install [**MMRL**](https://github.com/MMRLApp/MMRL/releases/latest), [**WebUI X Portable**](https://github.com/MMRLApp/WebUI-X-Portable/releases/latest), or use built-in WebUI support in your Root Manager.
 
    If WebUI does not open directly, install [**KsuWebUIStandalone**](https://github.com/KOWX712/KsuWebUIStandalone/releases/latest) manually as a fallback first. After you can open WebUI, its APK can also be downloaded through Integrity Downloader.
+
+5. **Mount metamodules.** IntegrityBox Ultimate itself does not require a separate metamodule just to work. A metamodule is only needed if you use other systemless modules that actually mount files into `/system`, `/vendor`, `/product`, `/system_ext`, `/odm`, or similar partitions.
+
+   If you use KernelSU/APatch with a metamodule, keep only one mounting solution active at a time. IntegrityBox Ultimate sets `skip_mount` and `skip_mountify` markers so such solutions do not process it as a module with a system mount payload. Metamodule state is included in diagnostic reports.
 
 ## ⚠️ Conflicting modules to remove or disable
 
@@ -151,37 +170,45 @@ For a clean setup and the best chance of restoring Play Store certification, fol
 > If this is your first setup, follow the steps in order and do not enable extra tools until you complete the first Play Store certification check.
 
 1. ✅ **Install Dependencies:** Make sure your Root Manager is installed and only one hardware attestation backend is selected.
-2. 📲 **Flash IntegrityBox Ultimate:** Install the module zip. During installation, the module automatically syncs the Keybox catalog from the cloud. If prompted **"Erase previous installation data?"** — press **Vol Up** to reset or **Vol Down** to keep existing settings.
-3. 🔄 **Reboot your device.** On the first boot, the module runs a full automatic setup sequence: disables ROM native spoofing, applies Banking Mode defaults, extracts the real Boot Hash, runs Standard Nuke cleanup, applies ZygiskNext stealth settings, attempts Widevine L1 repair, and enables AutoPilot Xtreme.
-4. ▶️ **Run the main action:** Open your Root Manager's module list and tap **Action** on the IntegrityBox Ultimate card. Wait until it finishes; it will refresh the Keybox and prepare fresh device identity data.
-5. 🔎 **Check the result:** Open the WebUI → **Toolkit** → **Integrity Checker**, and confirm that the active Keybox is `ONLINE` and device identity data is present.
-6. 🧼 **Deep Clean GMS:** Go to **Toolkit** → **GMS Tools** and run **Deep GMS Wipe**. This removes old Google certification states and Google Services Framework data. Reboot when prompted. *(You will be logged out of your Google Account.)*
-7. ✅ **Re-login & Verify:** After rebooting, open the Play Store, log back into your Google account, and check your Play Protect certification status.
-8. 🤖 **Check AutoPilot:** Go to **Auto Pilot** → **AutoPilot Manager** — the daemon should already be running in Xtreme mode. Switch to **Keybox Only** if you prefer minimal system impact.
-9. 🧹 **Custom ROM Props if needed:** If your device runs a custom ROM, open **Custom ROM Spoofing** → **Spoof ROM Props** and enable **Auto Mode** — the module will scan for ROM-family traces and enable the matching cleanup cards automatically.
-10. 📦 **Export a diagnostic package if needed:** If certification or apps are still unstable, open **Help Center** → **Export Report**. The archive will be saved to `/sdcard/IntegrityBox/Reports`.
+2. 📲 **Flash IntegrityBox Ultimate:** Install the module zip. During installation, the module syncs the Keybox catalog from the cloud, prepares metamodule compatibility, and stops old background workers from the previous version.
+3. 🧭 **Choose setup behavior:** If prompted **"Erase previous installation data?"** — press **Vol Up** to reset or **Vol Down** to keep existing settings. On a clean install, you will also see the first-run setup mode prompt: **Vol Up** selects Manual mode with confirmation for advanced stages, **Vol Down** or timeout selects Auto mode with default values.
+4. 🔄 **Reboot your device.** On first boot, the module performs initial setup: baseline safe defaults, Target Box, PIF, Keybox, Boot Hash, Security Patch, AutoPilot, and service profiles. In Manual mode, additional stages are confirmed separately to avoid overwriting user settings without permission.
+5. ▶️ **Run the main action:** Open your Root Manager's module list and tap **Action** on the IntegrityBox Ultimate card. Wait until it finishes; it will refresh Keybox data, check PIF/Target schedules, and run only stages that are due.
+6. 🔎 **Check the result:** Open WebUI → **Toolkit** → **Integrity Checker**, and confirm that the active Keybox is `ONLINE` and the page correctly shows PIF source, Target Box, TEE, and companion modules.
+7. 🧼 **Deep Clean GMS:** Go to **Toolkit** → **GMS Tools** and run **Deep GMS Wipe**. This removes old Google certification states and Google Services Framework data. Reboot when prompted. *(You will be logged out of your Google Account.)*
+8. ✅ **Re-login & Verify:** After rebooting, open the Play Store, log back into your Google account, and check your Play Protect certification status.
+9. 🤖 **Check AutoPilot:** Go to **Auto Pilot** → **AutoPilot Manager** — the daemon should already be running in Xtreme mode. Switch to **Keybox Only** if you prefer minimal system impact.
+10. 🧹 **Custom ROM Props if needed:** If your device runs a custom ROM, open **Custom ROM Spoofing** → **Spoof ROM Props** and enable **Auto Mode** — the module will scan for ROM-family traces and enable the matching cleanup cards automatically.
+11. 📦 **Export a diagnostic package if needed:** If certification or apps are still unstable, open **Help Center** → **Export Report**. The archive will be saved to `/sdcard/IntegrityBox/Reports`.
 
 > [!NOTE]
-> Boot Hash and Widevine L1 are configured automatically on first install. To adjust Boot Hash manually later — open **Detection** → **Boot Hash Spoofer**. To re-run Widevine L1 repair — use **Keybox Hub** → **Fix Widevine L1**.
+> Boot Hash and Widevine L1 can be configured automatically during first setup or confirmed manually in Manual mode. To adjust Boot Hash later — open **Detection** → **Boot Hash Spoofer**. To re-run Widevine L1 repair — use **Keybox Hub** → **Fix Widevine L1**.
+
+> [!IMPORTANT]
+> Do not tap **Action** repeatedly. In v42.0 critical operations are protected from duplicate execution, but it is still better to wait for the current cycle to finish: a repeated run can be skipped as an already active operation.
 
 ### 🕶️ Advanced Stealth Setup
 For users who need banking or government apps to see a cleaner device, we recommend setting up HideMyApplist (HMA) with the built-in helpers:
 
 > [!IMPORTANT]
+> If you already have your own HMA filter configured, do not run **Inject HMA Template** unless you actually need it: the IntegrityBox template can overwrite your current profile. During first setup, the module asks for confirmation for this stage separately.
+
+> [!NOTE]
 > In most cases, you do not need to open HMA manually before injecting the profile: IntegrityBox Ultimate attempts to create the required data directories and write the configuration automatically. If automatic injection fails, open HMA once, close it, and run **Inject HMA Template** again.
 
 1. 📥 **Download Tools:** Open WebUI -> **Miscellaneous** -> **Module Settings**. Toggle **Integrity Downloader** ON and tap **Apply Changes**. In the dialog, select the tools you need with checkboxes. For the HMA scenario, you usually need **LSPosedVector.zip**, **HMA_OSS.apk**, and **HMA_Config.json**. Downloaded files will be saved to `/sdcard/IntegrityBox/Downloads`.
 2. 🧩 **Install LSPosed / Vector:** Flash `/sdcard/IntegrityBox/Downloads/LSPosedVector.zip` in your Root Manager and reboot your device.
 3. 🕵️ **Install HMA:** Open `/sdcard/IntegrityBox/Downloads/HMA_OSS.apk`, install HideMyApplist, and enable it in LSPosed.
 4. 🛡️ **Inject the HMA profile:** Open WebUI -> **Hide My Stuff** -> **Inject HMA Template**. This applies ready-made hiding rules for many banking and government apps directly into HMA.
-5. 📱 **Install PixelMask for Google Photos features:** PixelMask can unlock selected Pixel features for Google Photos on your phone. Depending on the selected profile, this may include unlimited Original-quality photo and video backup or Pixel-only features such as Video Boost, Night Sight Video, Add Me, Reimagine, and Magic Editor.
+5. 🧰 **Manual HMA import fallback:** If automatic injection fails, open the HMA app and manually import `/sdcard/IntegrityBox/Downloads/HMA_Config.json` through HMA's import/restore configuration flow.
+6. 📱 **Install PixelMask for Google Photos features:** PixelMask can unlock selected Pixel features for Google Photos on your phone. Depending on the selected profile, this may include unlimited Original-quality photo and video backup or Pixel-only features such as Video Boost, Night Sight Video, Add Me, Reimagine, and Magic Editor.
 
-For maximum stealth and anti-detection, use these tools according to the symptoms:
+#### For maximum stealth and anti-detection, use these tools according to the symptoms
 
 1. 🏦 **Banking Mode:** Open **Toolkit** -> **Utility Box** and enable **Banking Mode**. It hides ADB/debug state and sets `sys.oem_unlock_allowed=0`.
 2. 🛡️ **SELinux Enforcing:** On the home page, open **Cleanup & SELinux** -> **Enforce SELinux** and make sure the module status shows SELinux as `Enforcing`.
-3. 🧩 **Strict Zygisk/Shamiko isolation:** Use **ZygiskNext & Shamiko** -> **Enable Whitelist Mode** to enable strict isolation. Configure the app list separately in your Root Manager's DenyList or in the ZygiskNext/Shamiko settings.
-4. ⚙️ **Optimize ZygiskNext:** Tap **ZygiskNext & Shamiko** -> **Optimize ZygiskNext** if you use Zygisk Next. The module applies recommended controller stealth settings.
+3. 🧩 **Strict Zygisk/Shamiko isolation:** Use **Zygisk Providers & Shamiko** -> **Enable Whitelist Mode** to enable strict isolation. Configure the app list separately in your Root Manager's DenyList or in the ZygiskNext/Shamiko settings.
+4. ⚙️ **Optimize Zygisk provider:** Tap **Zygisk Providers & Shamiko** -> **Optimize Zygisk Provider** if you use Zygisk Next or a supported fork. The module applies recommended controller stealth settings.
 5. 🧰 **Anti-detection flags:** In **Miscellaneous** → **Module Settings**, enable only what you actually need: **Debug Fingerprint**, **Debug Build**, **Build Tag**, **Clear LSposed**, **Spoof Encryption**, **Hide Recovery**, **Clear Gapps Logs**, and **Archive Manager Logs**. For ROM trace cleanup, use **Custom ROM Spoofing** → **Spoof ROM Props**.
 6. 🗂️ **Hide suspicious files:** Use **Hide My Stuff** -> **Hide Suspicious Files** if an app sees `TWRP`, `Fox`, `Magisk`, root managers, or old traces on `/sdcard`. Do not add random system paths.
 7. 🧹 **Reset the app state:** After changing HMA, Target, props, or Boot Hash, open **Cleanup & SELinux** -> **App Data Cleaner** and clear data/cache for the problematic app so it re-checks the environment.
@@ -326,7 +353,23 @@ Every item below **deletes the selected prop** from the current Android property
 
 </details>
 
-### 🎯 Manual Target List Control
+### 🎯 Automatic and Manual Target List Control
+In automatic mode, **Target Box** builds `/data/adb/tricky_store/target.txt` from a managed app list. You can view the current template in the repository:
+
+[targetList/target.list](https://github.com/flexgav/IntegrityBox-Ultimate/blob/main/targetList/target.list)
+
+The module first tries to fetch the latest list from the repository. If the network is unavailable, it uses the last cached list; if no cache exists yet, it falls back to the bundled list from the module ZIP. Before changing `target.txt`, the current file is backed up to `/data/adb/tricky_store/target.txt.bak`.
+
+The automatic list includes:
+
+* **Core Google packages:** Google Play Services, Play Store, Google Services Framework, and Google Wallet. These are always written.
+* **Optional Google components:** SafetyCore, Google Contact Keys, Google Pay India, and similar packages. These are added only when installed on the device.
+* **Checker apps:** Play Integrity, Key Attestation, Keybox Checker, and similar verification tools.
+* **Root/Xposed/native detectors:** apps that check root, Zygisk, Xposed, Magisk, app lists, and low-level environment signals.
+* **Additional checkers:** bootloader, NFC, DRM, and APK signature verification apps.
+
+If the TEE/backend is marked as broken or its state cannot be determined, the module applies forced attestation through the active Keybox for Tricky Store compatibility.
+
 If you want to use your own app list instead of the automatic template:
 
 1. Open WebUI -> **Customize Tricky Store** -> **Target Box**.
@@ -334,6 +377,9 @@ If you want to use your own app list instead of the automatic template:
 3. Use **Import Target** to select your own `target.txt` through the built-in file picker.
 4. For per-app tuning, open **Customize Tricky Store** -> **Target Simulator**: there you can select an app, profile, mode, and import a custom target file.
 5. If you enable **Auto Update Target List** again, the module will apply its own rules and refresh the displayed app list from the current `target.txt`.
+
+> [!NOTE]
+> In automatic mode, Target Box updates by schedule through AutoPilot and when Action runs. Manual mode protects your own `target.txt` from being overwritten. Before changing the file, the module creates a backup, and Target Box state is included in the diagnostic report.
 
 ---
 
@@ -353,7 +399,7 @@ If you want to use your own app list instead of the automatic template:
 ### 🧪 Play Integrity fails
 1. Open WebUI -> **Toolkit** -> **Integrity Checker**.
 2. Check **Active Keybox**: the status should be `ONLINE`, and the Keybox source should be shown correctly.
-3. If the Keybox is missing or the status is not `ONLINE`, open WebUI -> **Keybox Hub** -> **Keybox Loader**. Select **Slot 1** at the top *(the primary slot)*, tap **Force Cloud Sync**, wait for the list to refresh, then tap a fresh Keybox with the `PROVIDER` badge and confirm loading it into **Slot 1**. If the cloud list does not appear, check your internet connection and GitHub access. If sync is still unavailable, place your own XML Keybox in `/sdcard/Download` or `/sdcard/Documents`, tap the refresh button, and load the detected `LOCAL` Keybox into **Slot 1**.
+3. If the Keybox is missing or the status is not `ONLINE`, open WebUI -> **Keybox Hub** -> **Keybox Loader**. Select **Slot 1** at the top *(the primary slot)*, tap **Rebuild Catalog**, wait for the list to refresh, then tap a fresh Keybox with the `PROVIDER` badge and confirm loading it into **Slot 1**. If the cloud list does not appear, check your internet connection and GitHub access. If sync is still unavailable, place your own XML Keybox in `/sdcard/Download` or `/sdcard/Documents`, tap the refresh button, and load the detected `LOCAL` Keybox into **Slot 1**.
 4. After updating the Keybox, run WebUI -> **Toolkit** -> **GMS Tools** -> **Deep GMS Wipe**, reboot, and check the Play Store again.
 
 ### 🛒 Play Store says "Device not certified"
