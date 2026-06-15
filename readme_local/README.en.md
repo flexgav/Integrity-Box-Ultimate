@@ -37,8 +37,7 @@
 * ️ **Play Integrity in one place:** manage PIF, Keybox, `target.txt`, Boot Hash, and Security Patch without stacking multiple conflicting modules.
 * 🔑 **Keybox Hub:** cloud Keybox catalog, cached fallback, local XML import from `/sdcard/Download` and `/sdcard/Documents`, active Keybox selection, and state checks in **Integrity Checker**.
 * 🧬 **Fingerprint Selector:** built-in profile pool, scheduled PIF updates/application, manual Action refresh, and visible source information for the active profile.
-* 🎯 **Target Box:** automatic `target.txt` generation for Tricky Store, Manual mode protection, custom list import, and backup before changes.
-* 🧪 **Target Simulator:** per-app attestation tuning when a specific bank, Wallet, or service requires a different target mode.
+* 🎯 **Target Box:** automatic `target.txt` generation, protected Manual mode, import and backup, plus per-app Default/AOSP/Private profiles and AUTO/GENERATE/LEAF modes.
 * 🗓️ **Security Patch:** automatic patch-date detection from PIF plus manual override through a date picker.
 * 🔓 **Boot Hash Spoofer:** extract the real device Boot Hash and apply a manual override for apps that check bootloader or VBMeta state.
 * 🛡️ **TEE / Widevine tools:** TEE state diagnostics, hardware-attestation backend support, and Widevine L1 repair attempts on supported devices.
@@ -375,7 +374,7 @@ If you want to use your own app list instead of the automatic template:
 1. Open WebUI -> **Customize Tricky Store** -> **Target Box**.
 2. Disable **Auto Update Target List** if you want full manual control over `target.txt`.
 3. Use **Import Target** to select your own `target.txt` through the built-in file picker.
-4. For per-app tuning, open **Customize Tricky Store** -> **Target Simulator**: there you can select an app, profile, mode, and import a custom target file.
+4. For per-app tuning, enable the app in Target Box, then select the **Default**, **AOSP**, or **Private** profile and the **AUTO**, **GENERATE**, or **LEAF** mode. You can also select several apps and apply one configuration in bulk.
 5. If you enable **Auto Update Target List** again, the module will apply its own rules and refresh the displayed app list from the current `target.txt`.
 
 > [!NOTE]
@@ -394,7 +393,7 @@ If you want to use your own app list instead of the automatic template:
 
 ## 🛠️ Quick Troubleshooting
 > [!NOTE]
-> Start with the simple checks first: Keybox status, Deep GMS Wipe, reboot, and Play Store certification check. Use Target Simulator, Boot Hash Spoofer, and Nuke only when you know which exact check is failing.
+> Start with the simple checks first: Keybox status, Deep GMS Wipe, reboot, and Play Store certification check. Use advanced Target Box modes, Boot Hash Spoofer, and Nuke only when you know which exact check is failing.
 
 ### 🧪 Play Integrity fails
 1. Open WebUI -> **Toolkit** -> **Integrity Checker**.
@@ -427,12 +426,12 @@ If you want to use your own app list instead of the automatic template:
 
 ### 🔐 An app fails hardware attestation / TEE
 > [!IMPORTANT]
-> Target Simulator is configured per app. Do not apply it to all apps at once.
+> Advanced Target Box profiles are configured per app. Do not apply them to all apps at once.
 
 1. First make sure **Active Keybox** in **Integrity Checker** is `ONLINE`.
-2. Open WebUI -> **Customize Tricky Store** -> **Target Simulator**.
+2. Open WebUI -> **Customize Tricky Store** -> **Target Box**.
 3. Find the target app by name or package name.
-4. For the first attempt, select **Default** profile and **AUTO** mode, then tap **Save**.
+4. Enable Target for the app, then select **Default** profile and **AUTO** mode for the first attempt. Changes are saved automatically.
 5. Force stop the problematic app or reboot, then test it again.
 6. If **AUTO** does not help, try **LEAF** for the same app. Use **GENERATE** only as a last resort when it is clear that the app does not accept the normal attestation chain.
 

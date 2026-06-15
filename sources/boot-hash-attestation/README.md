@@ -2,9 +2,9 @@
 
 Place the source code for the Boot Hash Java/Dex helper here.
 
-The client module currently ships this compiled artifact:
+In the installed module, the compiled artifact lives at (`$MODDIR` = `/data/adb/modules/playintegrityfix`):
 
-- `IntegrityBox-Ultimate-Clnt/webroot/common_scripts/BootHashAttestation/boot_attest.jar`
+- `/data/adb/modules/playintegrityfix/common_scripts/BootHashAttestation/boot_attest.jar`
 
 Recommended layout:
 
