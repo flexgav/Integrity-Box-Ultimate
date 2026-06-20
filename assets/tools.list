@@ -7,8 +7,8 @@
 # 3. SHA256
 
 ZygiskNext.zip
-https://github.com/Dr-TSNG/ZygiskNext/releases/download/v1.3.4/Zygisk-Next-1.3.4-746-d1b76b3-release.zip
-b330b368e6133b83c069c0ff1bb1bf81091afec5a8d6532d39c14bd1b7e5d367
+https://github.com/Dr-TSNG/ZygiskNext/releases/download/v1.4.0/Zygisk-Next-1.4.0-768-37ee2d5-release.zip
+97791423c705726478b95c2fb625af29f3899baff1a61e322f0977f0cb1141b1
 
 TrickyStore.zip
 https://github.com/5ec1cff/TrickyStore/releases/download/1.4.1/Tricky-Store-v1.4.1-245-72b2e84-release.zip
@@ -19,8 +19,8 @@ https://github.com/vvb2060/KeyAttestation/releases/download/v1.8.4/KeyAttestatio
 e22ae305deca589fc9af2dc8940f5c62bac7120bed817f80da1f345a9ec69897
 
 Duck_Detector.apk
-https://github.com/eltavine/Duck-Detector-Refactoring/releases/download/nightly/Duck.Detector-2026.06.07-64d32c0c49b0.apk
-244a795170e0a20160032b7a9450abd84889bf8b15ecb25087db8b92b3c2e6d3
+https://github.com/eltavine/Duck-Detector-Refactoring/releases/download/nightly/Duck.Detector-2026.06.17-981fa8ad2abf.apk
+14131b3c244b40507350cd2ce42c51e474b825ed46f6a7e34357c677cc892132
 
 Native_Root_Detector.apk
 https://github.com/reveny/Android-Native-Root-Detector/releases/download/v7.7.0/native-root-detector-v7.7.0.apk
@@ -51,8 +51,8 @@ https://github.com/LSPosed/CorePatch/releases/download/4.9/app-release.apk
 1bdc47d5b48afffd37948a9f5638ae6a5f3d4d02ca01ae36143588284b979996
 
 Thor_Installer.apk
-https://github.com/trinadhthatakula/Thor/releases/download/v1.80.6/foss-release.apk
-81483ca98d1ca4b0dc05e7f7966e433f8507201b28c5f5809c07854bbe9d6b02
+https://github.com/trinadhthatakula/Thor/releases/download/v1.81.8/foss-release.apk
+6e834ee57539e802fba708184db1db88e6a55ec781321fad9bb627ec31d7de1c
 
 Android_Faker.apk
 https://github.com/Android1500/AndroidFaker/releases/download/v1.9.2/app-release.apk
