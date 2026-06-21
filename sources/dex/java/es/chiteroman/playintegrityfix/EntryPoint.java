@@ -156,24 +156,39 @@ public final class EntryPoint {
         clearCaches();
     }
 
-    // Inlined replacement for org.lsposed.hiddenapibypass.HiddenApiBypass.
-    // Uses meta-reflection (invoking Class.getDeclaredMethod through a reflected
-    // Method so the call is attributed to the platform) to reach the hidden
-    // dalvik.system.VMRuntime#setHiddenApiExemptions and lift all restrictions
-    // ("L" matches every type signature). Required on API >= P so the reflective
-    // PackageInfo/SigningInfo access used by the signature spoof keeps working.
+    // Keep direct reflection as a fallback for runtimes where meta-reflection is blocked.
     private static void liftHiddenApiRestrictions() throws Exception {
-        Method getDeclaredMethod = Class.class.getDeclaredMethod(
-                "getDeclaredMethod", String.class, Class[].class);
-        Method forName = (Method) getDeclaredMethod.invoke(
-                Class.class, "forName", new Class[]{String.class});
-        Class<?> vmRuntimeClass = (Class<?>) forName.invoke(null, "dalvik.system.VMRuntime");
-        Method getRuntime = (Method) getDeclaredMethod.invoke(
-                vmRuntimeClass, "getRuntime", null);
-        Method setHiddenApiExemptions = (Method) getDeclaredMethod.invoke(
-                vmRuntimeClass, "setHiddenApiExemptions", new Class[]{String[].class});
-        Object vmRuntime = getRuntime.invoke(null);
-        setHiddenApiExemptions.invoke(vmRuntime, new Object[]{new String[]{"L"}});
+        Exception metaFailure;
+        try {
+            Method getDeclaredMethod = Class.class.getDeclaredMethod(
+                    "getDeclaredMethod", String.class, Class[].class);
+            Method forName = (Method) getDeclaredMethod.invoke(
+                    Class.class, "forName", new Class[]{String.class});
+            Class<?> vmRuntimeClass = (Class<?>) forName.invoke(null, "dalvik.system.VMRuntime");
+            Method getRuntime = (Method) getDeclaredMethod.invoke(
+                    vmRuntimeClass, "getRuntime", null);
+            Method setHiddenApiExemptions = (Method) getDeclaredMethod.invoke(
+                    vmRuntimeClass, "setHiddenApiExemptions", new Class[]{String[].class});
+            Object vmRuntime = getRuntime.invoke(null);
+            setHiddenApiExemptions.invoke(vmRuntime, new Object[]{new String[]{"L"}});
+            return;
+        } catch (Exception e) {
+            metaFailure = e;
+        }
+
+        try {
+            Class<?> vmRuntimeClass = Class.forName("dalvik.system.VMRuntime");
+            Method getRuntime = vmRuntimeClass.getDeclaredMethod("getRuntime");
+            Method setHiddenApiExemptions = vmRuntimeClass.getDeclaredMethod(
+                    "setHiddenApiExemptions", String[].class);
+            getRuntime.setAccessible(true);
+            setHiddenApiExemptions.setAccessible(true);
+            Object vmRuntime = getRuntime.invoke(null);
+            setHiddenApiExemptions.invoke(vmRuntime, new Object[]{new String[]{"L"}});
+        } catch (Exception fallbackFailure) {
+            fallbackFailure.addSuppressed(metaFailure);
+            throw fallbackFailure;
+        }
     }
 
     private static void clearCaches() {
