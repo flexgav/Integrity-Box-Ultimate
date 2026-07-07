@@ -7,8 +7,8 @@
 # 3. SHA256
 
 ZygiskNext.zip
-https://github.com/Dr-TSNG/ZygiskNext/releases/download/v1.4.0/Zygisk-Next-1.4.0-768-37ee2d5-release.zip
-97791423c705726478b95c2fb625af29f3899baff1a61e322f0977f0cb1141b1
+https://github.com/Dr-TSNG/ZygiskNext/releases/download/v1.4.2/Zygisk-Next-1.4.2-789-119aaa0-release.zip
+44f17aacfc3e40747811445a8f3f627aba195115de2f9bcf2e6ed909a993fbab
 
 TrickyStore.zip
 https://github.com/5ec1cff/TrickyStore/releases/download/1.4.1/Tricky-Store-v1.4.1-245-72b2e84-release.zip
@@ -19,8 +19,8 @@ https://github.com/vvb2060/KeyAttestation/releases/download/v1.8.4/KeyAttestatio
 e22ae305deca589fc9af2dc8940f5c62bac7120bed817f80da1f345a9ec69897
 
 Duck_Detector.apk
-https://github.com/eltavine/Duck-Detector-Refactoring/releases/download/nightly/Duck.Detector-2026.06.17-981fa8ad2abf.apk
-14131b3c244b40507350cd2ce42c51e474b825ed46f6a7e34357c677cc892132
+https://github.com/eltavine/Duck-Detector-Refactoring/releases/download/nightly/Duck.Detector-2026.07.03-fd7b9bb44630.apk
+735fc69576b238e9e70c75a10adafadceadd1d3752f7ace9a804d4e917c23bf7
 
 Native_Root_Detector.apk
 https://github.com/reveny/Android-Native-Root-Detector/releases/download/v7.7.0/native-root-detector-v7.7.0.apk
@@ -35,8 +35,8 @@ https://raw.githubusercontent.com/flexgav/IntegrityBox-Ultimate/main/hidemyappli
 0157739423bfa00e03064e4f515bf6c76a17f929ed6a6c8a910a13af0b3967a3
 
 HMA_OSS.apk
-https://github.com/frknkrc44/HMA-OSS/releases/download/oss-161/HMA-OSS-oss-161-release.apk
-059f9fa4a2ccdef83f281d9434c852d29a0728d5e0e4e0f1e13d96fade6947cd
+https://github.com/frknkrc44/HMA-OSS/releases/download/oss-162/HMA-OSS-oss-162-release.apk
+dd5f995a223eac038b0b5147b5cfc69ae911ebcc04e2af5fb0e8a4eb68dbb9de
 
 PixelMask.apk
 https://github.com/kinginu/PixelMask/releases/download/15-1.1.0/PixelMask-1.1.0.apk
@@ -51,8 +51,8 @@ https://github.com/LSPosed/CorePatch/releases/download/4.9/app-release.apk
 1bdc47d5b48afffd37948a9f5638ae6a5f3d4d02ca01ae36143588284b979996
 
 Thor_Installer.apk
-https://github.com/trinadhthatakula/Thor/releases/download/v1.81.8/foss-release.apk
-6e834ee57539e802fba708184db1db88e6a55ec781321fad9bb627ec31d7de1c
+https://github.com/trinadhthatakula/Thor/releases/download/v1.82.3/foss-release.apk
+52682f50c1aa2f0763a0b86628749676df970d6457143ff74109524ff06323f2
 
 Android_Faker.apk
 https://github.com/Android1500/AndroidFaker/releases/download/v1.9.2/app-release.apk

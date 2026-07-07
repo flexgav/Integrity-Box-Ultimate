@@ -1,6 +1,6 @@
-> Release Date: 11/06/2026
+> Release Date: 22/06/2026
 
-#### 🚀 IntegrityBox Ultimate v42.0
+#### 🚀 IntegrityBox Ultimate v42.3
 
 - **First-run setup reworked**: the initial setup flow is now split into safe automatic steps and optional advanced steps. In Manual mode, sensitive stages are confirmed with Vol+/Vol- prompts; in Auto mode, defaults are applied without extra interaction.
 - **Metamodule and mount compatibility**: improved handling for KernelSU/APatch mount setups. The module now sets protective mount markers and the diagnostic report checks Mountify plus other metamodule-style solutions.
@@ -14,7 +14,13 @@
 - **Boot and runtime reliability**: post-boot, background, uninstall, and verification stages now expose clearer return codes and fewer silent failures. AutoPilot watchdog handling, timeout checks, stale process cleanup, and runtime marker cleanup were improved.
 - **Expanded report package**: reports now include metamodule state, Target Box state, PIF/security patch state, companion module status, raw/effective TEE state, and diagnostic log copies.
 - **Status and WebUI updates**: Status now shows PIF source, metadata state, TEE state, companion modules, CDN/network diagnostics, and active-file state more clearly. UI cards and shared components were polished, including automatic-height behavior for profile/mode blocks.
-- **General cleanup**: bundled PIF pool updated, module icon refreshed, credits added, ShellCheck cleanup performed, and obsolete helper components removed.
+- **WebUI reorganized**: modules were renamed to clear, purpose-based names and regrouped for easier navigation (e.g. Certified → GMS Tools, Risky → Applist Detector, Control → Zygiskless Mode). **Target Box and Target Simulator were merged** into a single Target Box module. **Spoof Apps** was added as a new module for per-app attestation spoofing.
+- **Spoof ROM Props — 20+ new ROM families**: coverage expanded well beyond the original set with AlphaDroid, ArrowOS, Avium, Bliss, CalyxOS, Clover, GrapheneOS, Halcyon, LMODroid, Lumine, Lunaris, MatrixX, Mica, MistOS, PixelOS, Sakura, StatiX, Superior, WitaQua, YAAP, and more.
+- **Per-app spoofing engine**: the bundled dex and Zygisk companion libraries were rebuilt to drive the new Spoof Apps flow, and a cached app-label helper makes the app picker (Spoof Apps / HMA) load faster.
+- **Keybox policy — freshest cloud always wins**: keybox selection now always prefers the newest published cloud keybox and supersedes a manual pin (important after an upstream revocation); the manual pin applies only when no cloud keybox is reachable (offline / sync failure).
+- **Advanced Spoofing — A10 mode fix**: Play Store SDK Downgrade (A10) is now mutually exclusive with Pixel / Vending-fingerprint / Provider / Signature spoofing, and its state is persisted to both `cust.spf.prop` and `custom_toggles.env` so it survives later toggles.
+- **Default profile — Pixelify**: when no profile control file is present, the module now applies the Pixelify profile (provider spoof off) instead of an advanced preset, to avoid breaking STRONG attestation.
+- **Maintenance & hardening**: bundled tools updated (ZygiskNext 1.4.0 and others), execution-lock and SKIP-path handling tightened, PIF pool streamlined, and a broad WebUI polish and localization pass across all modules.
 
 > Release Date: 31/05/2026
 
