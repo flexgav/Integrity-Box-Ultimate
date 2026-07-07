@@ -35,15 +35,17 @@
 
 ### ✨ Highlights
 * ️ **Play Integrity in one place:** manage PIF, Keybox, `target.txt`, Boot Hash, and Security Patch without stacking multiple conflicting modules.
-* 🔑 **Keybox Hub:** cloud Keybox catalog, cached fallback, local XML import from `/sdcard/Download` and `/sdcard/Documents`, active Keybox selection, and state checks in **Integrity Checker**.
+* 🔑 **Keybox Hub:** cloud Keybox catalog, cached fallback, local XML import from `/sdcard/Download` and `/sdcard/Documents`, active Keybox selection, and state checks in **Integrity Checker**. The freshest published cloud Keybox always takes priority and supersedes a manual pin; the manual pin only applies when the cloud is unreachable.
 * 🧬 **Fingerprint Selector:** built-in profile pool, scheduled PIF updates/application, manual Action refresh, and visible source information for the active profile.
 * 🎯 **Target Box:** automatic `target.txt` generation, protected Manual mode, import and backup, plus per-app Default/AOSP/Private profiles and AUTO/GENERATE/LEAF modes.
 * 🗓️ **Security Patch:** automatic patch-date detection from PIF plus manual override through a date picker.
 * 🔓 **Boot Hash Spoofer:** extract the real device Boot Hash and apply a manual override for apps that check bootloader or VBMeta state.
 * 🛡️ **TEE / Widevine tools:** TEE state diagnostics, hardware-attestation backend support, and Widevine L1 repair attempts on supported devices.
-* 🧹 **Spoof ROM Props:** automatic and manual cleanup for Custom ROM traces: LineageOS, crDroid, Evolution X, DerpFest, RisingOS, AOSPA, PixelExperience, Pixel, Infinity, Havoc, Axion, and Generic.
+* 🧹 **Spoof ROM Props:** automatic and manual cleanup for 30+ Custom ROM traces: LineageOS, crDroid, Evolution X, DerpFest, RisingOS, AOSPA, PixelExperience, Pixel, GrapheneOS, CalyxOS, PixelOS, ArrowOS, StatiX, and more (Generic covers the rest).
+* 🎭 **Spoof Apps:** targeted device-fingerprint and property spoofing for individual third-party apps — beyond GMS and Play Store. Useful for apps that check `Build` fields locally, bypassing the Play Integrity verdict.
 * 🕶️ **Root-environment hiding:** HideMyApplist template, suspicious-file hiding, TWRP/Fox/Magisk trace cleanup, and Anti-Detection Nuke.
-* 🧰 **GMS Tools:** deep GMS wipe, Google Wallet reset, selected app-data cleanup, and preparation for fresh Play Store checks.
+* 🧰 **GMS Tools:** soft-restart Google Play Services/Play Store, Google Wallet data reset, and deep GMS/Play Store/GSF wipe to re-prepare the device for a fresh Play Store check.
+* 🧼 **App Data Cleaner:** clear data and cache for individually selected apps — handy after changing HMA, a Target profile, props, or Boot Hash, so the app re-checks the environment.
 * 🤖 **AutoPilot:** scheduled background maintenance for Keybox, PIF, Target Box, and security patches.
 * 📦 **Integrity Downloader:** selectable APK/ZIP/JSON downloads directly from WebUI.
 * 📊 **Integrity Checker and Help Center:** active Keybox, PIF, TEE, Target Box, companion modules, network state, and diagnostic report export.
@@ -184,7 +186,7 @@ For a clean setup and the best chance of restoring Play Store certification, fol
 > Boot Hash and Widevine L1 can be configured automatically during first setup or confirmed manually in Manual mode. To adjust Boot Hash later — open **Detection** → **Boot Hash Spoofer**. To re-run Widevine L1 repair — use **Keybox Hub** → **Fix Widevine L1**.
 
 > [!IMPORTANT]
-> Do not tap **Action** repeatedly. In v42.0 critical operations are protected from duplicate execution, but it is still better to wait for the current cycle to finish: a repeated run can be skipped as an already active operation.
+> Do not tap **Action** repeatedly. Critical operations are protected from duplicate execution, but it is still better to wait for the current cycle to finish: a repeated run can be skipped as an already active operation.
 
 ### 🕶️ Advanced Stealth Setup
 For users who need banking or government apps to see a cleaner device, we recommend setting up HideMyApplist (HMA) with the built-in helpers:
