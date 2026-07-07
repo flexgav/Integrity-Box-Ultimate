@@ -171,15 +171,15 @@ For a clean setup and the best chance of restoring Play Store certification, fol
 > If this is your first setup, follow the steps in order and do not enable extra tools until you complete the first Play Store certification check.
 
 1. ✅ **Install Dependencies:** Make sure your Root Manager is installed and only one hardware attestation backend is selected.
-2. 📲 **Flash IntegrityBox Ultimate:** Install the module zip. During installation, the module syncs the Keybox catalog from the cloud, prepares metamodule compatibility, and stops old background workers from the previous version.
+2. 📲 **Flash IntegrityBox Ultimate:** Install the module zip. During installation, the module prepares metamodule compatibility and stops old background workers from the previous version.
 3. 🧭 **Choose setup behavior:** If prompted **"Erase previous installation data?"** — press **Vol Up** to reset or **Vol Down** to keep existing settings. On a clean install, you will also see the first-run setup mode prompt: **Vol Up** selects Manual mode with confirmation for advanced stages, **Vol Down** or timeout selects Auto mode with default values.
 4. 🔄 **Reboot your device.** On first boot, the module performs initial setup: baseline safe defaults, Target Box, PIF, Keybox, Boot Hash, Security Patch, AutoPilot, and service profiles. In Manual mode, additional stages are confirmed separately to avoid overwriting user settings without permission.
-5. ▶️ **Run the main action:** Open your Root Manager's module list and tap **Action** on the IntegrityBox Ultimate card. Wait until it finishes; it will refresh Keybox data, check PIF/Target schedules, and run only stages that are due.
+5. ▶️ **Run the main action:** Open your Root Manager's module list and tap **Action** on the IntegrityBox Ultimate card. Right after boot the module may still be running first-boot background tasks, so **Action** can fail to start right away and show a message that another operation is already in progress — if that happens, wait a couple of minutes and try again. Wait until it finishes: it will refresh Keybox data, check PIF/Target schedules, and run only the stages that are actually needed.
 6. 🔎 **Check the result:** Open WebUI → **Toolkit** → **Integrity Checker**, and confirm that the active Keybox is `ONLINE` and the page correctly shows PIF source, Target Box, TEE, and companion modules.
-7. 🧼 **Deep Clean GMS:** Go to **Toolkit** → **GMS Tools** and run **Deep GMS Wipe**. This removes old Google certification states and Google Services Framework data. Reboot when prompted. *(You will be logged out of your Google Account.)*
+7. 🧼 **Deep Clean GMS:** Go to **Play Integrity Fix** → **GMS Tools** and run **Deep GMS Wipe**. This removes old Google certification states and Google Services Framework data. Reboot when prompted. *(You will be logged out of your Google Account.)*
 8. ✅ **Re-login & Verify:** After rebooting, open the Play Store, log back into your Google account, and check your Play Protect certification status.
 9. 🤖 **Check AutoPilot:** Go to **Auto Pilot** → **AutoPilot Manager** — the daemon should already be running in Xtreme mode. Switch to **Keybox Only** if you prefer minimal system impact.
-10. 🧹 **Custom ROM Props if needed:** If your device runs a custom ROM, open **Custom ROM Spoofing** → **Spoof ROM Props** and enable **Auto Mode** — the module will scan for ROM-family traces and enable the matching cleanup cards automatically.
+10. 🧹 **Custom ROM Props if needed:** If your device runs a custom ROM, open **Detection** → **Spoof ROM Props** and enable **Auto Mode** — the module will scan for ROM-family traces and enable the matching cleanup cards automatically.
 11. 📦 **Export a diagnostic package if needed:** If certification or apps are still unstable, open **Help Center** → **Export Report**. The archive will be saved to `/sdcard/IntegrityBox/Reports`.
 
 > [!NOTE]
@@ -210,7 +210,7 @@ For users who need banking or government apps to see a cleaner device, we recomm
 2. 🛡️ **SELinux Enforcing:** On the home page, open **Cleanup & SELinux** -> **Enforce SELinux** and make sure the module status shows SELinux as `Enforcing`.
 3. 🧩 **Strict Zygisk/Shamiko isolation:** Use **Zygisk Providers & Shamiko** -> **Enable Whitelist Mode** to enable strict isolation. Configure the app list separately in your Root Manager's DenyList or in the ZygiskNext/Shamiko settings.
 4. ⚙️ **Optimize Zygisk provider:** Tap **Zygisk Providers & Shamiko** -> **Optimize Zygisk Provider** if you use Zygisk Next or a supported fork. The module applies recommended controller stealth settings.
-5. 🧰 **Anti-detection flags:** In **Miscellaneous** → **Module Settings**, enable only what you actually need: **Debug Fingerprint**, **Debug Build**, **Build Tag**, **Clear LSposed**, **Spoof Encryption**, **Hide Recovery**, **Clear Gapps Logs**, and **Archive Manager Logs**. For ROM trace cleanup, use **Custom ROM Spoofing** → **Spoof ROM Props**.
+5. 🧰 **Anti-detection flags:** In **Miscellaneous** → **Module Settings**, enable only what you actually need: **Debug Fingerprint**, **Debug Build**, **Build Tag**, **Clear LSposed**, **Spoof Encryption**, **Hide Recovery**, **Clear Gapps Logs**, and **Archive Manager Logs**. For ROM trace cleanup, use **Detection** → **Spoof ROM Props**.
 6. 🗂️ **Hide suspicious files:** Use **Hide My Stuff** -> **Hide Suspicious Files** if an app sees `TWRP`, `Fox`, `Magisk`, root managers, or old traces on `/sdcard`. Do not add random system paths.
 7. 🧹 **Reset the app state:** After changing HMA, Target, props, or Boot Hash, open **Cleanup & SELinux** -> **App Data Cleaner** and clear data/cache for the problematic app so it re-checks the environment.
 8. 🔥 **Anti-Detection Nuke:** Use **Detection** -> **Anti-Detection Nuke** only for clear leftover traces. Start with **Soft Cleanup**, then **Standard Nuke**. Keep **Aggressive Nuke** as the last resort.
@@ -401,7 +401,7 @@ If you want to use your own app list instead of the automatic template:
 1. Open WebUI -> **Toolkit** -> **Integrity Checker**.
 2. Check **Active Keybox**: the status should be `ONLINE`, and the Keybox source should be shown correctly.
 3. If the Keybox is missing or the status is not `ONLINE`, open WebUI -> **Keybox Hub** -> **Keybox Loader**. Select **Slot 1** at the top *(the primary slot)*, tap **Rebuild Catalog**, wait for the list to refresh, then tap a fresh Keybox with the `PROVIDER` badge and confirm loading it into **Slot 1**. If the cloud list does not appear, check your internet connection and GitHub access. If sync is still unavailable, place your own XML Keybox in `/sdcard/Download` or `/sdcard/Documents`, tap the refresh button, and load the detected `LOCAL` Keybox into **Slot 1**.
-4. After updating the Keybox, run WebUI -> **Toolkit** -> **GMS Tools** -> **Deep GMS Wipe**, reboot, and check the Play Store again.
+4. After updating the Keybox, run WebUI -> **Play Integrity Fix** -> **GMS Tools** -> **Deep GMS Wipe**, reboot, and check the Play Store again.
 
 ### 🛒 Play Store says "Device not certified"
 1. Make sure Play Integrity already passes in **Integrity Checker**.
@@ -409,14 +409,14 @@ If you want to use your own app list instead of the automatic template:
 3. Check the integrity verdict: go back to Play Store **Settings** -> **General** -> **Developer options** -> in the **Play Integrity** section, tap **Check integrity**.
 4. The result should show a passing integrity verdict. For normal Play Store certification, **Device integrity** / `MEETS_DEVICE_INTEGRITY` should pass; for Google Wallet and strict banking apps, **Strong integrity** / `MEETS_STRONG_INTEGRITY` is usually required.
 5. Also check the certification status: **Play Store** -> profile avatar -> **Settings** -> **About** -> **Play Protect certification**. The expected status is **Device is certified**.
-6. If the integrity verdict passes but the Play Store still says **Device is not certified**, open WebUI -> **Toolkit** -> **GMS Tools** -> **Deep GMS Wipe**.
+6. If the integrity verdict passes but the Play Store still says **Device is not certified**, open WebUI -> **Play Integrity Fix** -> **GMS Tools** -> **Deep GMS Wipe**.
 7. Reboot, open the Play Store, sign in again, and wait a few minutes. Then repeat the integrity and certification checks above.
 
 ### 💳 Google Wallet / GPay fails
 1. First run the built-in Play Integrity check through the Play Store: **Play Store** -> profile avatar -> **Settings** -> **General** -> **Developer options** -> **Play Integrity** -> **Check integrity**. If **Developer options** is not visible, enable it using the previous scenario.
 2. Google Wallet usually requires **Strong integrity** / `MEETS_STRONG_INTEGRITY`. If only **Device integrity** passes, the Play Store may be certified, but Wallet can still reject payments.
 3. If **Strong integrity** does not pass, go back to **Play Integrity fails**: check **Active Keybox**, refresh the Keybox through **Keybox Loader**, then run **Deep GMS Wipe** and reboot.
-4. If **Strong integrity** passes but Wallet still fails, open WebUI -> **Toolkit** -> **GMS Tools** -> **Wallet Reset**. This clears Wallet's local state that may have cached a previous security failure.
+4. If **Strong integrity** passes but Wallet still fails, open WebUI -> **Play Integrity Fix** -> **GMS Tools** -> **Wallet Reset**. This clears Wallet's local state that may have cached a previous security failure.
 5. Reboot, open Google Wallet, add your cards again if needed, and test contactless payment.
 
 ### 🏦 A banking app detects root, Xposed, or suspicious apps
@@ -458,6 +458,7 @@ If you still cannot restore Google certification or get the required apps workin
 The module ZIP already contains readable JS, HTML, CSS, shell scripts, and config files. Separate source folders are provided only for components shipped as compiled binaries:
 
 - `sources/zygisk/` - source code and build notes for native Zygisk libraries from `IntegrityBox-Ultimate-Clnt/zygisk/*.so`.
+- `sources/dex/` - Java source code the bundled `classes.dex` is built from (PIF entry point, provider, and keystore hooks).
 - `sources/boot-hash-attestation/` - source code and build notes for the `boot_attest.jar` helper.
 - `sources/licenses/` - licenses and notices for compiled components.
 
