@@ -1,3 +1,14 @@
+> Release Date: 24/06/2026
+
+#### 🛠️ IntegrityBox Ultimate v42.4
+
+- **Profile switching — false error fixed**: applying a profile could show a red "operation failed" message even when the switch actually completed successfully; success is now verified against the device's real active-profile state instead of the raw shell exit code.
+- **Keybox Loader — sync now also applies the keybox**: the sync button no longer just rebuilds the visible list — it now selects and activates the current keybox into Slot 1 in the same step, and AutoPilot's schedule correctly recognizes a manual sync so the next automatic check isn't needlessly delayed. Renamed to **Sync & Apply Keybox** ("Обновить Кейбоксы") to match, with the in-app guide updated to describe the actual selection policy (freshest cloud keybox always wins over a manual pin).
+- **App list loading hardened**: fixed cases where the installed-app list (Spoof Apps, App Data Cleaner, Applist Detector, Target Box) could fail to populate or load very slowly on some devices; app names are now generated directly from the package identifier instead of a bundled native tool.
+- **WebUI visibility timing fixed**: the WebUI button no longer appears from a background AutoPilot cycle right after a fresh install — it now unlocks only after a user-initiated Action run, as intended.
+- **Status labels clarified**: the Activity Log's "Last check" (Keybox) and "Last read" (Fingerprint) timestamps actually showed when the active file was last written, not when it was last checked; both are now labeled **Last applied** to reflect what they really measure.
+- **Scheduling reliability**: Keybox, PIF, and Target refresh intervals are now defined in a single shared place instead of separately in AutoPilot and Action, removing a risk of the two silently drifting apart if a schedule is adjusted in the future.
+
 > Release Date: 22/06/2026
 
 #### 🚀 IntegrityBox Ultimate v42.3
