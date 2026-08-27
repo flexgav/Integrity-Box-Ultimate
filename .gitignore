@@ -1,0 +1,7 @@
+# --- Gradle: кэш и вывод сборки (генерируется, машинно-локальное, не коммитить) ---
+.gradle/
+sources/zygisk/build/build/
+
+# --- OS / IDE шум ---
+Thumbs.db
+.DS_Store

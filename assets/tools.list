@@ -7,20 +7,28 @@
 # 3. SHA256
 
 ZygiskNext.zip
-https://github.com/Dr-TSNG/ZygiskNext/releases/download/v1.4.2/Zygisk-Next-1.4.2-789-119aaa0-release.zip
-44f17aacfc3e40747811445a8f3f627aba195115de2f9bcf2e6ed909a993fbab
+https://github.com/Dr-TSNG/ZygiskNext/releases/download/v1.5.0/Zygisk-Next-1.5.0-843-5217106-release.zip
+474d58abc208c0779e7f8f1d8449db755a874d475c13b9cf8decf74bc171933b
 
+# TrickyStore backend — обе сборки имеют module id "tricky_store",
+# поэтому ставить нужно ТОЛЬКО ОДНУ из них:
+#   TrickyStore.zip     = оригинал 5ec1cff (исходники закрыты с 1.1.0, релизы бинарные)
+#   TrickyStore_OSS.zip = FOSS-форк beakthoven (drop-in: те же пути конфигов и module id)
 TrickyStore.zip
 https://github.com/5ec1cff/TrickyStore/releases/download/1.4.1/Tricky-Store-v1.4.1-245-72b2e84-release.zip
 2f5e73fcba0e4e43b6e96b38f333cbe394873e3a81cf8fe1b831c2fbd6c46ea9
+
+TrickyStore_OSS.zip
+https://github.com/beakthoven/TrickyStoreOSS/releases/download/v3.1.0/Tricky-Store-OSS-v3.1.0-172-41383f5-Release.zip
+f1df8a04d2d020b9c4dda304d22c69ac62be8bdd6187a7bf0a3b94ec2152c9c3
 
 KeyAttestation.apk
 https://github.com/vvb2060/KeyAttestation/releases/download/v1.8.4/KeyAttestation-v1.8.4.apk
 e22ae305deca589fc9af2dc8940f5c62bac7120bed817f80da1f345a9ec69897
 
 Duck_Detector.apk
-https://github.com/eltavine/Duck-Detector-Refactoring/releases/download/nightly/Duck.Detector-2026.07.15-220804f96035.apk
-297d548427cc5335089443e7077f334fde6ea8bb9f78ef8b2d9e201d8624cfdc
+https://github.com/eltavine/Duck-Detector-Refactoring/releases/download/nightly/Duck.Detector-2026.08.26-19d59a072e64.apk
+03b52e1d602f5293d927b9922022c7cd4bd9f60f6bc436492dd2a790e36bc459
 
 Native_Root_Detector.apk
 https://github.com/reveny/Android-Native-Root-Detector/releases/download/v7.7.0/native-root-detector-v7.7.0.apk
@@ -35,8 +43,8 @@ https://raw.githubusercontent.com/flexgav/IntegrityBox-Ultimate/main/hidemyappli
 0157739423bfa00e03064e4f515bf6c76a17f929ed6a6c8a910a13af0b3967a3
 
 HMA_OSS.zip
-https://github.com/frknkrc44/HMA-OSS/releases/download/oss-164/HMA-OSS-ZYGISK-oss-164-release.zip
-4bf157db64f0daa59137436fef8eafeb3180d0fd545ca2e1196b47aa8abef9fa
+https://github.com/frknkrc44/HMA-OSS/releases/download/oss-166/HMA-OSS-ZYGISK-oss-166-release.zip
+fb4f845688c2a1d2a8880c6c68b40903e1aa1319dc8c2dd275e0f3162a9ce605
 
 PixelMask.apk
 https://github.com/kinginu/PixelMask/releases/download/15-1.1.0/PixelMask-1.1.0.apk
@@ -47,17 +55,17 @@ https://github.com/KOWX712/KsuWebUIStandalone/releases/download/v1.0/KsuWebUI-1.
 e781356ed1312c9c19d290e80e2816609f7cb909fb8ae557e6b88b6ffc7416a2
 
 Core_Patch.apk
-https://github.com/LSPosed/CorePatch/releases/download/4.9/app-release.apk
-1bdc47d5b48afffd37948a9f5638ae6a5f3d4d02ca01ae36143588284b979996
+https://github.com/LSPosed/CorePatch/releases/download/N-1.0/app-release.apk
+506b21a5be2a2cf4d6a0d7d048ab13ed4a166dfea1cce098002c5aea0196967c
 
 Thor_Installer.apk
-https://github.com/trinadhthatakula/Thor/releases/download/v1.92.0/foss-release.apk
-4a11ab3a9d0e454fbf00051fa1b6ec883d5cb4ffad450255f87520b1d6c21d68
+https://github.com/trinadhthatakula/Thor/releases/download/v1.95.1/foss-release.apk
+8a2e8cf0a96327679392267e363e99ed09cedf8a7d9502704ff6dee028b901b1
 
 Android_Faker.apk
 https://github.com/Android1500/AndroidFaker/releases/download/v1.9.2/app-release.apk
 7d36b972d559e35d1b14ef7e2e9e37a8e5237de585d87511e30e70a31c2d567c
 
 LSPosedVector.zip
-https://github.com/JingMatrix/Vector/releases/download/v2.0/Vector-v2.0-3021-Release.zip
-d5e39669c02c2c699ab948eb8f3639b348eefb7749553224a9c62fa4a2f2dc18
+https://github.com/JingMatrix/Vector/releases/download/v2.2/Vector-v2.2-3080-Release.zip
+9ee8323575d615f7b3f1076ff60b2a63a49390ef11881b52632311a37f6f79cc
