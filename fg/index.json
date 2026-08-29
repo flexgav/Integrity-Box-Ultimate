@@ -1,14 +1,1 @@
-[
-    {
-        "file":  "fg1.json",
-        "status":  3,
-        "updated":  "2026-06-12T06:05:09Z",
-        "hash":  "76580c95abe7517391043082b7573946e5c02b2a5acebebb1f1c94cdbac721b8"
-    },
-    {
-        "file":  "fg2.json",
-        "status":  3,
-        "updated":  "2026-06-12T06:05:09Z",
-        "hash":  "ee137ae89eb2d98e56eec4c7d584e7f4749916df4a0046b073f73d4e633900fb"
-    }
-]
+[]

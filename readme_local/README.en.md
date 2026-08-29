@@ -35,7 +35,8 @@
 
 ### ✨ Highlights
 * ️ **Play Integrity in one place:** manage PIF, Keybox, `target.txt`, Boot Hash, and Security Patch without stacking multiple conflicting modules.
-* 🔑 **Keybox Hub:** cloud Keybox catalog, cached fallback, local XML import from `/sdcard/Download` and `/sdcard/Documents`, active Keybox selection, and state checks in **Integrity Checker**. The freshest published cloud Keybox always takes priority and supersedes a manual pin; the manual pin only applies when the cloud is unreachable.
+* 🔑 **Keybox Hub:** cloud Keybox catalog, cached fallback, local XML import from `/sdcard/Download` and `/sdcard/Documents`, active Keybox selection, and state checks in **Integrity Checker**. The freshest published **non-revoked** cloud Keybox always takes priority and supersedes a manual pin; the manual pin only applies when the cloud is unreachable.
+* 🚫 **Keybox revocation checks:** keyboxes are matched against Google's certificate revocation list, and each one is tagged **ACTUAL / REVOKED / UNCHECKED**. A revoked key is no longer treated as usable: the engine switches to the next actual keybox on its own, and if *all* candidates are revoked it keeps the current one applied (a revoked key still passes for a few days until GMS syncs the ban) and switches as soon as an actual keybox appears. Only the public bulk list is used — downloaded, matched locally, discarded — so your specific key is never sent anywhere and cannot accelerate its own ban.
 * 🧬 **Fingerprint Selector:** built-in profile pool, scheduled PIF updates/application, manual Action refresh, and visible source information for the active profile.
 * 🎯 **Target Box:** automatic `target.txt` generation, protected Manual mode, import and backup, plus per-app Default/AOSP/Private profiles and AUTO/GENERATE/LEAF modes.
 * 🗓️ **Security Patch:** automatic patch-date detection from PIF plus manual override through a date picker.
@@ -44,9 +45,9 @@
 * 🧹 **Spoof ROM Props:** automatic and manual cleanup for 30+ Custom ROM traces: LineageOS, crDroid, Evolution X, DerpFest, RisingOS, AOSPA, PixelExperience, Pixel, GrapheneOS, CalyxOS, PixelOS, ArrowOS, StatiX, and more (Generic covers the rest).
 * 🎭 **Spoof Apps:** targeted device-fingerprint and property spoofing for individual third-party apps — beyond GMS and Play Store. Useful for apps that check `Build` fields locally, bypassing the Play Integrity verdict.
 * 🕶️ **Root-environment hiding:** HideMyApplist template, suspicious-file hiding, TWRP/Fox/Magisk trace cleanup, and Anti-Detection Nuke.
-* 🧰 **GMS Tools:** soft-restart Google Play Services/Play Store, Google Wallet data reset, and deep GMS/Play Store/GSF wipe to re-prepare the device for a fresh Play Store check.
-* 🧼 **App Data Cleaner:** clear data and cache for individually selected apps — handy after changing HMA, a Target profile, props, or Boot Hash, so the app re-checks the environment.
-* 🤖 **AutoPilot:** scheduled background maintenance for Keybox, PIF, Target Box, and security patches.
+* 🧰 **GMS Tools:** soft-restart Google Play Services/Play Store together with a GMS cache drop, including the DroidGuard verdict cache — without it a restart replays the old result and a spoofing change looks like it never applied. Plus Google Wallet data reset and a deep GMS/Play Store/GSF wipe to re-prepare the device for a fresh Play Store check.
+* 🧼 **App Data Cleaner:** clear data and cache for individually selected apps, system packages included — handy after changing HMA, a Target profile, props, or Boot Hash, so the app re-checks the environment. Packages whose full wipe could reset every system setting, kill mobile connectivity or bootloop the device are locked out of accidental erasure; clearing *cache* stays available for every package.
+* 🤖 **AutoPilot:** scheduled background maintenance for Keybox, PIF, Target Box, and security patches. The schedule is anchored to a fixed grid, so the cycle no longer creeps into the night, and a refresh that lands while offline is retried every hour until connectivity returns, instead of being burned for a full day.
 * 📦 **Integrity Downloader:** selectable APK/ZIP/JSON downloads directly from WebUI.
 * 📊 **Integrity Checker and Help Center:** active Keybox, PIF, TEE, Target Box, companion modules, network state, and diagnostic report export.
 * 🎨 **Modern WebUI:** Material You interface, Quick Access, localization, built-in module guides, and AI Assistant.
@@ -395,12 +396,12 @@ If you want to use your own app list instead of the automatic template:
 
 ## 🛠️ Quick Troubleshooting
 > [!NOTE]
-> Start with the simple checks first: Keybox status, Deep GMS Wipe, reboot, and Play Store certification check. Use advanced Target Box modes, Boot Hash Spoofer, and Nuke only when you know which exact check is failing.
+> Start with the simple checks first: Keybox status, **Restart Services**, then **Deep GMS Wipe** if needed, reboot, and Play Store certification check. Use advanced Target Box modes, Boot Hash Spoofer, and Nuke only when you know which exact check is failing.
 
 ### 🧪 Play Integrity fails
 1. Open WebUI -> **Toolkit** -> **Integrity Checker**.
-2. Check **Active Keybox**: the status should be `ONLINE`, and the Keybox source should be shown correctly.
-3. If the Keybox is missing or the status is not `ONLINE`, open WebUI -> **Keybox Hub** -> **Keybox Loader**. Select **Slot 1** at the top *(the primary slot)*, tap **Rebuild Catalog**, wait for the list to refresh, then tap a fresh Keybox with the `PROVIDER` badge and confirm loading it into **Slot 1**. If the cloud list does not appear, check your internet connection and GitHub access. If sync is still unavailable, place your own XML Keybox in `/sdcard/Download` or `/sdcard/Documents`, tap the refresh button, and load the detected `LOCAL` Keybox into **Slot 1**.
+2. Check **Active Keybox**. These are **two independent axes** and both matter: availability — the status should be `ONLINE`; and actuality — the **Actuality** line should read `ACTUAL`. A Keybox can be `ONLINE` and `REVOKED` at the same time: synced from the cloud, but banned by Google and about to stop passing.
+3. If the Keybox is missing, the status is not `ONLINE`, or it is flagged `REVOKED`, open WebUI -> **Keybox Hub** -> **Keybox Loader**. Select **Slot 1** at the top *(the primary slot)*, tap **Sync & Apply Keybox**, wait for the list to refresh, then tap a fresh Keybox carrying both the `PROVIDER` badge and the `ACTUAL` tag, and confirm loading it into **Slot 1**. If the cloud list does not appear, check your internet connection and GitHub access. If sync is still unavailable, place your own XML Keybox in `/sdcard/Download` or `/sdcard/Documents`, tap the refresh button, and load the detected `LOCAL` Keybox into **Slot 1**.
 4. After updating the Keybox, run WebUI -> **Play Integrity Fix** -> **GMS Tools** -> **Deep GMS Wipe**, reboot, and check the Play Store again.
 
 ### 🛒 Play Store says "Device not certified"
@@ -415,9 +416,10 @@ If you want to use your own app list instead of the automatic template:
 ### 💳 Google Wallet / GPay fails
 1. First run the built-in Play Integrity check through the Play Store: **Play Store** -> profile avatar -> **Settings** -> **General** -> **Developer options** -> **Play Integrity** -> **Check integrity**. If **Developer options** is not visible, enable it using the previous scenario.
 2. Google Wallet usually requires **Strong integrity** / `MEETS_STRONG_INTEGRITY`. If only **Device integrity** passes, the Play Store may be certified, but Wallet can still reject payments.
-3. If **Strong integrity** does not pass, go back to **Play Integrity fails**: check **Active Keybox**, refresh the Keybox through **Keybox Loader**, then run **Deep GMS Wipe** and reboot.
-4. If **Strong integrity** passes but Wallet still fails, open WebUI -> **Play Integrity Fix** -> **GMS Tools** -> **Wallet Reset**. This clears Wallet's local state that may have cached a previous security failure.
-5. Reboot, open Google Wallet, add your cards again if needed, and test contactless payment.
+3. **If you have just changed spoofing settings** (profile, fingerprint, **Advanced Spoofing** toggles), start with the light step: WebUI -> **Play Integrity Fix** -> **GMS Tools** -> the **Restart Services** button. It drops the DroidGuard verdict cache that keeps Google Play Services handing Wallet the **old** check result even though the settings already changed. Your cards and account are untouched. This is often enough — try adding a card right after.
+4. If **Strong integrity** does not pass, go back to **Play Integrity fails**: check **Active Keybox** (both the `ONLINE` status and the `ACTUAL` tag), refresh the Keybox through **Keybox Loader**, then run **Deep GMS Wipe** and reboot.
+5. If **Strong integrity** passes but Wallet still fails, open WebUI -> **Play Integrity Fix** -> **GMS Tools** -> the **Clear Wallet Data** button. It wipes Wallet's local state that cached a previous security failure and drops the services cache as well. You will **not** be signed out of your Google account, but you will most likely need to add your cards again.
+6. Reboot, open Google Wallet, add your cards again if needed, and test contactless payment.
 
 ### 🏦 A banking app detects root, Xposed, or suspicious apps
 1. Make sure **HideMyApplist / HMA-OSS** is installed, the HMA module is enabled in LSPosed, and the banking app is selected in HMA's LSPosed scope.
