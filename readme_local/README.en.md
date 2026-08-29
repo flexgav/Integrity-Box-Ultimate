@@ -66,28 +66,23 @@ For comfortable use and maximum stealth, make sure the environment is built with
 
 1. **Root solution.** Recommended order for devices where banking and government apps matter:
 
-   - **Preferred:** [**SukiSU Ultra**](https://github.com/SukiSU-Ultra/SukiSU-Ultra/releases/latest) or [**KernelSU Next**](https://github.com/KernelSU-Next/KernelSU-Next/releases/latest) together with **SUSFS**.
-     Full SUSFS support requires more than just the Manager APK: the device must boot a kernel / AnyKernel3 / boot image that already includes SUSFS patches. After flashing such a kernel, also install the userspace module [**susfs4ksu / SUSFS-FOR-KERNELSU**](https://github.com/sidex15/susfs4ksu-module/releases/latest).
+   - **Preferred:** [**SukiSU Ultra**](https://github.com/SukiSU-Ultra/SukiSU-Ultra/releases/latest) or [**KernelSU Next**](https://github.com/KernelSU-Next/KernelSU-Next/releases/latest). This is enough for the module to work; anti-detection can optionally be strengthened further with **SUSFS** (optional, see "Optional, but highly recommended").
 
-   - **Alternative:** [**APatch**](https://github.com/bmax121/APatch/releases/latest), if there is no stable KernelSU / SukiSU / SUSFS kernel for your device or you specifically need kernel-based root without a Magisk-like setup.
+   - **Alternative:** [**APatch**](https://github.com/bmax121/APatch/releases/latest), if there is no stable KernelSU / SukiSU kernel for your device or you specifically need kernel-based root without a Magisk-like setup.
 
    - **Fallback:** [**Kitsune Magisk / Kitsune Ufork**](https://t.me/KitsuneUfork). Use it only when KernelSU Next, SukiSU Ultra, or APatch are unavailable for your device. Stable behavior with strict banking apps is not guaranteed on Kitsune, because Magisk-like environments more often leave visible traces.
 
    Use only **one** root solution at a time. Do not mix Magisk / Kitsune, KernelSU Next, SukiSU Ultra, and APatch in the same system unless you fully understand the consequences.
 
-2. **SUSFS and stealth.** If you choose SukiSU Ultra or KernelSU Next, using a **SUSFS** kernel build for your exact device, Android version, kernel branch, and firmware is recommended for better anti-detection.
-
-   Simply patching `boot.img` or `init_boot.img` through a Manager can provide root access, but it does not guarantee SUSFS support. If the kernel does not contain SUSFS patches, the `susfs4ksu` module cannot enable kernel-level hiding.
-
-3. **Hardware attestation backend.** Install [**Tricky Store**](https://github.com/5ec1cff/TrickyStore/releases/latest) or [**TEE Simulator**](https://github.com/JingMatrix/TEESimulator/releases/latest) if apps check hardware-backed keys and TEE / KeyMint attestation.
+2. **Hardware attestation backend.** Install [**Tricky Store**](https://github.com/5ec1cff/TrickyStore/releases/latest) or [**TEE Simulator**](https://github.com/JingMatrix/TEESimulator/releases/latest) if apps check hardware-backed keys and TEE / KeyMint attestation.
 
    Use only **one** attestation backend. Tricky Store, TrickyStoreOSS, TEE Simulator, and their forks must not run at the same time.
 
-4. **WebUI.** To open the control panel, install [**MMRL**](https://github.com/MMRLApp/MMRL/releases/latest), [**WebUI X Portable**](https://github.com/MMRLApp/WebUI-X-Portable/releases/latest), or use built-in WebUI support in your Root Manager.
+3. **WebUI.** To open the control panel, install [**MMRL**](https://github.com/MMRLApp/MMRL/releases/latest), [**WebUI X Portable**](https://github.com/MMRLApp/WebUI-X-Portable/releases/latest), or use built-in WebUI support in your Root Manager.
 
    If WebUI does not open directly, install [**KsuWebUIStandalone**](https://github.com/KOWX712/KsuWebUIStandalone/releases/latest) manually as a fallback first. After you can open WebUI, its APK can also be downloaded through Integrity Downloader.
 
-5. **Mount metamodules.** IntegrityBox Ultimate itself does not require a separate metamodule just to work. A metamodule is only needed if you use other systemless modules that actually mount files into `/system`, `/vendor`, `/product`, `/system_ext`, `/odm`, or similar partitions.
+4. **Mount metamodules.** IntegrityBox Ultimate itself does not require a separate metamodule just to work. A metamodule is only needed if you use other systemless modules that actually mount files into `/system`, `/vendor`, `/product`, `/system_ext`, `/odm`, or similar partitions.
 
    If you use KernelSU/APatch with a metamodule, keep only one mounting solution active at a time. IntegrityBox Ultimate sets `skip_mount` and `skip_mountify` markers so such solutions do not process it as a module with a system mount payload. Metamodule state is included in diagnostic reports.
 
@@ -118,6 +113,7 @@ For comfortable use and maximum stealth, make sure the environment is built with
 
 1. [**Zygisk Next**](https://github.com/Dr-TSNG/ZygiskNext/releases/latest) or [**ReZygisk**](https://github.com/PerformanC/ReZygisk/releases/latest) *(needed for Zygisk-based features unless you use the standalone Zygiskless Pixel Mode)*.
 2. [**LSPosed / Vector**](https://github.com/JingMatrix/Vector/releases/latest) and [**HideMyApplist / HMA-OSS**](https://github.com/frknkrc44/HMA-OSS/releases/latest) *(recommended when banking or government apps react to app lists, root traces, or installed modules)*. Alternative HMA branch: [**Hide-My-Applist**](https://github.com/Dr-TSNG/Hide-My-Applist/releases/latest).
+3. **SUSFS** *(optional, for maximum stealth).* An extra kernel-level hiding layer on top of SukiSU Ultra or KernelSU Next. Not required for the module to work, but it strengthens anti-detection against the strictest checks. It needs more than the Manager APK: a kernel / AnyKernel3 / boot image with SUSFS patches already built in for your exact device, Android version, kernel branch, and firmware; after flashing such a kernel, install the userspace module [**susfs4ksu / SUSFS-FOR-KERNELSU**](https://github.com/sidex15/susfs4ksu-module/releases/latest). Simply patching `boot.img`/`init_boot.img` through a Manager gives root but does not guarantee SUSFS: without patches in the kernel, the `susfs4ksu` module cannot enable kernel-level hiding.
 
 ## 📦 Useful tools from Integrity Downloader
 
@@ -127,11 +123,12 @@ For comfortable use and maximum stealth, make sure the environment is built with
 Current list from `assets/tools.list`:
 
 * **ZygiskNext.zip** — current Zygisk Next for Root Managers without built-in Zygisk.
-* **TrickyStore.zip** — hardware attestation backend.
+* **TrickyStore.zip** — hardware attestation backend (original, 5ec1cff).
+* **TrickyStore_OSS.zip** — the same backend, an actively maintained FOSS fork (beakthoven). Installed instead of the original, not alongside it (same `tricky_store` module id).
 * **KeyAttestation.apk** — app for manual certificate and verdict checks.
 * **UpdateLocker.apk** — LSPosed module for blocking unwanted app updates.
 * **HMA_Config.json** — ready-made IntegrityBox profile for HideMyApplist.
-* **HMA_OSS.apk** — current HideMyApplist OSS build.
+* **HMA_OSS.zip** — current HideMyApplist OSS build (flashed in the Root Manager).
 * **PixelMask.apk** — LSPosed module for Pixel/GMS scenarios.
 * **KSU_WebUI.apk** — standalone WebUI app for devices where the Root Manager does not open WebUI directly.
 * **Core_Patch.apk** — LSPosed module for system install/signature restrictions.
@@ -150,12 +147,13 @@ Current list from `assets/tools.list`:
 | --- | --- | --- |
 | Zygisk Next | `ZygiskNext.zip` | `/sdcard/IntegrityBox/Downloads/ZygiskNext.zip` |
 | Tricky Store | `TrickyStore.zip` | `/sdcard/IntegrityBox/Downloads/TrickyStore.zip` |
+| Tricky Store OSS | `TrickyStore_OSS.zip` | `/sdcard/IntegrityBox/Downloads/TrickyStore_OSS.zip` |
 | Key Attestation | `KeyAttestation.apk` | `/sdcard/IntegrityBox/Downloads/KeyAttestation.apk` |
 | Duck Detector | `Duck_Detector.apk` | `/sdcard/IntegrityBox/Downloads/Duck_Detector.apk` |
 | Native Root Detector | `Native_Root_Detector.apk` | `/sdcard/IntegrityBox/Downloads/Native_Root_Detector.apk` |
 | Update Locker | `UpdateLocker.apk` | `/sdcard/IntegrityBox/Downloads/UpdateLocker.apk` |
 | HMA Config | `HMA_Config.json` | `/sdcard/IntegrityBox/Downloads/HMA_Config.json` |
-| HideMyApplist OSS | `HMA_OSS.apk` | `/sdcard/IntegrityBox/Downloads/HMA_OSS.apk` |
+| HideMyApplist OSS | `HMA_OSS.zip` | `/sdcard/IntegrityBox/Downloads/HMA_OSS.zip` |
 | PixelMask | `PixelMask.apk` | `/sdcard/IntegrityBox/Downloads/PixelMask.apk` |
 | KSU WebUI | `KSU_WebUI.apk` | `/sdcard/IntegrityBox/Downloads/KSU_WebUI.apk` |
 | Core Patch | `Core_Patch.apk` | `/sdcard/IntegrityBox/Downloads/Core_Patch.apk` |
@@ -176,7 +174,7 @@ For a clean setup and the best chance of restoring Play Store certification, fol
 3. 🧭 **Choose setup behavior:** If prompted **"Erase previous installation data?"** — press **Vol Up** to reset or **Vol Down** to keep existing settings. On a clean install, you will also see the first-run setup mode prompt: **Vol Up** selects Manual mode with confirmation for advanced stages, **Vol Down** or timeout selects Auto mode with default values.
 4. 🔄 **Reboot your device.** On first boot, the module performs initial setup: baseline safe defaults, Target Box, PIF, Keybox, Boot Hash, Security Patch, AutoPilot, and service profiles. In Manual mode, additional stages are confirmed separately to avoid overwriting user settings without permission.
 5. ▶️ **Run the main action:** Open your Root Manager's module list and tap **Action** on the IntegrityBox Ultimate card. Right after boot the module may still be running first-boot background tasks, so **Action** can fail to start right away and show a message that another operation is already in progress — if that happens, wait a couple of minutes and try again. Wait until it finishes: it will refresh Keybox data, check PIF/Target schedules, and run only the stages that are actually needed.
-6. 🔎 **Check the result:** Open WebUI → **Toolkit** → **Integrity Checker**, and confirm that the active Keybox is `ONLINE` and the page correctly shows PIF source, Target Box, TEE, and companion modules.
+6. 🔎 **Check the result:** Open WebUI → **Toolkit** → **Integrity Checker**. For the active Keybox check **both axes**: availability — the status should be `ONLINE`; and actuality — the **Actuality** line should read `ACTUAL`. A Keybox can be `ONLINE` and `REVOKED` at once (synced from the cloud but banned by Google) — if so, refresh it via **Keybox Hub** → **Keybox Loader** → **Sync & Apply Keybox**. Also confirm the page correctly shows PIF source, Target Box, TEE, and companion modules.
 7. 🧼 **Deep Clean GMS:** Go to **Play Integrity Fix** → **GMS Tools** and run **Deep GMS Wipe**. This removes old Google certification states and Google Services Framework data. Reboot when prompted. *(You will be logged out of your Google Account.)*
 8. ✅ **Re-login & Verify:** After rebooting, open the Play Store, log back into your Google account, and check your Play Protect certification status.
 9. 🤖 **Check AutoPilot:** Go to **Auto Pilot** → **AutoPilot Manager** — the daemon should already be running in Xtreme mode. Switch to **Keybox Only** if you prefer minimal system impact.
@@ -198,9 +196,9 @@ For users who need banking or government apps to see a cleaner device, we recomm
 > [!NOTE]
 > In most cases, you do not need to open HMA manually before injecting the profile: IntegrityBox Ultimate attempts to create the required data directories and write the configuration automatically. If automatic injection fails, open HMA once, close it, and run **Inject HMA Template** again.
 
-1. 📥 **Download Tools:** Open WebUI -> **Miscellaneous** -> **Module Settings**. Toggle **Integrity Downloader** ON and tap **Apply Changes**. In the dialog, select the tools you need with checkboxes. For the HMA scenario, you usually need **LSPosedVector.zip**, **HMA_OSS.apk**, and **HMA_Config.json**. Downloaded files will be saved to `/sdcard/IntegrityBox/Downloads`.
+1. 📥 **Download Tools:** Open WebUI -> **Miscellaneous** -> **Module Settings**. Toggle **Integrity Downloader** ON and tap **Apply Changes**. In the dialog, select the tools you need with checkboxes. For the HMA scenario, you usually need **LSPosedVector.zip**, **HMA_OSS.zip**, and **HMA_Config.json**. Downloaded files will be saved to `/sdcard/IntegrityBox/Downloads`.
 2. 🧩 **Install LSPosed / Vector:** Flash `/sdcard/IntegrityBox/Downloads/LSPosedVector.zip` in your Root Manager and reboot your device.
-3. 🕵️ **Install HMA:** Open `/sdcard/IntegrityBox/Downloads/HMA_OSS.apk`, install HideMyApplist, and enable it in LSPosed.
+3. 🕵️ **Install HMA:** Flash `/sdcard/IntegrityBox/Downloads/HMA_OSS.zip` in your Root Manager, reboot, and enable HideMyApplist in LSPosed.
 4. 🛡️ **Inject the HMA profile:** Open WebUI -> **Hide My Stuff** -> **Inject HMA Template**. This applies ready-made hiding rules for many banking and government apps directly into HMA.
 5. 🧰 **Manual HMA import fallback:** If automatic injection fails, open the HMA app and manually import `/sdcard/IntegrityBox/Downloads/HMA_Config.json` through HMA's import/restore configuration flow.
 6. 📱 **Install PixelMask for Google Photos features:** PixelMask can unlock selected Pixel features for Google Photos on your phone. Depending on the selected profile, this may include unlimited Original-quality photo and video backup or Pixel-only features such as Video Boost, Night Sight Video, Add Me, Reimagine, and Magic Editor.

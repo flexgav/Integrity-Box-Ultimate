@@ -67,28 +67,23 @@
 
 1. **Root-решение.** Рекомендуемый порядок для устройств, где важна работа банковских и государственных приложений:
 
-   - **Предпочтительно:** [**SukiSU Ultra**](https://github.com/SukiSU-Ultra/SukiSU-Ultra/releases/latest) или [**KernelSU Next**](https://github.com/KernelSU-Next/KernelSU-Next/releases/latest) в связке с **SUSFS**.
-     Для полноценной работы SUSFS требуется не только Manager APK, а ядро/AnyKernel3/boot-образ, в который уже встроены SUSFS-патчи. После прошивки такого ядра дополнительно установите userspace-модуль [**susfs4ksu / SUSFS-FOR-KERNELSU**](https://github.com/sidex15/susfs4ksu-module/releases/latest).
+   - **Предпочтительно:** [**SukiSU Ultra**](https://github.com/SukiSU-Ultra/SukiSU-Ultra/releases/latest) или [**KernelSU Next**](https://github.com/KernelSU-Next/KernelSU-Next/releases/latest). Этого достаточно для работы модуля; при необходимости антидетект дополнительно усиливается **SUSFS** (опционально, см. раздел «Дополнительные, но настоятельно рекомендуемые»).
 
-   - **Альтернатива:** [**APatch**](https://github.com/bmax121/APatch/releases/latest), если для устройства нет стабильного KernelSU/SukiSU/SUSFS-ядра или требуется kernel-based root без Magisk-подобной схемы.
+   - **Альтернатива:** [**APatch**](https://github.com/bmax121/APatch/releases/latest), если для устройства нет стабильного KernelSU/SukiSU-ядра или требуется kernel-based root без Magisk-подобной схемы.
 
    - **Fallback-вариант:** [**Kitsune Magisk / Kitsune Ufork**](https://t.me/KitsuneUfork). Используйте его только если KernelSU Next, SukiSU Ultra или APatch недоступны для вашего устройства. Для строгих банковских приложений стабильная работа на Kitsune не гарантируется, так как Magisk-подобные окружения чаще оставляют видимые следы.
 
    Используйте только **одно** root-решение одновременно. Не смешивайте Magisk/Kitsune, KernelSU Next, SukiSU Ultra и APatch в одной системе без полного понимания последствий.
 
-2. **SUSFS и скрытность.** Если выбран SukiSU Ultra или KernelSU Next, для лучшего антидетекта рекомендуется использовать сборку ядра с **SUSFS** под конкретное устройство, версию Android, ветку ядра и прошивку.
-
-   Простое патчирование `boot.img` или `init_boot.img` через Manager может дать root-доступ, но не гарантирует наличие SUSFS. Если ядро не содержит SUSFS-патчи, модуль `susfs4ksu` не сможет включить kernel-level скрытие.
-
-3. **Backend для аппаратной аттестации.** Установите [**Tricky Store**](https://github.com/5ec1cff/TrickyStore/releases/latest) или [**TEE Simulator**](https://github.com/JingMatrix/TEESimulator/releases/latest), если приложения проверяют hardware-backed ключи и TEE/KeyMint-аттестацию.
+2. **Backend для аппаратной аттестации.** Установите [**Tricky Store**](https://github.com/5ec1cff/TrickyStore/releases/latest) или [**TEE Simulator**](https://github.com/JingMatrix/TEESimulator/releases/latest), если приложения проверяют hardware-backed ключи и TEE/KeyMint-аттестацию.
 
    Используйте только **один** backend аттестации. Tricky Store, TrickyStoreOSS, TEE Simulator и их форки не должны работать одновременно.
 
-4. **WebUI.** Для открытия панели управления установите [**MMRL**](https://github.com/MMRLApp/MMRL/releases/latest), [**WebUI X Portable**](https://github.com/MMRLApp/WebUI-X-Portable/releases/latest) или используйте встроенную поддержку WebUI в root-менеджере.
+3. **WebUI.** Для открытия панели управления установите [**MMRL**](https://github.com/MMRLApp/MMRL/releases/latest), [**WebUI X Portable**](https://github.com/MMRLApp/WebUI-X-Portable/releases/latest) или используйте встроенную поддержку WebUI в root-менеджере.
 
    Если WebUI не открывается напрямую, заранее установите [**KsuWebUIStandalone**](https://github.com/KOWX712/KsuWebUIStandalone/releases/latest) вручную как fallback-вариант. После первого входа в WebUI его APK также можно скачать через Integrity Downloader.
 
-5. **Метамодули монтирования.** IntegrityBox Ultimate сам по себе не требует отдельный metamodule ради своей работы. Он нужен только если у вас есть другие systemless-модули, которые реально монтируют файлы в `/system`, `/vendor`, `/product`, `/system_ext`, `/odm` и похожие разделы.
+4. **Метамодули монтирования.** IntegrityBox Ultimate сам по себе не требует отдельный metamodule ради своей работы. Он нужен только если у вас есть другие systemless-модули, которые реально монтируют файлы в `/system`, `/vendor`, `/product`, `/system_ext`, `/odm` и похожие разделы.
 
    Если используете KernelSU/APatch с metamodule, держите активным только одно решение монтирования одновременно. IntegrityBox Ultimate выставляет маркеры исключения `skip_mount` и `skip_mountify`, чтобы такие решения не пытались обрабатывать его как модуль с системным mount-пayload. Состояние metamodule-подсистемы попадает в диагностический отчет.
 
@@ -119,6 +114,7 @@
 
 1. [**Zygisk Next**](https://github.com/Dr-TSNG/ZygiskNext/releases/latest) или [**ReZygisk**](https://github.com/PerformanC/ReZygisk/releases/latest) *(нужны для функций на базе Zygisk, если вы не используете автономный Zygiskless Pixel Mode)*.
 2. [**LSPosed / Vector**](https://github.com/JingMatrix/Vector/releases/latest) и [**HideMyApplist / HMA-OSS**](https://github.com/frknkrc44/HMA-OSS/releases/latest) *(рекомендуются, если банковские или государственные приложения реагируют на список приложений, root-следы или установленные модули)*. Альтернативная ветка HMA: [**Hide-My-Applist**](https://github.com/Dr-TSNG/Hide-My-Applist/releases/latest).
+3. **SUSFS** *(опционально, для максимальной скрытности).* Дополнительный инструмент kernel-level скрытия поверх SukiSU Ultra или KernelSU Next. Для базовой работы модуля не требуется, но усиливает антидетект против самых строгих проверок. Нужны не только Manager APK, а ядро/AnyKernel3/boot-образ со встроенными SUSFS-патчами под конкретное устройство, версию Android, ветку ядра и прошивку; после прошивки такого ядра установите userspace-модуль [**susfs4ksu / SUSFS-FOR-KERNELSU**](https://github.com/sidex15/susfs4ksu-module/releases/latest). Простое патчирование `boot.img`/`init_boot.img` через Manager даёт root, но не гарантирует SUSFS: без патчей в ядре модуль `susfs4ksu` не включит kernel-level скрытие.
 
 ## 📦 Полезные инструменты из Integrity Downloader
 
@@ -128,11 +124,12 @@
 Текущий список из `assets/tools.list`:
 
 * **ZygiskNext.zip** — актуальный Zygisk Next для Root-менеджеров без встроенного Zygisk.
-* **TrickyStore.zip** — backend для аппаратной аттестации.
+* **TrickyStore.zip** — backend для аппаратной аттестации (оригинал, 5ec1cff).
+* **TrickyStore_OSS.zip** — тот же backend, активно поддерживаемый FOSS-форк (beakthoven). Ставится вместо оригинала, не вместе с ним (один и тот же id модуля `tricky_store`).
 * **KeyAttestation.apk** — приложение для ручной проверки сертификатов и verdict-данных.
 * **UpdateLocker.apk** — LSPosed-модуль для блокировки нежелательных обновлений приложений.
 * **HMA_Config.json** — готовый профиль IntegrityBox для HideMyApplist.
-* **HMA_OSS.apk** — актуальная сборка HideMyApplist OSS.
+* **HMA_OSS.zip** — актуальная сборка HideMyApplist OSS (прошивается в Root-менеджере).
 * **PixelMask.apk** — LSPosed-модуль для Pixel/GMS-сценариев.
 * **KSU_WebUI.apk** — отдельное приложение WebUI для устройств, где Root-менеджер не открывает WebUI напрямую.
 * **Core_Patch.apk** — LSPosed-модуль для патча системных ограничений установки/подписи.
@@ -151,12 +148,13 @@
 | --- | --- | --- |
 | Zygisk Next | `ZygiskNext.zip` | `/sdcard/IntegrityBox/Downloads/ZygiskNext.zip` |
 | Tricky Store | `TrickyStore.zip` | `/sdcard/IntegrityBox/Downloads/TrickyStore.zip` |
+| Tricky Store OSS | `TrickyStore_OSS.zip` | `/sdcard/IntegrityBox/Downloads/TrickyStore_OSS.zip` |
 | Key Attestation | `KeyAttestation.apk` | `/sdcard/IntegrityBox/Downloads/KeyAttestation.apk` |
 | Duck Detector | `Duck_Detector.apk` | `/sdcard/IntegrityBox/Downloads/Duck_Detector.apk` |
 | Native Root Detector | `Native_Root_Detector.apk` | `/sdcard/IntegrityBox/Downloads/Native_Root_Detector.apk` |
 | Update Locker | `UpdateLocker.apk` | `/sdcard/IntegrityBox/Downloads/UpdateLocker.apk` |
 | HMA Config | `HMA_Config.json` | `/sdcard/IntegrityBox/Downloads/HMA_Config.json` |
-| HideMyApplist OSS | `HMA_OSS.apk` | `/sdcard/IntegrityBox/Downloads/HMA_OSS.apk` |
+| HideMyApplist OSS | `HMA_OSS.zip` | `/sdcard/IntegrityBox/Downloads/HMA_OSS.zip` |
 | PixelMask | `PixelMask.apk` | `/sdcard/IntegrityBox/Downloads/PixelMask.apk` |
 | KSU WebUI | `KSU_WebUI.apk` | `/sdcard/IntegrityBox/Downloads/KSU_WebUI.apk` |
 | Core Patch | `Core_Patch.apk` | `/sdcard/IntegrityBox/Downloads/Core_Patch.apk` |
@@ -177,7 +175,7 @@
 3. 🧭 **Выберите поведение установки:** Если отображается запрос **«Стереть данные предыдущей установки?»** — нажмите **Vol Up** для сброса или **Vol Down** для сохранения настроек. При чистой установке появится выбор режима первичной настройки: **Vol Up** — Ручной режим с подтверждением дополнительных этапов, **Vol Down** или ожидание таймера — Авто режим с применением стандартных значений.
 4. 🔄 **Перезагрузите устройство.** При первой загрузке модуль выполняет начальную настройку: включает базовые безопасные параметры, подготавливает Target Box, PIF, Keybox, Boot Hash, Security Patch, AutoPilot и служебные профили. В Ручном режиме дополнительные этапы запрашиваются отдельно, чтобы не перезаписать пользовательские настройки без подтверждения.
 5. ▶️ **Запустите основное действие:** Перейдите в список модулей Root-менеджера и нажмите **Action** на карточке IntegrityBox Ultimate. Сразу после загрузки системы модуль может ещё выполнять фоновые задачи первой настройки, поэтому **Action** способен сработать не сразу и показать сообщение о том, что уже выполняется другая операция — в этом случае подождите пару минут и повторите попытку. Дождитесь завершения: модуль обновит Keybox, проверит расписание PIF/Target и применит только те этапы, которые действительно необходимы.
-6. 🔎 **Проверьте статус:** Откройте WebUI → **Инструментарий** → **Проверка целостности** и убедитесь, что активный Keybox имеет статус `ONLINE`, а страница проверки корректно показывает источники PIF, Target Box, TEE и сопутствующие модули.
+6. 🔎 **Проверьте статус:** Откройте WebUI → **Инструментарий** → **Проверка целостности**. У активного Keybox смотрите **обе оси**: доступность — статус `ONLINE`, и актуальность — строка **Актуальность** должна показывать `АКТУАЛЕН`. Keybox может быть `ONLINE` и при этом `ОТОЗВАН` (синхронизирован из облака, но забанен Google) — тогда обновите его через **Центр Keybox** → **Keybox Loader** → **Обновить Кейбоксы**. Убедитесь также, что страница проверки корректно показывает источники PIF, Target Box, TEE и сопутствующие модули.
 7. 🧼 **Глубокая очистка GMS:** Перейдите в **Play Integrity Fix** → **GMS Tools** и нажмите кнопку **Глубокая очистка GMS**. Это удалит старые состояния сертификации Google и данные Google Services Framework. Следуйте подсказке, чтобы **перезагрузить** устройство. *(Вы выйдете из аккаунта Google.)*
 8. ✅ **Повторный вход и проверка:** После перезагрузки откройте Play Маркет, снова войдите в аккаунт Google и проверьте статус сертификации Play Защиты.
 9. 🤖 **Проверьте AutoPilot:** Перейдите в **Автопилот** → **Управление AutoPilot** — демон уже должен быть включён в режиме Xtreme. При необходимости переключите режим на **Keybox Only** для минимального воздействия на систему.
@@ -199,9 +197,9 @@
 > [!NOTE]
 > Обычно HMA не нужно открывать вручную перед применением профиля: IntegrityBox Ultimate пытается сам создать нужные data-директории и записать конфигурацию. Если применение не сработало, откройте HMA один раз, закройте его и повторите **Применить шаблон HMA**.
 
-1. 📥 **Скачайте инструменты:** Откройте WebUI -> **Разное** -> **Настройки модуля**. Включите **Integrity Downloader** и нажмите **Применить изменения**. В появившемся окне отметьте чекбоксами нужные позиции. Для HMA-сценария обычно нужны **LSPosedVector.zip**, **HMA_OSS.apk** и **HMA_Config.json**. Скачанные файлы появятся в `/sdcard/IntegrityBox/Downloads`.
+1. 📥 **Скачайте инструменты:** Откройте WebUI -> **Разное** -> **Настройки модуля**. Включите **Integrity Downloader** и нажмите **Применить изменения**. В появившемся окне отметьте чекбоксами нужные позиции. Для HMA-сценария обычно нужны **LSPosedVector.zip**, **HMA_OSS.zip** и **HMA_Config.json**. Скачанные файлы появятся в `/sdcard/IntegrityBox/Downloads`.
 2. 🧩 **Установите LSPosed / Vector:** Прошейте `/sdcard/IntegrityBox/Downloads/LSPosedVector.zip` в вашем Root-менеджере и перезагрузите устройство.
-3. 🕵️ **Установите HMA:** Откройте `/sdcard/IntegrityBox/Downloads/HMA_OSS.apk`, установите HideMyApplist и включите его в LSPosed.
+3. 🕵️ **Установите HMA:** Прошейте `/sdcard/IntegrityBox/Downloads/HMA_OSS.zip` в Root-менеджере, перезагрузитесь и включите HideMyApplist в LSPosed.
 4. 🛡️ **Примените готовый профиль HMA:** Откройте WebUI -> **Скрытие следов** -> **Применить шаблон HMA**. Это применит готовые правила скрытия для многих банковских и государственных приложений прямо в HMA.
 5. 🧰 **Запасной ручной импорт HMA:** Если автоматическое применение не прошло, откройте приложение HMA и импортируйте скачанный файл `/sdcard/IntegrityBox/Downloads/HMA_Config.json` вручную через импорт/восстановление конфигурации HMA.
 6. 📱 **Установите PixelMask для функций Google Photos:** PixelMask позволяет открыть на вашем смартфоне некоторые Pixel-функции Google Photos. В зависимости от выбранного профиля это может быть безлимитная загрузка фото и видео в исходном качестве или Pixel-only возможности вроде Video Boost, Night Sight Video, Add Me, Reimagine и Magic Editor.
